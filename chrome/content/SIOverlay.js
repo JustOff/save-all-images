@@ -1528,20 +1528,23 @@ var SIOV = {
 	si_getFirefoxVersion: function(){
 		const SEAMONKEY_ID = "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}";
 		const FIREFOX_ID = "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}";
+		const PALEMOON_ID = "{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}";
 		var appID = null;
 		var appInfo = Cc['@mozilla.org/xre/app-info;1'].getService(Ci.nsIXULAppInfo);
 		appID = appInfo.ID
 		var versionChecker = Cc['@mozilla.org/xpcom/version-comparator;1'].getService(Ci.nsIVersionComparator);
-	  if (appInfo && versionChecker) {
-		  if (appID == FIREFOX_ID) {
-		  	this.FFv14plus = versionChecker.compare(appInfo.version, '14') >= 0;
-		  	this.FFv32plus = versionChecker.compare(appInfo.version, '31') > 0;
-		  	this.FFv36plus = versionChecker.compare(appInfo.version, '35') > 0;
-	  	} else
-	  		if (appID == SEAMONKEY_ID) {
-		  		this.SMv229plus = versionChecker.compare(appInfo.version, '2.29') >= 0;
-	  		}
-	  }
+		if (appInfo && versionChecker) {
+			if (appID == FIREFOX_ID) {
+				this.FFv14plus = versionChecker.compare(appInfo.version, '14') >= 0;
+				this.FFv32plus = versionChecker.compare(appInfo.version, '31') > 0;
+				this.FFv36plus = versionChecker.compare(appInfo.version, '35') > 0;
+			} else if (appID == PALEMOON_ID) {
+				this.FFv14plus = versionChecker.compare(appInfo.version, '14') >= 0;
+				this.FFv32plus = versionChecker.compare(appInfo.version, '27') > 0;
+			} else if (appID == SEAMONKEY_ID) {
+				this.SMv229plus = versionChecker.compare(appInfo.version, '2.29') >= 0;
+			}
+		}
 	},
 
 // Returns true if the extension is running on a Mac
