@@ -16,12 +16,11 @@
         <hbox align="center">
         <hbox align="baseline">
           <text value="Save Images (Moon Edition)" style="font-weight: bold; font-size: x-large;"/>
-          <text value="  v1.0.1"/>
           <spacer style="width: 100px"/>
         </hbox>
           <image src="chrome://save-images-me/skin/SIicon.png" style="width:32px; height:32px;"/>
         </hbox>
-        <text value="    Save images in web pages." style="font-weight: bold;"/>  
+        <text value="    Save images from pages and tabs." style="font-weight: bold;"/>  
         <separator class="thin"/>
         <text value="Developed by:" style="font-weight: bold;"/>
         <text value="    JustOff"/>
