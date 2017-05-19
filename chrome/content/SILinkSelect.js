@@ -3,7 +3,7 @@ if (typeof Cc == "undefined") {
 }
 
 var siSelect = {
-	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.'),
+	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.'),
 	linklist: null,
   checkCount: 0,
 

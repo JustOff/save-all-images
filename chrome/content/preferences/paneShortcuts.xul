@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<prefpane

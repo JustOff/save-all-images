@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://saveimages/content/SI_css.css" type="text/css"?>
+<?xml-stylesheet href="chrome://save-images-me/content/SI_css.css" type="text/css"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://saveimages/locale/savedetails.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://save-images-me/locale/savedetails.dtd">
 
 <window 
 	id="si_idSaveDetails"
@@ -15,10 +15,10 @@
   >
   
   <stringbundleset id="stringbundleset">         
-    <stringbundle id="smg_SDstrs" src="chrome://saveimages/locale/savedetails.properties"/>
+    <stringbundle id="smg_SDstrs" src="chrome://save-images-me/locale/savedetails.properties"/>
   </stringbundleset>
 
-  <script type="application/x-javascript" src="chrome://saveimages/content/SIsaveDetails.js"/>
+  <script type="application/x-javascript" src="chrome://save-images-me/content/SIsaveDetails.js"/>
   
   <vbox>
   	<hbox><label value="&lblBaseFolder;:  "/><textbox readonly="true" id="edtSaveFolder" flex="1"/></hbox>

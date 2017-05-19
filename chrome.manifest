@@ -1,15 +1,15 @@
-content	saveimages   chrome/content/
-skin		saveimages   classic/1.0   chrome/skin/classic/
+content	save-images-me   chrome/content/
+skin	save-images-me   classic/1.0   chrome/skin/classic/
 
-overlay	  chrome://browser/content/browser.xul   chrome://saveimages/content/SIOverlay.xul
-overlay	  chrome://navigator/content/navigator.xul   chrome://saveimages/content/SIOverlay.xul
+overlay	  chrome://browser/content/browser.xul   chrome://save-images-me/content/SIOverlay.xul
+overlay	  chrome://navigator/content/navigator.xul   chrome://save-images-me/content/SIOverlay.xul
 
-style   chrome://global/content/customizeToolbar.xul   chrome://saveimages/skin/SI_OV.css
+style   chrome://global/content/customizeToolbar.xul   chrome://save-images-me/skin/SI_OV.css
 
 #localization
-locale	saveimages   en			chrome/locale/en/
-locale	saveimages   de			chrome/locale/de/
-locale	saveimages	 fr			chrome/locale/fr/
-locale	saveimages   sv			chrome/locale/sv/
-locale	saveimages	 zh-CN		chrome/locale/zh-CN/
-locale	saveimages	 zh-TW		chrome/locale/zh-TW/
+locale	save-images-me   en			chrome/locale/en/
+locale	save-images-me   de			chrome/locale/de/
+locale	save-images-me	 fr			chrome/locale/fr/
+locale	save-images-me   sv			chrome/locale/sv/
+locale	save-images-me	 zh-CN		chrome/locale/zh-CN/
+locale	save-images-me	 zh-TW		chrome/locale/zh-TW/

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<prefpane
@@ -10,26 +10,26 @@
 	
 	<!-- id's and preference id's must be different to access a component by getElemenyById -->
 		<preferences>
-		  <preference id="chkUseSizes" name="extensions.SI.chkUseSizes" type="bool"/>
-		  <preference id="chkFileSize" name="extensions.SI.chkFileSize" type="bool"/>
-		  <preference id="edtMinFSize" name="extensions.SI.edtMinFSize" type="int"/>
-		  <preference id="edtMaxFSize" name="extensions.SI.edtMaxFSize" type="int"/>
-		  <preference id="grpSizeUnk" name="extensions.SI.grpSizeUnk" type="string"/>
-		  <preference id="chkDims" name="extensions.SI.chkDims" type="bool"/>
-		  <preference id="edtMinWidth" name="extensions.SI.edtMinWidth" type="int"/>
-		  <preference id="edtMaxWidth" name="extensions.SI.edtMaxWidth" type="int"/>
-		  <preference id="edtMinHeight" name="extensions.SI.edtMinHeight" type="int"/>
-		  <preference id="edtMaxHeight" name="extensions.SI.edtMaxHeight" type="int"/>
-		  <preference id="grpDimsUnk" name="extensions.SI.grpDimsUnk" type="string"/>
-		  <preference id="grpImageTypes" name="extensions.SI.grpImageTypes" type="int"/>
-		  <preference id="prefImgjpg" name="extensions.SI.chkImgjpg" type="bool"/>
-		  <preference id="prefImggif" name="extensions.SI.chkImggif" type="bool"/>
-		  <preference id="prefImgbmp" name="extensions.SI.chkImgbmp" type="bool"/>
-		  <preference id="prefImgpng" name="extensions.SI.chkImgpng" type="bool"/>
-		  <preference id="chkSaveNoExt" name="extensions.SI.chkSaveNoExt" type="bool"/>
-		  <preference id="cbxRegexp" name="extensions.SI.cbxRegexp" type="unichar"/>
-		  <preference id="chkRegexp" name="extensions.SI.chkRegexp" type="bool"/>
-		  <preference id="chkSameDomain" name="extensions.SI.chkSameDomain" type="bool"/>
+		  <preference id="chkUseSizes" name="extensions.save-images-me.chkUseSizes" type="bool"/>
+		  <preference id="chkFileSize" name="extensions.save-images-me.chkFileSize" type="bool"/>
+		  <preference id="edtMinFSize" name="extensions.save-images-me.edtMinFSize" type="int"/>
+		  <preference id="edtMaxFSize" name="extensions.save-images-me.edtMaxFSize" type="int"/>
+		  <preference id="grpSizeUnk" name="extensions.save-images-me.grpSizeUnk" type="string"/>
+		  <preference id="chkDims" name="extensions.save-images-me.chkDims" type="bool"/>
+		  <preference id="edtMinWidth" name="extensions.save-images-me.edtMinWidth" type="int"/>
+		  <preference id="edtMaxWidth" name="extensions.save-images-me.edtMaxWidth" type="int"/>
+		  <preference id="edtMinHeight" name="extensions.save-images-me.edtMinHeight" type="int"/>
+		  <preference id="edtMaxHeight" name="extensions.save-images-me.edtMaxHeight" type="int"/>
+		  <preference id="grpDimsUnk" name="extensions.save-images-me.grpDimsUnk" type="string"/>
+		  <preference id="grpImageTypes" name="extensions.save-images-me.grpImageTypes" type="int"/>
+		  <preference id="prefImgjpg" name="extensions.save-images-me.chkImgjpg" type="bool"/>
+		  <preference id="prefImggif" name="extensions.save-images-me.chkImggif" type="bool"/>
+		  <preference id="prefImgbmp" name="extensions.save-images-me.chkImgbmp" type="bool"/>
+		  <preference id="prefImgpng" name="extensions.save-images-me.chkImgpng" type="bool"/>
+		  <preference id="chkSaveNoExt" name="extensions.save-images-me.chkSaveNoExt" type="bool"/>
+		  <preference id="cbxRegexp" name="extensions.save-images-me.cbxRegexp" type="unichar"/>
+		  <preference id="chkRegexp" name="extensions.save-images-me.chkRegexp" type="bool"/>
+		  <preference id="chkSameDomain" name="extensions.save-images-me.chkSameDomain" type="bool"/>
 		</preferences>
 	
 	 	<vbox>

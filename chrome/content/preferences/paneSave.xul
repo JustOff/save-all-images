@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<prefpane
@@ -9,29 +9,29 @@
 	>
 	
 		<preferences>
-		  <preference id="grpDefAction" name="extensions.SI.grpDefAction" type="int"/>
-		  <preference id="chkInclCurTab" name="extensions.SI.chkInclCurTab" type="bool"/>
-		  <preference id="grpFolder" name="extensions.SI.grpFolder" type="string"/>
-		  <preference id="cbxSaveFolder" name="extensions.SI.cbxSaveFolder" type="unichar"/>
+		  <preference id="grpDefAction" name="extensions.save-images-me.grpDefAction" type="int"/>
+		  <preference id="chkInclCurTab" name="extensions.save-images-me.chkInclCurTab" type="bool"/>
+		  <preference id="grpFolder" name="extensions.save-images-me.grpFolder" type="string"/>
+		  <preference id="cbxSaveFolder" name="extensions.save-images-me.cbxSaveFolder" type="unichar"/>
 		  
-		  <preference id="chkAppendTitle" name="extensions.SI.chkAppendTitle" type="bool"/>
-		  <preference id="chkUseUrlFolders" name="extensions.SI.chkUseUrlFolders" type="bool"/>
-		  <preference id="grpUrlFolders" name="extensions.SI.grpUrlFolders" type="string"/>
-		  <preference id="chkAppendDate" name="extensions.SI.chkAppendDate" type="bool"/>
-		  <preference id="chkAppendTime" name="extensions.SI.chkAppendTime" type="bool"/>
-		  <preference id="chkAppendSecs" name="extensions.SI.chkAppendSecs" type="bool"/>
+		  <preference id="chkAppendTitle" name="extensions.save-images-me.chkAppendTitle" type="bool"/>
+		  <preference id="chkUseUrlFolders" name="extensions.save-images-me.chkUseUrlFolders" type="bool"/>
+		  <preference id="grpUrlFolders" name="extensions.save-images-me.grpUrlFolders" type="string"/>
+		  <preference id="chkAppendDate" name="extensions.save-images-me.chkAppendDate" type="bool"/>
+		  <preference id="chkAppendTime" name="extensions.save-images-me.chkAppendTime" type="bool"/>
+		  <preference id="chkAppendSecs" name="extensions.save-images-me.chkAppendSecs" type="bool"/>
 		  
-		  <preference id="grpFN" name="extensions.SI.grpFN" type="string"/>
-		  <preference id="cbxFN" name="extensions.SI.cbxFN" type="unichar"/>
-		  <preference id="grpFNPrompt" name="extensions.SI.grpFNPrompt" type="string"/>
-		  <preference id="cbxRegexpFN" name="extensions.SI.cbxRegexpFN" type="unichar"/>
-		  <preference id="grpDupes" name="extensions.SI.grpDupes" type="string"/>
-		  <preference id="grpExtn" name="extensions.SI.grpExtn" type="int"/>
-		  <preference id="edtNumLen" name="extensions.SI.edtNumLen" type="int"/>
-		  <preference id="chkCloseTab" name="extensions.SI.chkCloseTab" type="bool"/>
-		  <preference id="chkPromptTab" name="extensions.SI.chkPromptTab" type="bool"/>
-		  <preference id="chkClearFolders" name="extensions.SI.chkClearFolders" type="bool"/>
-		  <preference id="chkClearFilenames" name="extensions.SI.chkClearFilenames" type="bool"/>
+		  <preference id="grpFN" name="extensions.save-images-me.grpFN" type="string"/>
+		  <preference id="cbxFN" name="extensions.save-images-me.cbxFN" type="unichar"/>
+		  <preference id="grpFNPrompt" name="extensions.save-images-me.grpFNPrompt" type="string"/>
+		  <preference id="cbxRegexpFN" name="extensions.save-images-me.cbxRegexpFN" type="unichar"/>
+		  <preference id="grpDupes" name="extensions.save-images-me.grpDupes" type="string"/>
+		  <preference id="grpExtn" name="extensions.save-images-me.grpExtn" type="int"/>
+		  <preference id="edtNumLen" name="extensions.save-images-me.edtNumLen" type="int"/>
+		  <preference id="chkCloseTab" name="extensions.save-images-me.chkCloseTab" type="bool"/>
+		  <preference id="chkPromptTab" name="extensions.save-images-me.chkPromptTab" type="bool"/>
+		  <preference id="chkClearFolders" name="extensions.save-images-me.chkClearFolders" type="bool"/>
+		  <preference id="chkClearFilenames" name="extensions.save-images-me.chkClearFilenames" type="bool"/>
 		</preferences>
 	
 	 	<vbox>

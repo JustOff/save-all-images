@@ -34,19 +34,19 @@ toolbarbutton {
 	height: auto;
 }
 toolbarbutton.clearlist {
-	list-style-image: url("chrome://saveimages/skin/SIclearList.png");
+	list-style-image: url("chrome://save-images-me/skin/SIclearList.png");
 	margin: auto;
 }
 #btnClearCbx[disabled="true"], #btnClearFolderCbx[disabled="true"] {
-	list-style-image: url("chrome://saveimages/skin/SIclearList_dis.png");
+	list-style-image: url("chrome://save-images-me/skin/SIclearList_dis.png");
 }
 toolbarbutton.browse {
-	list-style-image: url("chrome://saveimages/skin/SIbrowse.png");
+	list-style-image: url("chrome://save-images-me/skin/SIbrowse.png");
 	margin: auto;
 	width: 24px;
 }
 #btnBrowse[disabled="true"] {
-	list-style-image: url("chrome://saveimages/skin/SIbrowse_dis.png");
+	list-style-image: url("chrome://save-images-me/skin/SIbrowse_dis.png");
 }
 
 /* saveDetails CSS */
@@ -75,7 +75,7 @@ grid {
 
 /*  preferences */
 radio[pane] {
-  list-style-image: url("chrome://saveimages/skin/SIicon2.png");
+  list-style-image: url("chrome://save-images-me/skin/SIicon2.png");
 }
 
 /*  help file  */

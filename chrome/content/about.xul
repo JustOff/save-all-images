@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet type="text/css" href="chrome://saveimages/skin/SI_OV.css"?>
+<?xml-stylesheet type="text/css" href="chrome://save-images-me/skin/SI_OV.css"?>
 
 <window class="dialog"
 	title="Save Images : About"
@@ -15,18 +15,18 @@
       <vbox>
         <hbox align="center">
         <hbox align="baseline">
-          <text value="Save Images" style="font-weight: bold; font-size: x-large;"/>
-          <text value="  v1.1.0.3"/>
+          <text value="Save Images (Moon Edition)" style="font-weight: bold; font-size: x-large;"/>
+          <text value="  v1.0.1"/>
           <spacer style="width: 100px"/>
         </hbox>
-          <image src="chrome://saveimages/skin/SIicon.png" style="width:32px; height:32px;"/>
+          <image src="chrome://save-images-me/skin/SIicon.png" style="width:32px; height:32px;"/>
         </hbox>
         <text value="    Save images in web pages." style="font-weight: bold;"/>  
         <separator class="thin"/>
         <text value="Developed by:" style="font-weight: bold;"/>
-        <text value="    Lumox"/>
+        <text value="    JustOff"/>
         <separator class="thin"/>
-        <text value="Contact: plashcor@gmail.com"/>
+        <text value="Contact: Off.Just.Off@gmail.com"/>
         <separator class="thin"/>
         <description style="margin:0px 0px 0px 6px; width:350px;">
           Save Images comes with NO WARRANTY - it is free software, and may be redistribute under the GPL agreement. 
@@ -38,6 +38,8 @@
         <spacer style="height: 20px"/>
         <vbox>
           <text value="Thanks to:" style="font-weight: bold;"/>
+			<label value='- Lumox for the original Save Images add-on.'/>
+			<label value='- David Lanham for the icon.'/>
 			<label value='- Eric Batard for the information on how to solve the problem of duplicate files being overwritten.'/>
 			<label value="- André Pirard for the information on how to extract an image's file name from the header content-disposition."/>
 			<label value="- Florent Bouchez Tichadou for the filtering and file name regular expression code."/>

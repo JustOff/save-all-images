@@ -3,7 +3,7 @@ if (typeof Cc == "undefined") {
 }
 
 var siSD = {
-	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.'),
+	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.'),
 	strBundle: document.getElementById('smg_SDstrs'),
 	lblNo: 'No',
 	lblYes: 'Yes',

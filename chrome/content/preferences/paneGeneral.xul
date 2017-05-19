@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<prefpane
@@ -9,23 +9,23 @@
 	>
 	
 	<preferences>
-		<preference id="chkOpenDlg" name="extensions.SI.chkOpenDlg" type="bool"/>
-		<preference id="chkShowPopup" name="extensions.SI.chkShowPopup" type="bool"/>
-		<preference id="chkShowPopupError" name="extensions.SI.chkShowPopupError" type="bool"/>
-		<preference id="chkNotifyPos" name="extensions.SI.chkNotifyPos" type="bool"/>
-		<preference id="edtSeconds" name="extensions.SI.edtSeconds" type="int"/>
-		<preference id="chkSaveDetail" name="extensions.SI.chkSaveDetail" type="bool"/>
-		<preference id="chkShowDetailsSaved" name="extensions.SI.chkShowDetailsSaved" type="bool"/>
-		<preference id="chkFocusTab" name="extensions.SI.chkFocusTab" type="bool"/>
-		<preference id="chkSaveBkgd" name="extensions.SI.chkSaveBkgd" type="bool"/>
-		<preference id="chkSaveMouse" name="extensions.SI.chkSaveMouse" type="bool"/>
-		<preference id="chkSaveMouseFilters" name="extensions.SI.chkSaveMouseFilters" type="bool"/>
-		<preference id="edtFrameH" name="extensions.SI.edtFrameH" type="int"/>
-		<preference id="edtNumFNs" name="extensions.SI.edtNumFNs" type="int"/>
-		<preference id="cbxLanguage" name="extensions.SI.cbxLanguage" type="int"/>
-		<preference id="edtDelayOpenLinks" name="extensions.SI.edtDelayOpenLinks" type="int"/>
-		<preference id="edtNumOpenLinks" name="extensions.SI.edtNumOpenLinks" type="int"/>
-		<preference id="chkSkipLinkSelect" name="extensions.SI.chkSkipLinkSelect" type="bool"/>
+		<preference id="chkOpenDlg" name="extensions.save-images-me.chkOpenDlg" type="bool"/>
+		<preference id="chkShowPopup" name="extensions.save-images-me.chkShowPopup" type="bool"/>
+		<preference id="chkShowPopupError" name="extensions.save-images-me.chkShowPopupError" type="bool"/>
+		<preference id="chkNotifyPos" name="extensions.save-images-me.chkNotifyPos" type="bool"/>
+		<preference id="edtSeconds" name="extensions.save-images-me.edtSeconds" type="int"/>
+		<preference id="chkSaveDetail" name="extensions.save-images-me.chkSaveDetail" type="bool"/>
+		<preference id="chkShowDetailsSaved" name="extensions.save-images-me.chkShowDetailsSaved" type="bool"/>
+		<preference id="chkFocusTab" name="extensions.save-images-me.chkFocusTab" type="bool"/>
+		<preference id="chkSaveBkgd" name="extensions.save-images-me.chkSaveBkgd" type="bool"/>
+		<preference id="chkSaveMouse" name="extensions.save-images-me.chkSaveMouse" type="bool"/>
+		<preference id="chkSaveMouseFilters" name="extensions.save-images-me.chkSaveMouseFilters" type="bool"/>
+		<preference id="edtFrameH" name="extensions.save-images-me.edtFrameH" type="int"/>
+		<preference id="edtNumFNs" name="extensions.save-images-me.edtNumFNs" type="int"/>
+		<preference id="cbxLanguage" name="extensions.save-images-me.cbxLanguage" type="int"/>
+		<preference id="edtDelayOpenLinks" name="extensions.save-images-me.edtDelayOpenLinks" type="int"/>
+		<preference id="edtNumOpenLinks" name="extensions.save-images-me.edtNumOpenLinks" type="int"/>
+		<preference id="chkSkipLinkSelect" name="extensions.save-images-me.chkSkipLinkSelect" type="bool"/>
 	</preferences>
 	
 	<vbox>

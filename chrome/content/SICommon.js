@@ -5,7 +5,7 @@ if (typeof Cc == "undefined") {
 var byId = function(id){return document.getElementById(id);};
 
 var SICommon = { //create a namespace
-	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.'),
+	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.'),
 	SIPrompt: Cc['@mozilla.org/embedcomp/prompt-service;1'].getService(Ci.nsIPromptService),
 	numMenuItems: 17,
 	tmrNotify: null,

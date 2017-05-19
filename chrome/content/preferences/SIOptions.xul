@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin" type="text/css"?>
-<?xml-stylesheet href="chrome://saveimages/content/SI_css.css"?>
+<?xml-stylesheet href="chrome://save-images-me/content/SI_css.css"?>
 
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <prefwindow
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
@@ -19,20 +19,20 @@
 	ondialogextra2="SIprefs.restoreAll();"
 	>
 
-	<prefpane id="paneFilters" label="&paneFiltersLbl;" src="chrome://saveimages/content/preferences/paneFilters.xul" />
-	<prefpane id="paneSave" label="&paneSaveLbl;" src="chrome://saveimages/content/preferences/paneSave.xul" />
-	<prefpane id="paneGeneral" label="&paneGeneralLbl;" src="chrome://saveimages/content/preferences/paneGeneral.xul" />
-	<prefpane id="paneShortcuts" label="&paneShortcutsLbl;" src="chrome://saveimages/content/preferences/paneShortcuts.xul" />
-	<prefpane id="paneMenuItems" label="&paneMenuItemsLbl;" src="chrome://saveimages/content/preferences/paneMenuItems.xul" />
+	<prefpane id="paneFilters" label="&paneFiltersLbl;" src="chrome://save-images-me/content/preferences/paneFilters.xul" />
+	<prefpane id="paneSave" label="&paneSaveLbl;" src="chrome://save-images-me/content/preferences/paneSave.xul" />
+	<prefpane id="paneGeneral" label="&paneGeneralLbl;" src="chrome://save-images-me/content/preferences/paneGeneral.xul" />
+	<prefpane id="paneShortcuts" label="&paneShortcutsLbl;" src="chrome://save-images-me/content/preferences/paneShortcuts.xul" />
+	<prefpane id="paneMenuItems" label="&paneMenuItemsLbl;" src="chrome://save-images-me/content/preferences/paneMenuItems.xul" />
 	
 	<!--there must be nothing before prefpane else causes strange behaviour-->
-	<script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
-	<script type="application/x-javascript" src="chrome://saveimages/content/preferences/SIOptions.js"/>
+	<script type="application/x-javascript" src="chrome://save-images-me/content/SICommon.js"/>
+	<script type="application/x-javascript" src="chrome://save-images-me/content/preferences/SIOptions.js"/>
   
   <stringbundleset>
 		<stringbundle id="SI_platformKeys" src="chrome://global-platform/locale/platformKeys.properties"/>
 		<stringbundle id="SI_localeKeys" src="chrome://global/locale/keys.properties"/>
-		<stringbundle id="SI_optionStrs" src="chrome://saveimages/locale/options.properties"/>
+		<stringbundle id="SI_optionStrs" src="chrome://save-images-me/locale/options.properties"/>
   </stringbundleset>
   
   <hbox>

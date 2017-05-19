@@ -287,7 +287,7 @@ var SImenuitems = {
 }
 
 var SIprefs = {
-	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.'),
+	Prefs: Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.'),
 	SIPrompt: Cc['@mozilla.org/embedcomp/prompt-service;1'].getService(Ci.nsIPromptService),
 	//winres: false,
 	numMenuItems: 17,
@@ -308,7 +308,7 @@ var SIprefs = {
 	},
 	getVersion: function() {
 		Components.utils.import('resource://gre/modules/AddonManager.jsm');
-		AddonManager.getAddonByID('LDSI_plashcor@gmail.com', function(addon) {
+		AddonManager.getAddonByID('save-images-me@Off.JustOff', function(addon) {
   		SIprefs.siVersion = addon.version;
 		});
 	},
@@ -321,7 +321,7 @@ var SIprefs = {
 		if (change || (lang != this.oldLang)) {
 			try {
 				var i, len, fn, offset = 9,
-						id = "LDSI_plashcor@gmail.com",
+						id = "save-images-me@Off.JustOff",
 						manFile = Cc['@mozilla.org/file/directory_service;1'].getService(Ci.nsIProperties).get('ProfD', Ci.nsIFile);
 				manFile.append('extensions');
 				manFile.append(id);

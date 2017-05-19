@@ -1,8 +1,8 @@
 <?xml version="1.0"?>  
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="chrome://saveimages/content/SI_css.css"?>
+<?xml-stylesheet href="chrome://save-images-me/content/SI_css.css"?>
 
-<!DOCTYPE window SYSTEM "chrome://saveimages/locale/linkselect.dtd">
+<!DOCTYPE window SYSTEM "chrome://save-images-me/locale/linkselect.dtd">
 
 <window
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -14,8 +14,8 @@
 	onload="siSelect.load();"
 	>
 	
-  <script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
-  <script type="application/x-javascript" src="chrome://saveimages/content/SILinkSelect.js"/>
+  <script type="application/x-javascript" src="chrome://save-images-me/content/SICommon.js"/>
+  <script type="application/x-javascript" src="chrome://save-images-me/content/SILinkSelect.js"/>
   
   <keyset>
 		<key keycode="VK_ESCAPE" oncommand="window.close();"/>
@@ -36,19 +36,19 @@
          </listbox>
          <hbox align="center">
 		      <spacer style="width:24px;"/>
-		      <toolbarbutton id="btnAll" tooltiptext="&lblCheckAll; [Ctrl+A]" image="chrome://saveimages/skin/SIall.png" oncommand="siSelect.checkAll(true);"/>
-		      <toolbarbutton id="btnNone" tooltiptext="&lblCheckNone; [Ctrl+N]" image="chrome://saveimages/skin/SInone.png" oncommand="siSelect.checkAll(false);"/>
-		      <toolbarbutton id="btnSelCheck" tooltiptext="&lblCheckSelected; [Ctrl+S]" image="chrome://saveimages/skin/SIselcheck.png" oncommand="siSelect.checkSelected();"/>
-		      <toolbarbutton id="btnSwop" tooltiptext="&lblInvertChecked; [Ctrl+R]" image="chrome://saveimages/skin/SIswop.png" oncommand="siSelect.invertSelect();"/>
-		      <toolbarbutton id="btnUp" tooltiptext="&lblMoveUp; [Ctrl+UP]" image="chrome://saveimages/skin/SIup.png" oncommand="siSelect.moveItem(true);"/>
-		      <toolbarbutton id="btnDown" tooltiptext="&lblMoveDown; [Ctrl+DOWN]" image="chrome://saveimages/skin/SIdown.png" oncommand="siSelect.moveItem(false);"/>
+		      <toolbarbutton id="btnAll" tooltiptext="&lblCheckAll; [Ctrl+A]" image="chrome://save-images-me/skin/SIall.png" oncommand="siSelect.checkAll(true);"/>
+		      <toolbarbutton id="btnNone" tooltiptext="&lblCheckNone; [Ctrl+N]" image="chrome://save-images-me/skin/SInone.png" oncommand="siSelect.checkAll(false);"/>
+		      <toolbarbutton id="btnSelCheck" tooltiptext="&lblCheckSelected; [Ctrl+S]" image="chrome://save-images-me/skin/SIselcheck.png" oncommand="siSelect.checkSelected();"/>
+		      <toolbarbutton id="btnSwop" tooltiptext="&lblInvertChecked; [Ctrl+R]" image="chrome://save-images-me/skin/SIswop.png" oncommand="siSelect.invertSelect();"/>
+		      <toolbarbutton id="btnUp" tooltiptext="&lblMoveUp; [Ctrl+UP]" image="chrome://save-images-me/skin/SIup.png" oncommand="siSelect.moveItem(true);"/>
+		      <toolbarbutton id="btnDown" tooltiptext="&lblMoveDown; [Ctrl+DOWN]" image="chrome://save-images-me/skin/SIdown.png" oncommand="siSelect.moveItem(false);"/>
 		      <spacer flex="1"/>
 		      <label value="&lblFindText;"/>
 		      <menulist id="idcbxFind" type="unichar" editable="true" width="250px">
 		        <menupopup id="pumFindList">
 		        </menupopup>
 		      </menulist>
-		      <toolbarbutton id="btnFind" tooltiptext="&lblFindText; [Ctrl+F]" image="chrome://saveimages/skin/SIsearch.png" oncommand="siSelect.findPhrase();"/>
+		      <toolbarbutton id="btnFind" tooltiptext="&lblFindText; [Ctrl+F]" image="chrome://save-images-me/skin/SIsearch.png" oncommand="siSelect.findPhrase();"/>
 		      <spacer style="width:8px;"/>
 		      <toolbarbutton id="btnClearFindCbx" class="clearlist" tooltiptext="&lblClearFindList;" oncommand="SICommon.clearCombobox('idcbxFind','pumFindList',null,'findList');"/>
 		    </hbox>

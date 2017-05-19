@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0"?>
-<?xml-stylesheet type="text/css" href="chrome://saveimages/skin/SI_OV.css"?>
+<?xml-stylesheet type="text/css" href="chrome://save-images-me/skin/SI_OV.css"?>
 
-<!DOCTYPE overlay SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://save-images-me/locale/saveimages.dtd">
 
 <overlay id="SIOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
          
   <stringbundleset id="stringbundleset">         
 		<stringbundle id="SI_platformKeys" src="chrome://global-platform/locale/platformKeys.properties"/>
 		<stringbundle id="SI_localeKeys" src="chrome://global/locale/keys.properties"/>
-		<stringbundle id="SI_strings" src="chrome://saveimages/locale/saveimages.properties"/>
+		<stringbundle id="SI_strings" src="chrome://save-images-me/locale/saveimages.properties"/>
   </stringbundleset>
 
 // This imports our javascript.
-<script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
-<script type="application/x-javascript" src="chrome://saveimages/content/SIOverlay.js"/>
+<script type="application/x-javascript" src="chrome://save-images-me/content/SICommon.js"/>
+<script type="application/x-javascript" src="chrome://save-images-me/content/SIOverlay.js"/>
 
 <keyset><!--key="" is required for these to work-->
   <key id="SI_key0" label="SI:&si_lblSaveImages;" key="" oncommand="SIOV.startSaveImages(event,null,0);"/>
@@ -43,7 +43,7 @@
 		<hbox id="SI_idNotifyOuterbox" flex="1">
 		  <vbox id="SI_idNotifyInnerbox" flex="1">
 		    <hbox align="center">
-		      <image src="chrome://saveimages/skin/SIicon2-sm.png" autostretch="never"/>
+		      <image src="chrome://save-images-me/skin/SIicon2-sm.png" autostretch="never"/>
 		      <label class="header" value="&si_lblSaveImages;"/>
 		    </hbox>
 	      <grid flex="1" style="margin-top: 5px;">
@@ -67,7 +67,7 @@
 		<hbox id="SI_idErrorOuterbox" flex="1">
 		  <vbox id="SI_idErrorInnerbox" flex="1">
 		    <hbox align="center">
-		      <image src="chrome://saveimages/skin/SIicon2-sm.png" autostretch="never"/>
+		      <image src="chrome://save-images-me/skin/SIicon2-sm.png" autostretch="never"/>
 		      <label class="header" value="&si_lblSaveImages;"/>
 		    </hbox>
 	      <grid flex="1" style="margin-top: 5px;">

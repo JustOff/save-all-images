@@ -8,7 +8,7 @@ var siFN = {
   strBundle: null,
   
   init: function() {
-	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 	  document.getElementById('chkRetain').checked = Prefs.getBoolPref('chkRetain');
 	  document.getElementById('edtSepChar').value = Prefs.getCharPref('edtSepChar');
 	  document.getElementById('edtStart').value = Prefs.getIntPref('edtStart');
@@ -50,7 +50,7 @@ var siFN = {
 	},
 	
 	saveDefaults: function(saveDefs) {
-	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 	  if (!saveDefs) {
 		  var ctrl = document.getElementById('idcbxSaveFolder');
 	    if (ctrl.value == '') {

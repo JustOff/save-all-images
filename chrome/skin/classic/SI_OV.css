@@ -1,13 +1,13 @@
 #SI_mnuToolbar0 {
-  list-style-image: url("chrome://saveimages/skin/SIicon2.png");
+  list-style-image: url("chrome://save-images-me/skin/SIicon2.png");
 }
 
 toolbar[iconsize="small"] #SI_mnuToolbar0 {
-  list-style-image: url("chrome://saveimages/skin/SIicon2-sm.png");
+  list-style-image: url("chrome://save-images-me/skin/SIicon2-sm.png");
 }
 
 #SI_mnuTools0, #SI_mnuContext0 {
-  list-style-image: url("chrome://saveimages/skin/SIicon2-sm.png");
+  list-style-image: url("chrome://save-images-me/skin/SIicon2-sm.png");
 }
 
 /* Popup notification */

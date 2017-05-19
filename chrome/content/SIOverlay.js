@@ -50,7 +50,7 @@ var SIOV = {
 	lblNoImagesFound: '', lblFiltersApplied: '', lblFRenamed: '', lblFIgnored: '', lblFOverwritten: '', lblImagesSaved: '',	lblErrors: '',
 
 	getSIPrefs: function() {
-	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 	  this.chkUseSizes = Prefs.getBoolPref('chkUseSizes');
 	  this.chkFileSize = Prefs.getBoolPref('chkFileSize');
 	  this.edtMinFSize = Prefs.getIntPref('edtMinFSize');
@@ -451,7 +451,7 @@ var SIOV = {
 	            arg[0] = imgUrlFN;
 	            arg[1] = this.tempFN;
 	            arg[2] = (this.grpFN == 'prompt') && (this.grpFNPrompt == 'each');
-	            openDialog('chrome://saveimages/content/SIPromptFN.xul', 'SIPromptFN', 'chrome,titlebar,modal,centerscreen,resizable=no,dialog=yes',arg);
+	            openDialog('chrome://save-images-me/content/SIPromptFN.xul', 'SIPromptFN', 'chrome,titlebar,modal,centerscreen,resizable=no,dialog=yes',arg);
 	            if (!arg[0]) //set to true if Ok clicked
 	              return -1; //exit function - cancel rest of saves
 	            this.saveFolder = arg[1]; //set this.saveFolder so retained for next image save if promtonce
@@ -1105,7 +1105,7 @@ var SIOV = {
 	  	'saveFolder': this.saveFolder
 		};
 		//focus() brings the window to the front, giving the window a name ("si_idSaveDetails") prevents multiple windows from being created
-  	openDialog('chrome://saveimages/content/SIsaveDetails.xul', 'si_idSaveDetails', 'scrollbars,resizable,chrome,dialog=no',arg).focus();
+  	openDialog('chrome://save-images-me/content/SIsaveDetails.xul', 'si_idSaveDetails', 'scrollbars,resizable,chrome,dialog=no',arg).focus();
 	},
 
 	getOriginalFilename: function(imgsrc,doc) {
@@ -1214,10 +1214,10 @@ var SIOV = {
 					this.linkList[p++] = u;
 			} //for
 			if (this.linkList.length > 0) {
-				var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+				var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 			  this.chkSkipLinkSelect = Prefs.getBoolPref('chkSkipLinkSelect');
 				if (!this.chkSkipLinkSelect)
-	      	openDialog('chrome://saveimages/content/SILinkSelect.xul', 'SILinkSelect', 'chrome,titlebar,resizable,modal',this.linkList);
+	      	openDialog('chrome://save-images-me/content/SILinkSelect.xul', 'SILinkSelect', 'chrome,titlebar,resizable,modal',this.linkList);
 				if (this.linkList.length > 0)
 					this.openLinks();
 	    }
@@ -1264,10 +1264,10 @@ var SIOV = {
 		        }
 		      } //for
 		      if (this.linkList.length > 0) {
-			      var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+			      var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 			      this.chkSkipLinkSelect = Prefs.getBoolPref('chkSkipLinkSelect');
 			      if (!this.chkSkipLinkSelect)
-		        	openDialog('chrome://saveimages/content/SILinkSelect.xul', 'SILinkSelect', 'chrome,titlebar,resizable,modal',this.linkList);
+		        	openDialog('chrome://save-images-me/content/SILinkSelect.xul', 'SILinkSelect', 'chrome,titlebar,resizable,modal',this.linkList);
 						if (this.linkList.length > 0)
 							this.openLinks();
 		      } else
@@ -1280,7 +1280,7 @@ var SIOV = {
 	},
 
 	openLinks: function() {
-		var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.'),
+		var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.'),
 			focusTab = Prefs.getBoolPref('chkFocusTab');
 		this.edtFrameH = Prefs.getIntPref('edtFrameH');
 		this.edtDelayOpenLinks = Prefs.getIntPref('edtDelayOpenLinks');
@@ -1386,12 +1386,12 @@ var SIOV = {
 		//must use the following features for it to display correctly
 		var features = 'chrome,titlebar,toolbar,centerscreen,modal,dialog=no,resizable=yes',
 	  		res = {}; //to get return value from openDialog
-	  openDialog('chrome://saveimages/content/preferences/SIOptions.xul', 'SIdlgOptions', features, res);
+	  openDialog('chrome://save-images-me/content/preferences/SIOptions.xul', 'SIdlgOptions', features, res);
 	  return res.ok;
 	},
 
 	SIShowHelp: function() {
-	  gBrowser.selectedTab = gBrowser.addTab('chrome://saveimages/content/help/SI_Index.htm');
+	  gBrowser.selectedTab = gBrowser.addTab('chrome://save-images-me/content/help/SI_Index.htm');
 	},
 
 	endisContexts: function() {
@@ -1487,7 +1487,7 @@ var SIOV = {
 			for (var property in KeyEvent)
 		    SICommon.gVKNames[KeyEvent[property]] = property.replace('DOM_', '');
 	    SICommon.gVKNames[8] = 'VK_BACK';
-			var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+			var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
 			SIOV.chkSaveMouse = Prefs.getBoolPref('chkSaveMouse');
 			SICommon.saveUnderMouse(SIOV.chkSaveMouse);
 			//SIOV.chkAltClick = Prefs.getBoolPref('chkAltClick');
@@ -1564,7 +1564,7 @@ var SIOV = {
 
 var SIOV_Observer = {
   observe: function(aSubject, aTopic, aData) {
-	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.SI.');
+	  var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.save-images-me.');
     if (aTopic == 'quit-application-granted') {
       var chkClearFolders = Prefs.getBoolPref('chkClearFolders'),
       		chkClearFilenames = Prefs.getBoolPref('chkClearFilenames');
@@ -1581,15 +1581,15 @@ var SIOV_Observer = {
     if(aTopic != 'nsPref:changed')
     	return;
     switch (aData) {
-      case 'extensions.SI.mnuTools':
-      case 'extensions.SI.mnuContext':
-      case 'extensions.SI.mnuToolbar':
-      case 'extensions.SI.mnuLabels':
-      case 'extensions.SI.chkHideToolMenu':
-      case 'extensions.SI.chkHideContextMenu':
+      case 'extensions.save-images-me.mnuTools':
+      case 'extensions.save-images-me.mnuContext':
+      case 'extensions.save-images-me.mnuToolbar':
+      case 'extensions.save-images-me.mnuLabels':
+      case 'extensions.save-images-me.chkHideToolMenu':
+      case 'extensions.save-images-me.chkHideContextMenu':
       	SICommon.si_showHideMenuItems();
         break;
-      case 'extensions.SI.chkSaveMouse':
+      case 'extensions.save-images-me.chkSaveMouse':
       	SICommon.saveUnderMouse(Prefs.getBoolPref('chkSaveMouse'));
       	break;
     } //switch
@@ -1599,14 +1599,14 @@ var SIOV_Observer = {
     observerService.addObserver(this, 'quit-application-granted', false);
 
     var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService);
-    Prefs.addObserver('extensions.SI.',this,false);
+    Prefs.addObserver('extensions.save-images-me.',this,false);
   },
   unregister: function() {
     var observerService = Cc['@mozilla.org/observer-service;1'].getService(Ci.nsIObserverService);
     observerService.removeObserver(this, 'quit-application-granted');
 
     var Prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService);
-    Prefs.removeObserver('extensions.SI.mnuTools',this);
+    Prefs.removeObserver('extensions.save-images-me.mnuTools',this);
   }
 } //SIOV_Observer
 
