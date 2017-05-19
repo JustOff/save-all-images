@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane
+		id="paneMenuItems"
+		label="&paneMenuItemsLbl;"
+		onpaneload="SImenuitems.load();"
+	>
+	
+		<preferences>
+			<preference id="chkHideToolMenu" name="extensions.SI.chkHideToolMenu" type="bool"/>
+			<preference id="chkHideContextMenu" name="extensions.SI.chkHideContextMenu" type="bool"/>
+		</preferences>
+	
+	 	<vbox>
+      <label class="bold" value="&SelectMenuitems;"/>
+     
+      <hbox style="margin-top: 8px;">
+	      <grid id="grdMenuItems">
+	        <columns>
+	          <column style="padding-right: 30px;"/>
+	          <column/>
+	          <column/>
+	          <column/>
+	        </columns>
+	        <rows>
+	        	<row class="bold">
+	        		<label value=""/>
+	       			<label value="&lblTools;"/>
+	       			<label value="&lblContext;"/>
+	       			<label value="&lblToolbutton;"/>
+	        	</row>
+	          <row>
+	            <label value="&si_lblSaveCurrent;"/>
+	            <checkbox id="chkShowTM1" checked="true"/>
+	            <checkbox id="chkShowCM1" checked="true"/>
+	            <checkbox id="chkShowTBM1" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblSaveLeft;"/>
+	            <checkbox id="chkShowTM2" checked="true"/>
+	            <checkbox id="chkShowCM2" checked="true"/>
+	            <checkbox id="chkShowTBM2" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblSaveRight;"/>
+	            <checkbox id="chkShowTM3" checked="true"/>
+	            <checkbox id="chkShowCM3" checked="true"/>
+	            <checkbox id="chkShowTBM3" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblSaveAll;"/>
+	            <checkbox id="chkShowTM4" checked="true"/>
+	            <checkbox id="chkShowCM4" checked="true"/>
+	            <checkbox id="chkShowTBM4" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblSaveSel;"/>
+	            <checkbox id="chkShowTM13" checked="true"/>
+	            <checkbox id="chkShowCM13" checked="true"/>
+	            <checkbox id="chkShowTBM13" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblImageLinks;" class="bold"/>
+	            <checkbox id="chkLbl0" checked="true"/>
+	            <checkbox id="chkLbl1" checked="true"/>
+	            <checkbox id="chkLbl2" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblImageLinksAll;"/>
+	            <checkbox id="chkShowTM5" checked="true"/>
+	            <checkbox id="chkShowCM5" checked="true"/>
+	            <checkbox id="chkShowTBM5" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblImageLinksSel;"/>
+	            <checkbox id="chkShowTM6" checked="true"/>
+	            <checkbox id="chkShowCM6" checked="true"/>
+	            <checkbox id="chkShowTBM6" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblImageLinksAllTabs;"/>
+	            <checkbox id="chkShowTM7" checked="true"/>
+	            <checkbox id="chkShowCM7" checked="true"/>
+	            <checkbox id="chkShowTBM7" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblImageLinksSelTabs;"/>
+	            <checkbox id="chkShowTM8" checked="true"/>
+	            <checkbox id="chkShowCM8" checked="true"/>
+	            <checkbox id="chkShowTBM8" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblLinks;" class="bold"/>
+	            <checkbox id="chkLbl3" checked="true"/>
+	            <checkbox id="chkLbl4" checked="true"/>
+	            <checkbox id="chkLbl5" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblLinksAll;"/>
+	            <checkbox id="chkShowTM9" checked="true"/>
+	            <checkbox id="chkShowCM9" checked="true"/>
+	            <checkbox id="chkShowTBM9" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblLinksSel;"/>
+	            <checkbox id="chkShowTM10" checked="true"/>
+	            <checkbox id="chkShowCM10" checked="true"/>
+	            <checkbox id="chkShowTBM10" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblLinksAllTabs;"/>
+	            <checkbox id="chkShowTM11" checked="true"/>
+	            <checkbox id="chkShowCM11" checked="true"/>
+	            <checkbox id="chkShowTBM11" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblLinksSelTabs;"/>
+	            <checkbox id="chkShowTM12" checked="true"/>
+	            <checkbox id="chkShowCM12" checked="true"/>
+	            <checkbox id="chkShowTBM12" checked="true"/>
+	          </row>
+	          <row>
+	          	<label value=""/>
+	          </row>
+	          <row>
+	            <label value="&si_lblOptions;"/>
+	            <checkbox id="chkShowTM15" checked="true"/>
+	            <checkbox id="chkShowCM15" checked="true"/>
+	            <checkbox id="chkShowTBM15" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblSaveDetails;"/>
+	            <checkbox id="chkShowTM16" checked="true"/>
+	            <checkbox id="chkShowCM16" checked="true"/>
+	            <checkbox id="chkShowTBM16" checked="true"/>
+	          </row>
+	          <row>
+	            <label value="&si_lblHelp;"/>
+	            <checkbox id="chkShowTM17" checked="true"/>
+	            <checkbox id="chkShowCM17" checked="true"/>
+	            <checkbox id="chkShowTBM17" checked="true"/>
+	          </row>
+	        </rows>
+	      </grid>
+      </hbox>
+      <spacer style="height:16px;"/>
+      <checkbox label="&lblHideToolsMenu;" preference="chkHideToolMenu"/>
+      <checkbox label="&lblHideContextMenu;" preference="chkHideContextMenu"/>
+    </vbox>
+	</prefpane>
+</overlay>

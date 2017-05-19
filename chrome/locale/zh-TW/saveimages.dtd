@@ -1,0 +1,151 @@
+﻿<!ENTITY lblOk "確定">
+<!ENTITY lblCancel "取消">
+
+<!-- Menu Labels -->
+<!ENTITY si_lblSaveImages "儲存影像">
+<!ENTITY si_lblSaveCurrent "儲存〔目前〕標籤頁的影像">
+<!ENTITY si_lblSaveLeft "儲存《左側〕標籤頁的影像 &lt;&lt;">
+<!ENTITY si_lblSaveRight "儲存〔右側》標籤頁的影像 &gt;&gt;">
+<!ENTITY si_lblSaveAll "儲存《所有》標籤頁的影像">
+<!ENTITY si_lblSaveSel "保存選定的圖像">
+<!ENTITY si_lblSaveUnderMouse "儲存滑鼠游標下的影像">
+<!ENTITY si_lblImageLinks "影像連結">
+<!ENTITY si_lblImageLinksAll "打開所有影像連結 在同一標籤頁">
+<!ENTITY si_lblImageLinksSel "打開「選取的」影像連結 在同一標籤頁">
+<!ENTITY si_lblImageLinksAllTabs "打開所有影像連結 在「各別的」標籤頁">
+<!ENTITY si_lblImageLinksSelTabs "打開「選取的」影像連結 在「各別的」標籤頁">
+<!ENTITY si_lblLinks "連結">
+<!ENTITY si_lblLinksAll "打開所有連結 在同一標籤頁">
+<!ENTITY si_lblLinksSel "打開「選取的」連結 在同一標籤頁">
+<!ENTITY si_lblLinksAllTabs "打開所有連結 在「各別的」標籤頁">
+<!ENTITY si_lblLinksSelTabs "打開「選取的」連結 在「各別的」標籤頁">
+<!ENTITY si_lblOptions "選項">
+<!ENTITY si_lblSaveDetails "儲存詳情">
+<!ENTITY si_lblHelp "幫助">
+
+<!-- Option Pane Labels -->
+<!ENTITY optionsTitle "儲存影像選項">
+<!ENTITY buttonlabelextra2 "恢復預設">
+<!ENTITY paneFiltersLbl "篩選">
+<!ENTITY paneSaveLbl "儲存">
+<!ENTITY paneAutoLbl "自動開啟/儲存">
+<!ENTITY paneGeneralLbl "一般">
+<!ENTITY paneShortcutsLbl "快捷鍵">
+<!ENTITY paneMenuItemsLbl "選單項">
+<!ENTITY btnExportLbl "匯出">
+<!ENTITY btnExportTooltip "匯出選項設置">
+<!ENTITY btnImportLbl "匯入">
+<!ENTITY btnImportTooltip "匯入選項設置">
+
+<!-- Filters pane -->
+<!ENTITY lblEnableLimits "啟用限制">
+<!ENTITY lblFileSize "檔案大小">
+<!ENTITY lblBytes "位元組">
+<!ENTITY lblMin "最小">
+<!ENTITY lblMax "最大">
+<!ENTITY lblUnknown "如果未知">
+<!ENTITY lblSkip "略過">
+<!ENTITY lblPrompt "提示">
+<!ENTITY lblSave "儲存">
+<!ENTITY lblDimensions "尺寸 (像素)">
+<!ENTITY lblMinWidth "最小寬度">
+<!ENTITY lblMaxWidth "最大寬度">
+<!ENTITY lblMinHeight "最小高度">
+<!ENTITY lblMaxHeight "最大高度">
+<!ENTITY lblImageTypes "要下載的影像類型">
+<!ENTITY lblAllImages "所有影像">
+<!ENTITY lblSelection "選擇">
+<!ENTITY lblJPGImages "JPG/JPEG 影像">
+<!ENTITY lblPNGImages "PNG 影像">
+<!ENTITY lblGIFImages "GIF 影像">
+<!ENTITY lblBMPImages "BMP 影像">
+<!ENTITY lblSaveNoExt "如果沒有副檔名, 存為 JPG">
+<!ENTITY lblRegExp "正規表示式">
+<!ENTITY lblRegExpSentence "正規表示式基於影像地址 (僅儲存符合的影像)">
+<!ENTITY lblClearRegExpList "清空正規表示式列表">
+<!ENTITY lblSameDomain "僅儲存與標籤頁地址同一域名/伺服器的影像">
+
+<!-- Save pane -->
+<!ENTITY lblDefaultSave "預設儲存動作">
+<!ENTITY lblCurrentTab "目前標籤頁">
+<!ENTITY lblLeftCurrentTab "左邊的標籤頁 &lt;&lt;">
+<!ENTITY lblRightCurrentTab "右邊的標籤頁 &gt;&gt;">
+<!ENTITY lblAllTabs "所有標籤頁">
+<!ENTITY lblIncludeCurrentTab "儲存影像時包含目前標籤頁 (左/右)">
+<!ENTITY lblFolderOptions "資料夾選項">
+<!ENTITY lblFolder "資料夾">
+<!ENTITY lblFileNames "檔案名稱">
+<!ENTITY lblSaveFolder "儲存資料夾">
+<!ENTITY lblUseFFFolder "使用火狐下載資料夾">
+<!ENTITY lblLastFFFolder "使用火狐上次下載資料夾">
+<!ENTITY lblUseFolder "使用資料夾">
+<!ENTITY lblBrowseForFolder "選擇一個資料夾">
+<!ENTITY lblClearFolderList "清空資料夾列表">
+<!ENTITY lblAppendTitle "附加標籤頁標題到 '儲存目錄'">
+<!ENTITY lblAppendURL "附加影像地址目錄到 '儲存目錄'">
+<!ENTITY lblTreeStructure "樹形結構">
+<!ENTITY lblSingleFolder "單獨資料夾">
+<!ENTITY lblAppendDate "附加日期">
+<!ENTITY lblAppendTime "附加時間">
+<!ENTITY lblIncludeSeconds "包括秒">
+<!ENTITY lblUseImgFN "使用影像檔案名稱">
+<!ENTITY lblUseFN "使用檔案名稱">
+<!ENTITY lblClearFNList "清空檔案名稱列表">
+<!ENTITY lblFNPrompt "提示檔案名稱">
+<!ENTITY lblOnce "一頁一次">
+<!ENTITY lblForEachPage "一張圖一次">
+<!ENTITY lblRegExpFN "正規表示式檔案名稱 (可以用 $1, $2...)">
+<!ENTITY lblClearRegxEprList "清空正規表示式檔案名稱列表">
+<!ENTITY lblDuplicateFiles "重複文件">
+<!ENTITY lblIgnore "忽略">
+<!ENTITY lblOverwrite "覆蓋">
+<!ENTITY lblNumberLength "數字 - 長度">
+<!ENTITY lblExtLetterSize "擴充字母大小">
+<!ENTITY lblExtAsIs "由於給定的">
+<!ENTITY lblExtLower "小寫">
+<!ENTITY lblExtUpper "大寫">
+<!ENTITY lblCloseTab "儲存完畢關閉標籤頁">
+<!ENTITY lblPromptTab "提示關閉標籤頁">
+<!ENTITY lblClearFoldersExit "火狐存在時清空 '使用資料夾' 列表 (僅在使用 '檔案->離開'有效)">
+<!ENTITY lblClearFNExit "火狐存在時清空 '使用檔案名稱' 列表 (僅在使用 '檔案->離開'有效)">
+
+<!-- General pane -->
+<!ENTITY lblOpenDlg "儲存之前打開儲存影像選項對話框">
+<!ENTITY lblShowPopup "顯示確認儲存提示">
+<!ENTITY lblShowPopupError "僅在發生錯誤時">
+<!ENTITY lblNotifyPos "在火狐窗口右下角顯示彈出提示">
+<!ENTITY lblPopupTime "彈出提示顯示時間 (秒)">
+<!ENTITY lblSaveDetail "為已儲存/未儲存影像顯示詳情列表">
+<!ENTITY lblShowDetailsSaved "僅儲存影像時">
+<!ENTITY lblAutoSwitch "自動切換到新標籤頁 (當打開多個連結時)">
+<!ENTITY lblSaveBkgd "儲存背景影像">
+<!ENTITY lblSaveMouse "儲存滑鼠游標下的影像">
+<!ENTITY lblSaveMouseFilters "忽略 '選項' 裡的 '篩選'設置 ">
+<!ENTITY lblFrameHeight "在一個標籤頁打開多個連接的框架高度">
+<!ENTITY lblPixels "像素">
+<!ENTITY lblFoldersRemember "要記憶的資料夾/檔案名稱數量">
+<!ENTITY lblGenLang1 "選擇 'Save Images' 使用的語言">
+<!ENTITY lblGenNote1 "需要重新啟動瀏覽器">
+<!ENTITY lblMultiLinks "開啟多個連結/影像">
+<!ENTITY lblDelayOpenLinks "延遲多少時間（秒）開啟各連結/影像">
+<!ENTITY lblNumOpenLinks "要一次開啟多少個連結/影像">
+<!ENTITY lblNoLimit "(0 = 無限制)">
+<!ENTITY lblNoDelay "(0 = 無延遲)">
+<!ENTITY lblSkipLinkSelect "忽略已開啟的 '選擇連結' 對話框">
+
+<!-- Shortcuts pane -->
+<!ENTITY lblDescription "敘述">
+<!ENTITY lblShortcutKey "快捷鍵">
+<!ENTITY lblKey "鍵">
+<!ENTITY lblApply "套用">
+<!ENTITY lblClear "清空">
+<!ENTITY lblKeyboard1 "不會檢查是否與火狐快捷鍵有衝突.">
+<!ENTITY lblKeyboard2 "對快捷鍵的更改在瀏覽器重新啟動後生效.">
+
+<!-- Menuitems pane -->
+<!ENTITY SelectMenuitems "選擇您要在選單裡顯示的選單項.">
+<!ENTITY lblTools "工具選單">
+<!ENTITY lblContext "上下文選單">
+<!ENTITY lblToolbutton "工具按鈕">
+<!ENTITY lblHideToolsMenu "隱藏儲存影像工具選單">
+<!ENTITY lblHideContextMenu "隱藏儲存影像上下文選單">

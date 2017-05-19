@@ -1,0 +1,30 @@
+<!ENTITY lblSaveDetails "Save Details">
+<!ENTITY lblBaseFolder "Base Save Folder">
+<!ENTITY lblTotalProcessed "Total number of images processed">
+<!ENTITY lblTotalSaved "Total number of images saved">
+<!ENTITY lblDuplicateImages "Duplicate images">
+<!ENTITY lblTotalErrors "Total number of errors">
+<!ENTITY lblFileSizeProp "File Size Properties">
+<!ENTITY lblSetting "Setting">
+<!ENTITY lblNoImagesNotSaved "No. of images not saved">
+<!ENTITY lblMinFS "Minimum file size">
+<!ENTITY lblMaxFS "Maximum file size">
+<!ENTITY lblFSUnknown "File size unknown">
+<!ENTITY lblDimProp "Dimension Properties">
+<!ENTITY lblMinWidth "Minimum width">
+<!ENTITY lblMaxWidth "Maximum width">
+<!ENTITY lblMinHeight "Minimum height">
+<!ENTITY lblMaxHeight "Maximum height">
+<!ENTITY lblDimUnknown "Dimensions unknown">
+<!ENTITY lblImageTypesProp "Image Types To Save Properties">
+<!ENTITY lblAllImages "Image types:        All images">
+<!ENTITY lblJpgImages "JPG/JPEG images">
+<!ENTITY lblPngImages "PNG images">
+<!ENTITY lblGifImages "GIF images">
+<!ENTITY lblBmpImages "BMP images">
+<!ENTITY lblOtherImages "Other images">
+<!ENTITY lblSaveNoExt "If no extension, save as JPG">
+<!ENTITY lblSameDomainProp "Same Domain Properties">
+<!ENTITY lblSameDomain "Only save if Same Domain">
+<!ENTITY lblRegExpProp "Regular Expression Properties">
+<!ENTITY lblRegExp "Regular Expression">

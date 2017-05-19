@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane
+		id="paneFilters"
+		label="&paneFiltersLbl;"
+		onpaneload="SIfilters.load();"
+	>
+	
+	<!-- id's and preference id's must be different to access a component by getElemenyById -->
+		<preferences>
+		  <preference id="chkUseSizes" name="extensions.SI.chkUseSizes" type="bool"/>
+		  <preference id="chkFileSize" name="extensions.SI.chkFileSize" type="bool"/>
+		  <preference id="edtMinFSize" name="extensions.SI.edtMinFSize" type="int"/>
+		  <preference id="edtMaxFSize" name="extensions.SI.edtMaxFSize" type="int"/>
+		  <preference id="grpSizeUnk" name="extensions.SI.grpSizeUnk" type="string"/>
+		  <preference id="chkDims" name="extensions.SI.chkDims" type="bool"/>
+		  <preference id="edtMinWidth" name="extensions.SI.edtMinWidth" type="int"/>
+		  <preference id="edtMaxWidth" name="extensions.SI.edtMaxWidth" type="int"/>
+		  <preference id="edtMinHeight" name="extensions.SI.edtMinHeight" type="int"/>
+		  <preference id="edtMaxHeight" name="extensions.SI.edtMaxHeight" type="int"/>
+		  <preference id="grpDimsUnk" name="extensions.SI.grpDimsUnk" type="string"/>
+		  <preference id="grpImageTypes" name="extensions.SI.grpImageTypes" type="int"/>
+		  <preference id="prefImgjpg" name="extensions.SI.chkImgjpg" type="bool"/>
+		  <preference id="prefImggif" name="extensions.SI.chkImggif" type="bool"/>
+		  <preference id="prefImgbmp" name="extensions.SI.chkImgbmp" type="bool"/>
+		  <preference id="prefImgpng" name="extensions.SI.chkImgpng" type="bool"/>
+		  <preference id="chkSaveNoExt" name="extensions.SI.chkSaveNoExt" type="bool"/>
+		  <preference id="cbxRegexp" name="extensions.SI.cbxRegexp" type="unichar"/>
+		  <preference id="chkRegexp" name="extensions.SI.chkRegexp" type="bool"/>
+		  <preference id="chkSameDomain" name="extensions.SI.chkSameDomain" type="bool"/>
+		</preferences>
+	
+	 	<vbox>
+		 	<hbox>
+	      <groupbox style="margin: -3px 0px 0px 0px;">
+	        <caption>
+	          <checkbox id="idchkUseSizes" align="start" label="&lblEnableLimits;" class="bold" preference="chkUseSizes" oncommand="SIfilters.grpSizesChanged(!this.checked);"/>
+	        </caption>
+	        <hbox>   
+	          <groupbox style="margin: -2px 0px 0px 0px;">
+	            <caption>
+	              <checkbox id="idchkFileSize" align="start" label="&lblFileSize;" class="bold" preference="chkFileSize" oncommand="SIfilters.grpFileSizesChanged(!this.checked);"/>
+	            </caption>         
+	            <vbox>
+	              <hbox align="center">
+	                <label id="lblMinFSize" value="&lblMin; "/>
+	                <textbox type="number" min="0" style="margin:0px; width:10ex;" preference="edtMinFSize"/>
+	                <label id="lblBytes1" value="&lblBytes;" style="margin: 4px;"/>
+	              </hbox>
+	              <separator class="thin"/>
+	              <hbox align="center">
+	                <label id="lblMaxFSize" value="&lblMax;"/>
+	                <textbox type="number" min="0" style="margin:0px; width:10ex;" preference="edtMaxFSize"/>
+	                <label id="lblBytes2" value="&lblBytes;" style="margin: 4px;"/>
+	              </hbox>
+	              <groupbox>
+	                <caption>
+	                  <label id="lblSizeUnk" value="&lblUnknown;" class="bold" />
+	                </caption>
+	                <radiogroup preference="grpSizeUnk">
+	                  <vbox>
+	                    <radio value="sizeskip" label="&lblSkip;"/>
+	                    <radio value="sizeprompt" label="&lblPrompt;"/>              
+	                    <radio value="sizesave" label="&lblSave;" selected="true"/>
+	                  </vbox>
+	                </radiogroup>
+	              </groupbox>
+	            </vbox>
+	          </groupbox>
+	          <spacer style="width:8px"/>
+	          <groupbox style="margin: -2px 2px 0px 0px;">
+	            <caption>
+	              <checkbox id="idchkDims" align="start" label="&lblDimensions;" class="bold" preference="chkDims" oncommand="SIfilters.grpDimsChanged(!this.checked);"/>
+	            </caption>         
+	            <vbox>
+	              <hbox align="center">
+	                <label id="lblMinWidth" value="&lblMinWidth;" style="width:10ex;"/>
+	                <textbox id="idedtMinWidth" type="number" min="0" style="margin:0px; width:10ex;" preference="edtMinWidth"/>
+	              </hbox>
+	              <separator class="thin"/>
+	              <hbox align="center">
+	                <label id="lblMaxWidth" value="&lblMaxWidth;" style="width:10ex;"/>
+	                <textbox id="idedtMaxWidth" type="number" min="0" style="margin:0px; width:10ex;" preference="edtMaxWidth"/>
+	              </hbox>
+	              <separator class="thin"/>
+	              <hbox align="center">
+	                <label id="lblMinHeight" value="&lblMinHeight;" style="width:10ex;"/>
+	                <textbox id="idedtMinHeight" type="number" min="0" style="margin:0px; width:10ex;" preference="edtMinHeight"/>
+	              </hbox>
+	              <separator class="thin"/>
+	              <hbox align="center">
+	                <label id="lblMaxHeight" value="&lblMaxHeight;" style="width:10ex;"/>
+	                <textbox id="idedtMaxHeight" type="number" min="0" style="margin:0px; width:10ex;" preference="edtMaxHeight"/>
+	              </hbox>
+	              <groupbox>
+	                <caption>
+	                  <label id="lblDimsUnk" value="&lblUnknown;" class="bold" />
+	                </caption>
+	                <radiogroup id="grpDimsUnk" preference="grpDimsUnk">
+	                  <vbox>
+	                    <radio value="dimsskip" label="&lblSkip;"/>
+	                    <radio value="dimsprompt" label="&lblPrompt;"/>              
+	                    <radio value="dimssave" label="&lblSave;" selected="true"/>
+	                  </vbox>
+	                </radiogroup>
+	              </groupbox>
+	            </vbox>
+	          </groupbox>
+	        </hbox>
+	      </groupbox>
+	
+	      <groupbox style="margin: 0px 0px 0px 15px;">
+	        <caption>
+	          <label value="&lblImageTypes;" class="bold"/>
+	        </caption>
+	        <vbox>
+	          <radiogroup id="idgrpImageTypes" preference="grpImageTypes" oncommand="SIfilters.imageTypeChanged();">
+	            <radio value="0" label="&lblAllImages;" checked="true"/>
+	            <radio value="1" label="&lblSelection;"/>
+	            <hbox>
+	              <spacer style="width:20px"/>
+	              <vbox>
+	                <checkbox id="chkImgjpg" label="&lblJPGImages;" preference="prefImgjpg"/>
+	                <checkbox id="chkImgpng" label="&lblPNGImages;" preference="prefImgpng"/>
+	                <checkbox id="chkImggif" label="&lblGIFImages;" preference="prefImggif"/>
+	                <checkbox id="chkImgbmp" label="&lblBMPImages;" preference="prefImgbmp"/>
+	              </vbox>
+	            </hbox>
+	          </radiogroup>
+	          <separator class="thin"/>
+	          <checkbox id="chkSaveNoExt" checked="true" label="&lblSaveNoExt;" preference="chkSaveNoExt"/>
+	        </vbox>
+	      </groupbox>
+	    </hbox>
+      
+      <groupbox>
+	      <caption><label value="&lblRegExp;" class="bold"/></caption>
+		    <checkbox id="idchkRegexp" value="regexp" label="&lblRegExpSentence;" oncommand="SIfilters.chkRegexpChecked();" preference="chkRegexp"/>
+		    <hbox class="indent20">
+	      	<menulist id="idcbxRegexp" type="unichar" editable="true" focused="yes" flex="1" preference="cbxRegexp">
+  	    		<menupopup id="pumRegexp"></menupopup>
+    	  	</menulist>
+      		<toolbarbutton id="btnClearRegExp" class="clearlist" tooltiptext="&lblClearRegExpList;" oncommand="SICommon.clearCombobox('idcbxRegexp','pumRegexp','cbxRegexp','regexpList');"/>
+      	</hbox>
+      </groupbox>
+	    <checkbox checked="false" label="&lblSameDomain;" preference="chkSameDomain"/>
+	  </vbox>
+	  
+	</prefpane>
+</overlay>

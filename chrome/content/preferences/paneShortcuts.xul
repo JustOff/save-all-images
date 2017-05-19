@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane
+		id="paneShortcuts"
+		label="&paneShortcutsLbl;"
+		onpaneload="SIshorts.load();"
+	>
+	
+		<preferences>
+		</preferences>
+	
+	 	<vbox>
+      <label class="bold" value="&lblKeyboard1;"/>
+      <spacer style="height:12px;"/>
+      <listbox id="idlbxKeys" flex="1" enableColumnDrag="true" height="350" onselect="SIshorts.selectionChanged();">
+		    <listcols>
+					<listcol flex="1" />
+					<splitter class="tree-splitter" />
+					<listcol flex="2" />
+				</listcols>
+				<listhead>
+					<listheader label="&lblDescription;" />
+					<listheader label="&lblShortcutKey;" />
+				</listhead>
+				<listitem id="itmKB0" selected="true">
+					<listcell label="&si_lblSaveImages;"/><listcell />
+				</listitem>
+				<listitem id="itmKB1">
+					<listcell label="&si_lblSaveCurrent;"/><listcell />
+				</listitem>
+				<listitem id="itmKB2">
+					<listcell label="&si_lblSaveLeft;"/><listcell />
+				</listitem>
+				<listitem id="itmKB3">
+					<listcell label="&si_lblSaveRight;"/><listcell />
+				</listitem>
+				<listitem id="itmKB4">
+					<listcell label="&si_lblSaveAll;"/><listcell />
+				</listitem>
+				<listitem id="itmKB13">
+					<listcell label="&si_lblSaveSel;"/><listcell />
+				</listitem>
+				<listitem id="itmKB5">
+					<listcell label="&si_lblImageLinksAll;"/><listcell />
+				</listitem>
+				<listitem id="itmKB6">
+					<listcell label="&si_lblImageLinksSel;"/><listcell />
+				</listitem>
+				<listitem id="itmKB7">
+					<listcell label="&si_lblImageLinksAllTabs;"/><listcell />
+				</listitem>
+				<listitem id="itmKB8">
+					<listcell label="&si_lblImageLinksSelTabs;"/><listcell />
+				</listitem>
+				<listitem id="itmKB9">
+					<listcell label="&si_lblLinksAll;"/><listcell />
+				</listitem>
+				<listitem id="itmKB10">
+					<listcell label="&si_lblLinksSel;"/><listcell />
+				</listitem>
+				<listitem id="itmKB11">
+					<listcell label="&si_lblLinksAllTabs;"/><listcell />
+				</listitem>
+				<listitem id="itmKB12">
+					<listcell label="&si_lblLinksSelTabs;"/><listcell />
+				</listitem>
+				
+				<listitem class="liodd" hidden="true">
+					<listcell label="Auto Stop"/><listcell />
+				</listitem>
+				
+				<listitem id="itmKB15">
+					<listcell label="&si_lblOptions;"/><listcell />
+				</listitem>
+				<listitem id="itmKB16">
+					<listcell label="&si_lblSaveDetails;"/><listcell />
+				</listitem>
+				<listitem id="itmKB17">
+					<listcell label="&si_lblHelp;"/><listcell />
+				</listitem>
+				<listitem id="itmKB18">
+					<listcell label="&si_lblSaveUnderMouse;"/><listcell />
+				</listitem>
+		  </listbox>
+		
+			<groupbox id="gbxKeys" orient="horizontal" align="center" disabled="true">
+				<label value="&lblKey;:"/>
+				<textbox id="edtKey" flex="1" onfocus="this.select();" onkeypress="SIshorts.getKey(event);"/>
+				<button label="&lblApply;" oncommand="SIshorts.applyKey();" />
+				<button label="&lblClear;" oncommand="SIshorts.clearKey();" />
+			</groupbox>
+      <label value="&lblKeyboard2;" style="color:red;"/>
+    </vbox>
+	</prefpane>
+</overlay>

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://saveimages/content/SI_css.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://saveimages/locale/promptFN.dtd">
+
+<dialog
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="SIPromptFN"
+	title="&lblSaveFileAs;"
+	onload="siFN.init();"
+	persist="screenX screenY"
+	ondialogaccept="return siFN.doOk();"
+	ondialogcancel="return siFN.doCancel();"
+	>
+	
+	<stringbundleset>
+		<stringbundle id="smg_promptFNStrs" src="chrome://saveimages/locale/promptFN.properties"/>
+  </stringbundleset>
+
+  <script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
+  <script type="application/x-javascript" src="chrome://saveimages/content/SIPromptFN.js"/>
+
+  <vbox>
+    <groupbox>
+      <caption>
+        <label value="&lblFNOptions;" class="bold"/>
+      </caption>
+			<grid>
+        <columns>
+          <column/>
+          <column/>
+          <column/>
+        </columns>
+        <rows>
+        	<row>
+        		<hbox align="center">
+	        		<label value="&lblSaveFolder;" control="idcbxSaveFolder"/>
+	        		<menulist id="idcbxSaveFolder" type="unichar" editable="true" width="330">
+			          <menupopup id="pumSaveFolder">
+			          </menupopup>
+			        </menulist>
+		        </hbox>
+		        <toolbarbutton id="btnBrowse" image="chrome://saveimages/skin/SIbrowse.png" width="24px" height="24px" style="padding:0px 0px 0px 5px;"
+		          tooltiptext="&lblBrowseForFolder;" oncommand="SICommon.browseFolder('idcbxSaveFolder',false);"/>
+		        <toolbarbutton id="btnClearFolderCbx" image="chrome://saveimages/skin/SIClearList.png" style="width:24px; height:24px;"
+		          tooltiptext="&lblClearFolderList;" oncommand="SICommon.clearCombobox('idcbxSaveFolder','pumSaveFolder','cbxSaveFolder','saveFolderList');"/>
+        	</row>
+        	<row>
+        		<hbox>
+        			<spacer flex="1"/>
+	        		<label value="&lblFileName;" control="idcbxFN"/>
+	        		<menulist id="idcbxFN" type="unichar" editable="true" width="330" focused="yes" oninput="siFN.doExample();">
+			          <menupopup id="pumFN" oncommand="siFN.doExample();">
+			          </menupopup>
+			        </menulist>
+		        </hbox>
+		        <toolbarbutton id="btnClearCbx" image="chrome://saveimages/skin/SIClearList.png" width="24px" height="24px" style="padding:0px 0px 0px 5px;"    
+		          tooltiptext="&lblClearFNList;" oncommand="SICommon.clearCombobox('idcbxFN','pumFN','cbxFN','saveFNList');"/>
+        	</row>
+        </rows>
+			</grid>
+      
+      
+      <vbox>
+        <checkbox id="chkRetain" label="&lblRetainFN;" style="margin-left: 4px;" oncommand="siFN.chkRetainChanged(); siFN.doExample();"/>
+	      <hbox align="center" style="margin-left: 24px;">
+	        <label id="idPrependFN" value="&lblPrependFN;" control="edtSepChar"/>
+	        <textbox id="edtSepChar" value="_" width="50" onclick="siFN.doExample();" oninput="siFN.doExample();"/>
+	      </hbox>
+	    </vbox>
+      <groupbox>
+        <caption>
+          <label value="&lblPreSufNumber;" class="bold"/>
+        </caption>
+        <hbox>
+          <vbox>
+            <hbox align="center">
+              <spacer flex="1"/>
+              <label value="&lblStartValue;" control="edtStart"/>
+              <textbox id="edtStart" type="number" min="0" max="100000" value="1" width="60" onclick="siFN.doExample();" oninput="siFN.doExample();"/>
+            </hbox>
+            <hbox align="center">
+              <spacer flex="1"/>
+              <label value="&lblLength;" control="edtLength"/>
+              <textbox id="edtLength" type="number" min="1" max="10" maxlength="2" value="3" width="60" onclick="siFN.doExample();" oninput="siFN.doExample();"/>
+            </hbox>
+            <hbox align="center">
+            	<spacer flex="1"/>
+              <label value="&lblIncBy;" control="edtInc"/>
+              <textbox id="edtInc" type="number" min="1" max="10000" value="1" width="60" onclick="siFN.doExample();" oninput="siFN.doExample();"/>
+            </hbox>
+          </vbox>
+          <vbox style="margin-left:16px">
+            <radiogroup id="grpPreSuf" oncommand="siFN.doExample();">
+              <radio value="prefix" label="&lblPrefix;"/>
+              <radio value="suffix" label="&lblSuffix;" selected="true"/>
+            </radiogroup>
+          </vbox>
+          <vbox  style="margin-left:12px">
+            <label value="&lblExample; :" class="bold"/>
+            <label id="lblEg1" style="width:200px" crop="left"/>
+            <label id="lblEg2" style="width:200px" crop="left"/>
+            <label id="lblEg3" style="width:200px" crop="left"/>
+          </vbox>
+        </hbox>
+      </groupbox>
+    </groupbox>
+    <hbox style="margin-left: 24px;">
+      <button id="btnDefault" label="&lblDefault;" oncommand="siFN.saveDefaults(true);"/>
+    </hbox>
+  </vbox>
+</dialog>

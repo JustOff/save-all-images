@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Save Images - Help</title>
+	<link type="text/css" rel="stylesheet" href="SI_help.css" />
+	<script type="text/javascript" src="SI_help.js"></script>
+</head>
+
+<body>
+	<div id="divheader"></div>
+	<div id="content">
+		<blockquote>
+			<p>Enable/disable file size and image dimension restrictions, the action to take when duplicate file names are found, the image types to save and whether to use a regular expression to filter the images that are found on the web page.</p>
+			<table class="tab_help">
+				<tr>
+					<td class="cellheader">Enable Size Limits</td>
+					<td>Select to be able to use the various size limit options. The	size limit options only work if the file is in Firefox's cache.</td>
+				</tr>
+				<tr>
+					<td class="cellheader pad1">File Size</td>
+					<td>Select to use and to be able to set the minimum and maximum file sizes in bytes (1024 bytes = 1kB).</td>
+				</tr>
+				<tr>
+					<td class="pad2">Min</td>
+					<td>Set the minimum size a file must be to be saved.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Max</td>
+					<td>Set the maximum size a file can be to be saved. If zero,	all files larger than the minimum size will be saved.</td>
+				</tr>
+				<tr>
+					<td class="cellheader pad1">If unknown</td>
+					<td>Select one of the settings below if the image's file size is unknown.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Skip</td>
+					<td>The image will not be saved.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Prompt</td>
+					<td>A message box is displayed prompting you whether to save the	specified image or not.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Save</td>
+					<td>The image will be saved.</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="cellheader pad1">Dimensions</td>
+					<td>Select to use and to be able to set the minimum width and height.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Min Width</td>
+					<td>Set the minimum width an image must be to be saved.</td>
+				</tr>
+				<tr>
+				  <td class="pad2">Max Width</td>
+				  <td>Set the maximum width an image must be to be saved.</td>
+			  </tr>
+			  <tr>
+					<td class="pad2">Min Height</td>
+					<td>Set the minimum height an image must be to be saved.</td>
+				</tr>
+				<tr>
+				  <td class="pad2">Max Height </td>
+				  <td>Set the maximum height an image must be to be saved.</td>
+			  </tr>
+				<tr>
+					<td class="cellheader pad1">If unknown</td>
+					<td>Select one of the settings below if the image's dimensions are unknown.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Skip</td>
+					<td>The image will not be saved.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Prompt</td>
+					<td>A message box is displayed prompting you whether to save the specified image or not.</td>
+				</tr>
+				<tr>
+					<td class="pad2">Save</td>
+					<td>The image will be saved.</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="cellheader">Image Types to save</td>
+					<td>Select one of the settings below to choose what type of images will be saved.</td>
+				</tr>
+				<tr>
+					<td>All images</td>
+					<td>All image types will be saved.</td>
+				</tr>
+				<tr>
+					<td>Selection</td>
+					<td>A combination of any of the following image types will be saved. </td>
+				</tr>
+				<tr>
+					<td class="pad2">JPG / JPEG images</td>
+					<td>Images with either a JPG or JPEG extension	will be saved.</td>
+				</tr>
+				<tr>
+					<td class="pad2">PNG images</td>
+					<td>Images with a PNG extension will be saved.</td>
+				</tr>
+				<tr>
+					<td  class="pad2">GIF images</td>
+					<td>Images with a GIF extension will be saved.</td>
+				</tr>
+				<tr>
+					<td  class="pad2">BMP images</td>
+					<td>Images with a BMP extension will be saved.</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="nopad">Save image as JPG if no extension</td>
+					<td>Select this option to save images that do not have an extension. The image will be given a JPG extension when saved.</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class="nopad">Regular Expressions</td>
+					<td>Select this option and provide a <em>Regular Expression</em> that will be used to filter the images that will be saved. This can be used in conjunction with <em>Regular Expression file name</em> under <em>File Names</em> in the <a href="SI_tab_Save.htm">Save</a> tab. Read this <a href="regexp.html">Regular Expressions</a> document for more details.</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+		      <td>Only save images from the same domain/server as the selected tab's URL</td>
+				  <td>If the image has a domain that is different to the selected tab's URL, the image will not be saved.</td>
+			  </tr>
+			</table>
+		</blockquote>
+	</div>
+	<script type="text/javascript">
+		si_help.showHeader('Options - Filters tab',true);
+	</script>
+</body>
+</html>

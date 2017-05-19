@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<!-- Firefox -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>18.0</em:minVersion>
+				<em:maxVersion>48.0</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- Seamonkey -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+				<em:minVersion>2.0a1pre</em:minVersion>
+				<em:maxVersion>2.45</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<em:type>2</em:type>
+		<em:id>LDSI_plashcor@gmail.com</em:id>
+		<em:name>Save Images</em:name>
+		<em:version>1.1.0.3</em:version>
+		<em:description>Save images in the open page.</em:description>
+		<em:creator>Lumox</em:creator>
+		<em:homepageURL/>
+		<em:iconURL>chrome://saveimages/skin/SIicon2.png</em:iconURL>
+		<em:optionsURL>chrome://saveimages/content/preferences/SIOptions.xul</em:optionsURL>
+		<em:aboutURL>chrome://saveimages/content/about.xul</em:aboutURL>
+		
+		<em:translator>Christopher Stelmaszyk (de)</em:translator>
+		<em:translator>Jack Black (fr)</em:translator>
+		<em:translator>Micheal Liu (zh-CN)</em:translator>
+		<em:translator>Roger Chen (zh-TW)</em:translator>
+		
+		<em:localized>
+		  <Description>
+		    <em:locale>de</em:locale>
+		    <em:name>Save Images</em:name>
+		    <em:description>Bilder aus offenen Seiten speichern.</em:description>
+		  </Description>
+		</em:localized>
+		<em:localized>
+		  <Description>
+			<em:locale>fr</em:locale>
+			<em:name>Save Images</em:name>
+			<em:description>Enregistrement des images des pages ouvertes.</em:description>
+		  </Description>
+		</em:localized>
+		<em:localized>
+		  <Description>
+		    <em:locale>sv</em:locale>
+		    <em:name>Save Images</em:name>
+		    <em:description>Spara bilderna i den öppna sidan.</em:description>
+		  </Description>
+		</em:localized>
+		<em:localized>
+		  <Description>
+		    <em:locale>zh-CN</em:locale>
+		    <em:name>保存图像</em:name>
+		    <em:description>保存页面里的图像</em:description>
+		  </Description>
+		</em:localized>
+		
+  </Description>
+
+</RDF>

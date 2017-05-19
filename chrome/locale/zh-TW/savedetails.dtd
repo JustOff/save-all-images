@@ -1,0 +1,30 @@
+﻿<!ENTITY lblSaveDetails "儲存詳情">
+<!ENTITY lblBaseFolder "基本儲存目錄">
+<!ENTITY lblTotalProcessed "處理的影像總數">
+<!ENTITY lblTotalSaved "儲存的影像總數">
+<!ENTITY lblDuplicateImages "重複影像">
+<!ENTITY lblTotalErrors "錯誤總數">
+<!ENTITY lblFileSizeProp "檔案大小屬性">
+<!ENTITY lblSetting "設定">
+<!ENTITY lblNoImagesNotSaved "不儲存的影像數量">
+<!ENTITY lblMinFS "最小檔案大小">
+<!ENTITY lblMaxFS "最大檔案大小">
+<!ENTITY lblFSUnknown "檔案大小未知">
+<!ENTITY lblDimProp "尺寸屬性">
+<!ENTITY lblMinWidth "最小寬度">
+<!ENTITY lblMaxWidth "最大寬度">
+<!ENTITY lblMinHeight "最小高度">
+<!ENTITY lblMaxHeight "最大高度">
+<!ENTITY lblDimUnknown "未知尺寸">
+<!ENTITY lblImageTypesProp "要儲存的影像類型屬性">
+<!ENTITY lblAllImages "影像類型:        所有影像">
+<!ENTITY lblJpgImages "JPG/JPEG 影像">
+<!ENTITY lblPngImages "PNG 影像">
+<!ENTITY lblGifImages "GIF 影像">
+<!ENTITY lblBmpImages "BMP 影像">
+<!ENTITY lblOtherImages "其他影像">
+<!ENTITY lblSaveNoExt "如果沒有副檔名, 儲存為 JPG">
+<!ENTITY lblSameDomainProp "同一域名屬性">
+<!ENTITY lblSameDomain "僅儲存同一域名的圖片">
+<!ENTITY lblRegExpProp "正規表示式屬性">
+<!ENTITY lblRegExp "正規表示式">

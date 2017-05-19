@@ -1,0 +1,69 @@
+<?xml version="1.0"?>  
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://saveimages/content/SI_css.css"?>
+
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/linkselect.dtd">
+
+<window
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="SILinkSelect"
+	title="&lblSelectLinks;"
+	width="500px"
+	height="450x"
+	persist="screenX screenY width height"
+	onload="siSelect.load();"
+	>
+	
+  <script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
+  <script type="application/x-javascript" src="chrome://saveimages/content/SILinkSelect.js"/>
+  
+  <keyset>
+		<key keycode="VK_ESCAPE" oncommand="window.close();"/>
+		<key modifiers="control" key="A" oncommand="siSelect.checkAll(true);"/>
+		<key modifiers="control" key="N" oncommand="siSelect.checkAll(false);"/>
+    <key modifiers="control" key="S" oncommand="siSelect.checkSelected();"/>
+    <key modifiers="control" key="R" oncommand="siSelect.invertSelect();"/>
+    <key modifiers="control" key="F" oncommand="document.getElementById('idcbxFind').focus();"/>
+	</keyset>
+  
+  <vbox flex="1">
+    <groupbox  flex="1">
+      <caption>
+        <label value="&lblSelectLinksOpen;" class="bold"/>
+      </caption>
+      <vbox flex="1">            
+         <listbox id="lbxLinks" flex="1" seltype="multiple" oncommand="siSelect.updateCheckCount();" onkeyup="siSelect.keyup(event);">
+         </listbox>
+         <hbox align="center">
+		      <spacer style="width:24px;"/>
+		      <toolbarbutton id="btnAll" tooltiptext="&lblCheckAll; [Ctrl+A]" image="chrome://saveimages/skin/SIall.png" oncommand="siSelect.checkAll(true);"/>
+		      <toolbarbutton id="btnNone" tooltiptext="&lblCheckNone; [Ctrl+N]" image="chrome://saveimages/skin/SInone.png" oncommand="siSelect.checkAll(false);"/>
+		      <toolbarbutton id="btnSelCheck" tooltiptext="&lblCheckSelected; [Ctrl+S]" image="chrome://saveimages/skin/SIselcheck.png" oncommand="siSelect.checkSelected();"/>
+		      <toolbarbutton id="btnSwop" tooltiptext="&lblInvertChecked; [Ctrl+R]" image="chrome://saveimages/skin/SIswop.png" oncommand="siSelect.invertSelect();"/>
+		      <toolbarbutton id="btnUp" tooltiptext="&lblMoveUp; [Ctrl+UP]" image="chrome://saveimages/skin/SIup.png" oncommand="siSelect.moveItem(true);"/>
+		      <toolbarbutton id="btnDown" tooltiptext="&lblMoveDown; [Ctrl+DOWN]" image="chrome://saveimages/skin/SIdown.png" oncommand="siSelect.moveItem(false);"/>
+		      <spacer flex="1"/>
+		      <label value="&lblFindText;"/>
+		      <menulist id="idcbxFind" type="unichar" editable="true" width="250px">
+		        <menupopup id="pumFindList">
+		        </menupopup>
+		      </menulist>
+		      <toolbarbutton id="btnFind" tooltiptext="&lblFindText; [Ctrl+F]" image="chrome://saveimages/skin/SIsearch.png" oncommand="siSelect.findPhrase();"/>
+		      <spacer style="width:8px;"/>
+		      <toolbarbutton id="btnClearFindCbx" class="clearlist" tooltiptext="&lblClearFindList;" oncommand="SICommon.clearCombobox('idcbxFind','pumFindList',null,'findList');"/>
+		    </hbox>
+      </vbox>
+    </groupbox>    
+  </vbox>
+  <hbox align="center">
+    <spacer style="width:24px;"/>
+    <label value="&lblLinksTotal;:"/>
+    <label id="numLinks" value="0" style="margin-left:-2px;"/>
+    <label value="    &lblChecked;:"/>
+    <label id="numChecked" value="0" style="margin-left:-2px;"/>
+		<spacer flex="1"/>
+		<button id="btnOk" label="&lblOk;" tooltiptext="&lblOpenLinks;" oncommand="siSelect.doOpenLinks();"/>
+		<button label="&lblCancel;" oncommand="siSelect.doCancel();"/>
+	</hbox>
+	   
+</window>

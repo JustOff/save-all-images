@@ -1,0 +1,30 @@
+<!ENTITY lblSaveDetails "Détails d'enregistrement">
+<!ENTITY lblBaseFolder "Répertoire d'enregistrement de base ">
+<!ENTITY lblTotalProcessed "Nombre total d'images traitées ">
+<!ENTITY lblTotalSaved "Nombre total d'images enregistrées ">
+<!ENTITY lblDuplicateImages "Images en double ">
+<!ENTITY lblTotalErrors "Nombre total d'erreurs ">
+<!ENTITY lblFileSizeProp "Propriétés de taille de fichier">
+<!ENTITY lblSetting "Paramètre">
+<!ENTITY lblNoImagesNotSaved "Nb d'images non enregistrées">
+<!ENTITY lblMinFS "Taille de fichier minimale">
+<!ENTITY lblMaxFS "Taille de fichier maximale">
+<!ENTITY lblFSUnknown "Taille de fichier inconnue">
+<!ENTITY lblDimProp "Propriétés des dimensions">
+<!ENTITY lblMinWidth "Largeur minimale">
+<!ENTITY lblMaxWidth "Largeur maximale">
+<!ENTITY lblMinHeight "Hauteur minimale">
+<!ENTITY lblMaxHeight "Hauteur maximale">
+<!ENTITY lblDimUnknown "Dimensions inconnues">
+<!ENTITY lblImageTypesProp "Propriétés de types d'images à enregistrer">
+<!ENTITY lblAllImages "Types d'images :        Toutes les images">
+<!ENTITY lblJpgImages "Images JPG/JPEG ">
+<!ENTITY lblPngImages "Images PNG ">
+<!ENTITY lblGifImages "Images GIF ">
+<!ENTITY lblBmpImages "Images BMP ">
+<!ENTITY lblOtherImages "Autres images ">
+<!ENTITY lblSaveNoExt "Si aucune extension, enregistrer sous JPG ">
+<!ENTITY lblSameDomainProp "Propriétés de domaine identique">
+<!ENTITY lblSameDomain "Enregistrer uniquement si le domaine est identique ">
+<!ENTITY lblRegExpProp "Propriétés d'expressions régulières">
+<!ENTITY lblRegExp "Expression régulière">

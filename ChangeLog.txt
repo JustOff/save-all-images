@@ -1,0 +1,336 @@
+This extension possibly will not work on operating systems other than Windows and Linux (not tested on other OS's).
+
+v1.1.0.3
+- Fixed: partially - selecting a language causes the add-on to be not signed and therefore disabled
+- Added: filters now also apply to background images 
+
+v1.1.0.2
+- Fixed: preferences that used the getComplexValue function were not working
+
+v1.1.0.1
+- Added: ability to save only the selected images
+- Changed: SI_doImageSave back to using saveURI but with a check for the correct number of parameters (sorts out the problem of private browsing as well)
+- Added: When using 'Open *** in Tabs', the opened tabs are now opened relative to the last opened tab so that the sequence is maintained
+
+v1.0.9
+- Changed: SI_doImageSave to use Download.fetch for Firefox v36+
+
+v1.0.8
+- Fixed: changed "let" to "var" so compatible with Firefox v35
+
+v1.0.7
+- Fixed: nsIIOservice errors caused by trying to convert blank URL's to URI's with makeURI
+- Added: images from inputs with type="image" will now be saved
+
+v1.0.6
+- Fixed: nsIIOservice errors caused by trying to save background images that were actually gradients
+
+v1.0.5
+- Updated: Chinese simplified locale
+- Changed: removed tabArr and instead added attributes to the tabs themselves to indicate whether they should be closed
+- Changed: placed closeTabs, showSIDoneMsg and showSaveDetails in separate function that is called after setTimeout to allow async cache calls to complete
+
+v1.0.4
+- Fixed: spelling mistake in the French locale
+- Changed: document.getElementByID to use byID
+- Changed: simage variable names to SI
+- Changed: the method of how the URI is obtained for saving the file - using newURI instead of createInstance
+- Changed: the method of how the PrivacyContext is obtained for the saveURI function
+- Fixed: unicode filenames and folders were not using unicode to create the folder/filename - required getComplexValue/setComplexValue function
+- Fixed: unicode characters were not being written to file correctly - required a converter stream
+
+v1.0.3
+- Changed: labels for left and right tabs, added &lt;&lt; and &gt;&gt; respectively to give clearer indication of the direction
+- Changed: FF32 uses a new cache system so updated to work with both v1 & v2
+- Added: general option to allow the selection of the language to be used by "Save Images"
+- Added: Chinese - Traditional (Thanks to Rogeer Chen)
+- Added: when opening image links/links, a delay can be applied so that not all links are opened at once
+- Added: an option to bypass the "Select Links' dialog box when opeining multiple links/images at once
+
+v1.0.2
+- Fixed: missing Chinese, Swedish and German label translation in Link Select box
+
+v1.0.1
+- Updated French translation
+
+v0.9.9
+- Updated French translation
+- Added: Option to choose what case the extension of the image is saved as
+
+v0.9.8
+- Fixed: File Picker not working correctly - incorrect parameters and display directory
+
+v0.9.7
+- Added: Chinese (zh-CN) translation
+- Fixed: file number length was not set correctly for the first image saved
+- Changed how text is searched for in the "Link Select" window
+- Fixed: the items being displayed was not being reset correctly when "Ok" clicked
+
+v0.9.6
+- Added: French translation
+- Updated max version for SeaMonkey to v2.19.*
+- Fixed: a spelling mistake in Clear "Use filename" list when Firefox exits (Only works if use "File->Exit") in English translation
+- Fixed: a blank export file was created when exporting options from a new Firefox profile
+- When showing the "Save Details" window, multiple windows are not created and if already open, brings it to the front
+- Added: an observer to notify other windows when the menu items have changed so that the other windows can reflect the changes
+
+
+v0.9.5
+- Fixed: a variable was not updated in the new version of "checkImages" which resulted in an error when "File Size -> If Unknown -> Prompt" was set in "Options"
+- Changed the "blue" headers in the "Options", "Save" and "Select Links" windows to black/bold
+- Changed that a tab will only close if an image was saved from that tab
+- Added complete localization of add-on - complete German translation
+- Added OS version, Firefox version, Save Images version, language, "Last Firefox download folder", "Firefox Download folder" when exporting settings
+
+v0.9.4
+- Fixed: images within frames were not being saved
+- Fixed: replaced various DOM node generic labels with distinct labels
+- Fixed: problem with shortcut keys due to auto save/stop items being removed
+
+v0.9.3
+- Fixed: errors caused by the removal of the auto open/save functionality
+- Fixed: changed the privacyContext to be obtained from the image's document
+
+v0.9.2
+- Fixed: changed the privacyContext to comply with the validation process
+- Removed the "Automatically Open/Save" functionality as it does not work properly since Firefox 18
+
+v0.9.1
+- Fixed: Add-on validation warning for "saveURI" and "imgICache"
+
+v0.9.0
+- Fixed: "Close tab after saving" was closing all tabs in the range of tabs, not just the tab from which images were saved
+
+v0.8.9
+- Fixed: "Close tab after saving" not working correctly
+- Changed the tab title and domain url initializing from findImages to checkImages else only set once
+- Reorganized when "asyncOpenCacheEntry" is called
+
+v0.8.8
+- Changed from using "openCacheEntry" to "asyncOpenCacheEntry" for accessing cache information
+- Moved option "Same Domain" from General tab to Filters tab
+- Rearranged Filters tab contents
+
+v0.8.7
+- Fixed: change the way the operating system is detected
+- Fixed: some image url's were invaid which caused errors (google ads)
+
+v0.8.6
+- Fixed: "No images found to be saved" reported incorrectly - moved to "showSIDoneMsg" function
+
+v0.8.5
+- Fixed: placed all non-essential global variables in namespaces
+
+v0.8.4
+- Added ability to export/import "Options" settings to file
+- Allowed width resizing of Options dialog box (height is auto)
+- Added options to use regular expressions to filter images and to use in file names
+- Changed panel "Limits/Types" to "Filters"
+- Updated help
+- Added version check for Firefox14+ - nsIFile used instead of nsILocalFile in Firefox14+
+- Changed use of unescape to decodeURI (unescaped is deprecated)
+- Fixed: if image is an inline/data URL image, corrected getting extension and prevent from creating folders from URL
+- Fixed: when stepping through frames, if no images were found in a frame and yet other frames contained images, popup would display "No images were found to be saved" message
+- Improved the error and save notifications
+
+v0.8.3
+- Fixed: Changed nsILocalFile to nsIFile, but this is only from Firefox14+, so changed back to nsILocalFile
+
+v0.8.2
+- Fixed: about.xul needed to be saved as UTF-8
+
+v0.8.1
+- Fixed bug: when using "check same domain", was causing error "curtab.contentDocument undefined"
+- Changed where tab Title and domain are set so have the correct information
+
+v0.8.0
+- Fixed bug where saveURI had error "Not enough arguements" in Windows 8
+- Fixed bug where unicode characters in folder,file name and regular expressions was not read from preferences correctly
+- Added function to obtain the original file name of images if no file name is found in the URL of the image
+- Fixed bug where images in a tab in a non-visible group where being saved when saving from Left,Right or All
+
+v0.7.9
+- Fixed bug : menuitems where not being displayed correctly
+- Fixed bug: conflict between old shortcut preference and new one
+
+v0.7.8
+- Images are saved with case-sensitive extensions, not all converted to lower case as before
+- Changed keyboard shortcuts to allow more shortcut options
+- Changed the way the "Options" box is displayed in Mac Firefox
+
+v0.7.7
+- Fixed bug where "tree" folder structure was not working
+
+v0.7.6
+- Fixed bug where Unicode characters where not being used when saving wuth "Tab Title"
+
+v0.7.5
+- Fixed bug where unicode characters could not be used in the save folder name
+
+v0.7.4
+- Modified popup to own popup - fix so Save Images works on Mac
+- Moved "Duplicates" to under "Save" tab
+- Fixed bug in "Links Select" where when using the keyboard, the number of checked items was incorrect
+
+v0.7.2
+- Added ability to save the image under the mouse (Ctrl+Shift+Z)
+- Added Folder option to append "Tab Title" to folder name
+
+v0.7.1
+- Fixed "imageRequest" error
+
+v.0.7.0
+- Added Swedish translation for menu items
+- Corrected arrangement of optons in MenuItems Options window
+- Fixed error where the full URL was not being computed correctly for some websites
+- Added 2 options to General tab that allow selection of how many folders/filenames to remember
+
+v0.6.9
+- Fixed bug when saving using the "Filename Prompt" dialog box and "Prefix" selected
+- Fixed bug when saving multiple images from "Filename Prompt" dialog box, not working - 1st image has given name but rest use own filename (works if "Use Filename" or "Prompt for filename" selected in main options)
+- Fixed error when restoring default options, shortcuts and menuitems were not being reset if those panes were showing
+
+v0.6.8
+- Fixed bug in Select Items dialog box where items were not checked correctly if searched for by phrase and there were more items than could be viewed all at once
+- Removed adding "img_" to image name if image had no name
+- Fixed bug where Folder list and FN list were not saving unicode characters
+- Added back "Open Save Images Options Dialog Box before saving" in Linux
+
+v0.6.7
+- Fixed a few minor bugs when saving using prompt dialog box
+- When saving from prompt dialog box, original filenames of each image are used and not just the 1st one if retaining original filename
+- If FN = '' and option Use Filename checked, then FN is set to 'img_'
+- If UrlFN = '' or is only a extension, then UrlFN is set to 'img_'
+- Fixed "SaveFolder" and "Filename" so that unicode characters are used correctly when creating folders and filenames
+- Added option to save background images - file sizes and dimensions of background images are not checked
+- Fixed bug where if "Use Firefox last download folder" was long, the end of the "Save Folder" edit box was off the page
+
+v0.6.6
+- Added option to show save details only if images are actually saved
+- Fixed bug where if prompt for save location is selected, the 1st image was being saved to the new location but the rest of the images were saved to the location set in options
+- Fixed where there was a discrepancy between how many images were processed and what the "Save Details" actualled showed
+
+v0.6.5
+- Added option to show Confirmation popup only if an error occurs or if zero images are saved
+- Added option for Folders to save to last folder that Firefox used to save to
+- Added option to save images only if they are from the same domain/server as the pages domain
+- Prevented Unknown File Size dialog box from displaying if width/height of image are both zero
+- Fixed bug (work around) where not all images are shown in 1 tab if you do not scroll down to the bottom of the Select Links dialog box - checking of "checked" items does not work if the item has not been made visible - Firefox bug??
+- Fixed bug where automatic open/save function was not functioning correctly since changes from v0.6.3
+- Added a button to clear the folders list in options
+- Implemented Restore Default for options
+- Delete temp files when FF starts
+
+v0.6.4
+- Compatible with Firefox 3.6.*
+- Fixed bug where when "Duplicate Files->Prompt" option is selected, images with the same filename are overwritten
+- Placed all global variables in SIOV namespace
+- Moved the "Append URL Folder Structure" option under "Folder" and changed it so any filename can be used when saving (used to only use images filename)
+- Added option to append date and time to folder when saving
+- Fixed bug where assigning a shortcut key to save images resulted in the images filename being used instead of the given filename
+- Removed "Open Save Images Options Dialog Box before saving" from showing in Linux versions due to instantApply option
+- Fixed bug where menuitems were not hidden in Linux version due to instantApply option
+
+v0.6.3
+- Fixed bug where hiding menuitems for toolbar menu caused error when toolbarbutton was not added to toolbar
+
+v0.6.1
+- Fixed error where clicking on menuitem checkboxes in options gave an error
+- Used 'ex' instead of 'px' for specified widths of textboxes so it works in Linux (windows px and Linux px are different?)
+
+v0.6.0
+- Changed Options to use lastest "preferences" in FF
+- Re-added Png to Image Types
+- Fixed error when saving using SIPromptFN & the start value,incBy values were not 1, giving wrong number
+- Fixed error when saving using SIPromptFN and retaining old FN, p was not defined (pos of '.')
+- Changed SIPromptFN so example is updated when change start,length,incBy values by keyboard or mouse
+- Added Max width/height dimensions
+- Added options to hide Tools & context menus completely
+- Added menu items to view a more detailed breakdown of the last save operation
+
+v0.5.4
+- Set persist="screenX screenY" in Options, LinkSelect and PromptFN dialog boxes so screen position is remembered
+- Fixed bug where selecting the Save Folder did not change the selected folder (also in SIPromptFN)
+- Setting menu items now does not require browser to be restarted
+
+v0.5.3
+- Changed Save Images icon
+- Fixed a spelling mistake in Clear "Use filename" list when Firefox exits (Only works if use "File->Exit")
+- Changed the layout slightly which improves the loading speed of the Options box (theme bug)
+- Removed the "Example" when typing a filename to use (due to speed issue) (theme bug)
+- Fixed error where determining whether is a Mac OS caused error
+- Fixed bug where moving item up/down in Select Items list caused incorrect URl to be used
+
+v0.5.2
+- Compatible with Firefox 3.1.*
+- Options rearranged due to space constraints
+- Saving of top/left position of Link Select dialog box added
+- Fixed bug where incorrect number of images are saved - Thanks to Eric Batard
+- Added comboboxes to both Options dialog box and Prompt dialog box for folder and filename - saves last 10 entries
+- Added a clear list button next to filenames to clear combo box in Options and Prompt dialog boxes
+- Added checkbox to Options dialog box to clear filenames on Firefox exit - only works if select File->Exit
+- Changed Image Type option to be able to select multiple types
+- Added Length box for Duplicates/Number to pad created number
+- Added option to save using URL folder structure either as a tree or single folder
+- Added option to include the current tab when saving tabs to the left or right
+- Added options to designate your own keyboard shortcuts
+- Added options to show/hide menu items
+- Added option to set the height of each frame when multiple links are opened in a single tab
+
+v0.5.1
+- Compatible with Firefox 3.0
+
+v0.5.0
+- Fixed bug where Options not working correctly from Tools->Add-Ons->Options
+- Fixed bug where getting incorrect Firefox folder to save to
+- Changed permissions setting for creating folder in Linux from 664 to 777 - read & write access
+- The enabling/disabling of Size Limits was incorrect depending on what Options were selected - fixed
+- Should work with Linux
+
+v0.4.9
+- Added a menu item "Help" and created a help file
+- Compatible with Firefox v3.0b3
+
+v0.4.8
+- Compressed the Options dialog box contents so displays correctly on 800x600 screen resolution
+
+v0.4.7
+- Fixed bug if button noy visible on toolbar
+- Changed menu to include submenus
+- Fixed bug of Save Images occurring if a menuitem was selected from button
+
+v0.4.4
+- Fixed bug where using AutoMode, If size unknown and not using settings, wasn't using save option
+- Changed way "Selected" menuitems are disabled depending on selection
+
+v0.4.3
+- Fixed bug when using option "Use image URL folder structure (images filename used)
+- Fixed bug getting error message "Component returned failure code: 0x8000FFFF (NS_ERROR_UNEXPECTED) [nsIPrefBranch.getCharPref]"
+- If option "Open dialog box before saving" is checked and Cancel is clicked when the Options dialog Box is displayed, it cancels the dialog box as well as the saving of images
+- Relabeled the option "Select added tab" to "Automatically switch to new tab (when opening links)" for clarity.
+- Selected Links list dialog box does not contain duplicate links
+- Added options to select Default Save Action and menuitems to select whether to save Current Tab,Left of tab, Right of tab, All tabs. Selecting Left or Right also includes the current tab
+
+v 0.4.2
+- Added option to save an image if the file has no extension
+- Added function that if Ctrl+Alt keys are held when saving options in current tab or all tabs, a dialog box appears asking for a filename irrespective of settings in Options
+
+v 0.4.0
+- Added menuitems to open all/selected links/image links in 1 tab/tabs
+- Added menuitem to save images from all tabs
+- Added function that if Ctrl key is held when saving options in current tab or all tabs, the images filename is used irrespective of settings in Options
+- Added menuitems to allow automatically opening/saving of selected links (a type of batch download function) and a menuitem to stop the function
+- New option to check file dimensions before saving
+- New options available for automatically opening/saving
+
+Bugs fixed
+- Not saving of images in frames in web pages
+
+
+v 0.3.7
+- Added option to not display confirmation notification when images are saved
+
+
+NOTES:
+
+If automatically opening/saving is used with the option "If size unknown - Save" and displaying of images in the web page is off, all images of the selected image type will be downloaded.

@@ -1,0 +1,151 @@
+<!ENTITY lblOk "D'accord">
+<!ENTITY lblCancel "Annuler">
+
+<!-- Menu Labels -->
+<!ENTITY si_lblSaveImages "Enregistrer les images">
+<!ENTITY si_lblSaveCurrent "Enregistrer les images depuis l'onglet actuel">
+<!ENTITY si_lblSaveLeft "Enregistrer les images depuis les onglets à GAUCHE &lt;&lt;">
+<!ENTITY si_lblSaveRight "Enregistrer les images depuis les onglets à DROITE &gt;&gt;">
+<!ENTITY si_lblSaveAll "Enregistrer les images depuis TOUS les onglets">
+<!ENTITY si_lblSaveSel "Enregistrer les images sélectionnés">
+<!ENTITY si_lblSaveUnderMouse "Enregistrer les images sous la souris">
+<!ENTITY si_lblImageLinks "Liens d'image">
+<!ENTITY si_lblImageLinksAll "Ouvrir TOUS les liens d'image dans 1 onglet">
+<!ENTITY si_lblImageLinksSel "Ouvrir les liens d'image SÉLECTIONNÉS dans 1 onglet">
+<!ENTITY si_lblImageLinksAllTabs "Ouvrir TOUS les liens d'image dans DES ONGLETS">
+<!ENTITY si_lblImageLinksSelTabs "Ouvrir les liens d'image SÉLECTIONNÉS dans DES ONGLETS">
+<!ENTITY si_lblLinks "Liens">
+<!ENTITY si_lblLinksAll "Ouvrir TOUS les liens dans 1 onglet">
+<!ENTITY si_lblLinksSel "Ouvrir les liens SÉLECTIONNÉS dans 1 onglet">
+<!ENTITY si_lblLinksAllTabs "Ouvrir TOUS les liens dans DES ONGLETS">
+<!ENTITY si_lblLinksSelTabs "Ouvrir les liens SÉLECTIONNÉS dans DES ONGLETS">
+<!ENTITY si_lblOptions "Options">
+<!ENTITY si_lblSaveDetails "Détails d'enregistrement">
+<!ENTITY si_lblHelp "Aide">
+
+<!-- Option Pane Labels -->
+<!ENTITY optionsTitle "Options de Save Images">
+<!ENTITY buttonlabelextra2 "Restaurer les réglages par défaut">
+<!ENTITY paneFiltersLbl "Filtres">
+<!ENTITY paneSaveLbl "Enregistrement">
+<!ENTITY paneAutoLbl "Ouverture/Enregistrement auto.">
+<!ENTITY paneGeneralLbl "Général">
+<!ENTITY paneShortcutsLbl "Raccourcis clavier">
+<!ENTITY paneMenuItemsLbl "Éléments de menu">
+<!ENTITY btnExportLbl "Exporter">
+<!ENTITY btnExportTooltip "Réglages des options d'exportation">
+<!ENTITY btnImportLbl "Importer">
+<!ENTITY btnImportTooltip "Réglages des options d'importation">
+
+<!-- Filters pane -->
+<!ENTITY lblEnableLimits "Activer les limitations">
+<!ENTITY lblFileSize "Taille de fichier">
+<!ENTITY lblBytes "octets">
+<!ENTITY lblMin "Min. :">
+<!ENTITY lblMax "Max. :">
+<!ENTITY lblUnknown "Si inconnue">
+<!ENTITY lblSkip "Sauter">
+<!ENTITY lblPrompt "Demander">
+<!ENTITY lblSave "Enregistrer">
+<!ENTITY lblDimensions "Dimensions (pixels)">
+<!ENTITY lblMinWidth "Largeur min. :">
+<!ENTITY lblMaxWidth "Largeur max. :">
+<!ENTITY lblMinHeight "Hauteur min. :">
+<!ENTITY lblMaxHeight "Hauteur max. :">
+<!ENTITY lblImageTypes "Types d'images à enregistrer">
+<!ENTITY lblAllImages "Toutes les images">
+<!ENTITY lblSelection "Sélection :">
+<!ENTITY lblJPGImages "Images JPG/JPEG">
+<!ENTITY lblPNGImages "Images PNG">
+<!ENTITY lblGIFImages "Images GIF">
+<!ENTITY lblBMPImages "Images BMP">
+<!ENTITY lblSaveNoExt "Si aucune extension, enregistrer sous JPG">
+<!ENTITY lblRegExp "Expressions rationnelles">
+<!ENTITY lblRegExpSentence "Expression rationnelle basée sur l'URL des images (seules les images correspondantes seront enregistrées)">
+<!ENTITY lblClearRegExpList "Effacer la liste d'expressions rationnelles">
+<!ENTITY lblSameDomain "Enregistrer uniquement les images depuis le même domaine/serveur que l'URL de l'onglet sélectionné">
+
+<!-- Save pane -->
+<!ENTITY lblDefaultSave "Action d'enregistrement par défaut">
+<!ENTITY lblCurrentTab "Onglet actuel">
+<!ENTITY lblLeftCurrentTab "À gauche de l'onglet actuel &lt;&lt;">
+<!ENTITY lblRightCurrentTab "À droite de l'onglet actuel &gt;&gt;">
+<!ENTITY lblAllTabs "Tous les onglets">
+<!ENTITY lblIncludeCurrentTab "Inclure l'onglet actuel lors de l'enregistrement d'images (Gauche/Droite)">
+<!ENTITY lblFolderOptions "Options du répertoire">
+<!ENTITY lblFolder "Répertoire">
+<!ENTITY lblFileNames "Noms de fichiers">
+<!ENTITY lblSaveFolder "Répertoire d'enregistrement">
+<!ENTITY lblUseFFFolder "Utiliser le répertoire de téléchargement de Firefox ">
+<!ENTITY lblLastFFFolder "Utiliser le dernier répertoire de téléchargement de Firefox ">
+<!ENTITY lblUseFolder "Utiliser ce répertoire :">
+<!ENTITY lblBrowseForFolder "Parcourir pour trouver un répertoire">
+<!ENTITY lblClearFolderList "Effacer la liste de répertoires">
+<!ENTITY lblAppendTitle "Ajouter le titre de l'onglet au 'Répertoire d'enregistrement'">
+<!ENTITY lblAppendURL "Ajouter la structure de répertoire de l'URL de l'image au 'Répertoire d'enregistrement'">
+<!ENTITY lblTreeStructure "Structure de l'arbre">
+<!ENTITY lblSingleFolder "Répertoire unique">
+<!ENTITY lblAppendDate "Ajouter la date">
+<!ENTITY lblAppendTime "Ajouter l'heure">
+<!ENTITY lblIncludeSeconds "Inclure les secondes">
+<!ENTITY lblUseImgFN "Utiliser le nom de fichier des images">
+<!ENTITY lblUseFN "Utiliser le nom de fichier ">
+<!ENTITY lblClearFNList "Effacer la liste de noms de fichiers">
+<!ENTITY lblFNPrompt "Demander le nom de fichier">
+<!ENTITY lblOnce "Une fois par page">
+<!ENTITY lblForEachPage "Pour chaque image">
+<!ENTITY lblRegExpFN "Nom de fichier avec expression rationnelle (peut utiliser $1, $2...) ">
+<!ENTITY lblClearRegxEprList "Effacer la liste de noms de fichiers avec expression rationnelle">
+<!ENTITY lblDuplicateFiles "Fichiers en double">
+<!ENTITY lblIgnore "Ignorer">
+<!ENTITY lblOverwrite "Écraser">
+<!ENTITY lblNumberLength "Numéroter - longueur :">
+<!ENTITY lblExtLetterSize "Casse de l'extension">
+<!ENTITY lblExtAsIs "Telle quelle">
+<!ENTITY lblExtLower "Bas-de-casse">
+<!ENTITY lblExtUpper "Haut-de-casse">
+<!ENTITY lblCloseTab "Fermer l'onglet après l'enregistrement">
+<!ENTITY lblPromptTab "Demander lors de la fermeture de l'onglet">
+<!ENTITY lblClearFoldersExit "Effacer la liste 'Utiliser le répertoire' lorsque Firefox se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
+<!ENTITY lblClearFNExit "Effacer la liste 'Utiliser le nom de fichier' lorsque Firefox se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
+
+<!-- General pane -->
+<!ENTITY lblOpenDlg "Ouvrir la boite de dialogue des options de Save Images avant l'enregistrement">
+<!ENTITY lblShowPopup "Afficher la fenêtre surgissante de confirmation d'enregistrement">
+<!ENTITY lblShowPopupError "Seulement si une erreur survient">
+<!ENTITY lblNotifyPos "Afficher la fenêtre surgissante de notification dans le coin en bas à droite de la fenêtre de Firefox">
+<!ENTITY lblPopupTime "Durée d'affichage de la fenêtre surgissante de notification (en secondes) :">
+<!ENTITY lblSaveDetail "Afficher une liste détaillée des images enregistrées/non enregistrées">
+<!ENTITY lblShowDetailsSaved "Seulement lorsque des images sont enregistrées">
+<!ENTITY lblAutoSwitch "Basculer automatiquement vers le nouvel onglet (lors de l'ouverture de multiples liens)">
+<!ENTITY lblSaveBkgd "Enregistrer les images d'arrière-plan">
+<!ENTITY lblSaveMouse "Enregistrer les images sous le curseur de la souris">
+<!ENTITY lblSaveMouseFilters "Ignorer les 'Filtres' définis dans 'Options'">
+<!ENTITY lblFrameHeight "Hauteur du cadre lorsque de multiples liens sont ouverts dans un onglet :">
+<!ENTITY lblPixels "pixels">
+<!ENTITY lblFoldersRemember "Nombre de répertoires/noms de fichiers à se rappeler :">
+<!ENTITY lblGenLang1 "Choisissez la langue de 'Save Images' :">
+<!ENTITY lblGenNote1 "Nécessite le redémarrage du navigateur">
+<!ENTITY lblMultiLinks "Ouverture de multiples liens/images">
+<!ENTITY lblDelayOpenLinks "Délai entre l'ouverture des liens/images (en secondes) :">
+<!ENTITY lblNumOpenLinks "Nombre de liens/images à ouvrir à la fois :">
+<!ENTITY lblNoLimit "(0 = aucune limite)">
+<!ENTITY lblNoDelay "(0 = aucun délai)">
+<!ENTITY lblSkipLinkSelect "Éviter l'ouverture de la boite de dialogue 'Sélectionner les liens'">
+
+<!-- Shortcuts pane -->
+<!ENTITY lblDescription "Description">
+<!ENTITY lblShortcutKey "Touche de raccourci">
+<!ENTITY lblKey "Touche">
+<!ENTITY lblApply "Appliquer">
+<!ENTITY lblClear "Effacer">
+<!ENTITY lblKeyboard1 "Aucune vérification n'est faite d'éventuels conflits avec d'autres raccourcis clavier de Firefox.">
+<!ENTITY lblKeyboard2 "Toute modification de raccourci clavier nécessite le redémarrage du navigateur.">
+
+<!-- Menuitems pane -->
+<!ENTITY SelectMenuitems "Choisir les élements de menu que vous souhaitez voir apparaitre dans les divers menus.">
+<!ENTITY lblTools "Menu Outils">
+<!ENTITY lblContext "Menu contextuel">
+<!ENTITY lblToolbutton "Bouton de barre d'outils">
+<!ENTITY lblHideToolsMenu "Cacher Save Images du menu Outils">
+<!ENTITY lblHideContextMenu "Cacher le menu contextuel de Save Images">

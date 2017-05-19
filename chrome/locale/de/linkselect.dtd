@@ -1,0 +1,15 @@
+<!ENTITY lblOk "Ok">
+<!ENTITY lblCancel "Abbrechen">
+<!ENTITY lblSelectLinks "Links auswählen">
+<!ENTITY lblSelectLinksOpen "Links zum Öffnen auswählen">
+<!ENTITY lblCheckAll "Alle auswählen">
+<!ENTITY lblCheckNone "Keine auswählen">
+<!ENTITY lblCheckSelected "Ausgewählte auswählen">
+<!ENTITY lblInvertChecked "Auswahl umkehren">
+<!ENTITY lblFindText "Text in Links suchen">
+<!ENTITY lblMoveUp "Das ausgewählte Element in der Liste nach oben bewegen">
+<!ENTITY lblMoveDown "Das ausgewählte Element in der Liste nach unten bewegen">
+<!ENTITY lblLinksTotal "Links - Summe">
+<!ENTITY lblChecked "Ausgewählt">
+<!ENTITY lblOpenLinks "Ausgewählte Links öffnen">
+<!ENTITY lblClearFindList "Suchliste leeren">

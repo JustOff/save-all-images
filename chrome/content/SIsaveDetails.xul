@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://saveimages/content/SI_css.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://saveimages/locale/savedetails.dtd">
+
+<window 
+	id="si_idSaveDetails"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&lblSaveDetails;"
+  onload="siSD.init()"
+  class="dialog"
+  persist="screenX screenY"
+  screenX="50" screenY="50"
+  >
+  
+  <stringbundleset id="stringbundleset">         
+    <stringbundle id="smg_SDstrs" src="chrome://saveimages/locale/savedetails.properties"/>
+  </stringbundleset>
+
+  <script type="application/x-javascript" src="chrome://saveimages/content/SIsaveDetails.js"/>
+  
+  <vbox>
+  	<hbox><label value="&lblBaseFolder;:  "/><textbox readonly="true" id="edtSaveFolder" flex="1"/></hbox>
+  	<spacer height="20px;"/>
+  	<hbox><label value="&lblTotalProcessed;:  "/><textbox readonly="true" id="edtTotal"/></hbox>
+  	<hbox><label value="&lblTotalSaved;:  "/><textbox readonly="true" id="edtSaved"/></hbox>
+  	<hbox><label value="&lblDuplicateImages;:  "/><textbox readonly="true" id="edtDupes" flex="1"/></hbox>
+  	<hbox><label value="&lblTotalErrors;:  "/><textbox readonly="true" id="edtErrors"/></hbox>
+  	<separator/>
+  </vbox>
+  <vbox id="idSizeLimits">
+  	<hbox>
+		  <vbox id="idFSize">
+		  	<label id="lblFSize" class="bold" value="&lblFileSizeProp;"/>
+		  	<separator class="groove"/>
+		  	<hbox>
+		  		<spacer width="20px;"/>
+			  	<grid>
+			      <columns>
+			        <column class="idCol_w130"/>
+			        <column class="idCol_w100"/>
+			        <column class="idCol_w130"/>
+			      </columns>
+			      <rows>
+			      	<row>
+			      		<label />
+			          <label value="&lblSetting;" class="bold"/>
+			          <label value="&lblNoImagesNotSaved;" class="bold" />
+			        </row>
+			        <row id="rowMinFSize" align="center">
+			          <label id="lblMinFSize" value="&lblMinFS;:"/>
+			          <label id="setMinFSize"/>
+			          <textbox readonly="true" id="edtMinFSize"/>
+			        </row>
+			        <row id="rowMaxFSize">
+			          <label id="lblMaxFSize" value="&lblMaxFS;:"/>
+			          <label id="setMaxFSize"/>
+			          <textbox readonly="true" id="edtMaxFSize"/>
+			        </row>
+			        <row id="rowFSUnknown">
+			          <label id="lblFSUnknown" value="&lblFSUnknown;:"/>
+			          <label id="setFSUnknown"/>
+			          <textbox readonly="true" id="edtFSUnknown"/>
+			        </row>
+			      </rows>
+			    </grid>
+			  </hbox>
+			</vbox>
+			<hbox id="idLimitsSpacer">
+				<spacer width="20px;"/>
+				<separator class="groove" orient="vertical"/>
+				<spacer width="20px;"/>
+			</hbox>
+			<vbox id="idDims">
+			  <label id="lblDims" class="bold" value="&lblDimProp;"/>
+		  	<separator class="groove"/>
+		  	<hbox>
+		  		<spacer width="20px;"/>
+			  	<grid>
+			      <columns>
+			        <column class="idCol_w130"/>
+			        <column class="idCol_w100"/>
+			        <column class="idCol_w130"/>
+			      </columns>
+			      <rows>
+			      	<row>
+			      		<label />
+			          <label value="&lblSetting;" class="bold"/>
+			          <label value="&lblNoImagesNotSaved;" class="bold"/>
+			        </row>
+			      	<row id="rowMinWidth">
+			          <label id="lblMinWidth" value="&lblMinWidth;:"/>
+			          <label id="setMinW"/>
+			          <textbox readonly="true" id="edtMinWidth"/>
+			        </row>
+			        <row id="rowMaxWidth">
+			          <label id="lblMaxWidth" value="&lblMaxWidth;:"/>
+			          <label id="setMaxW"/>
+			          <textbox readonly="true" id="edtMaxWidth"/>
+			        </row>
+			        <row id="rowMinHeight">
+			          <label id="lblMinHeight" value="&lblMinHeight;:"/>
+			          <label id="setMinH"/>
+			          <textbox readonly="true" id="edtMinHeight"/>
+			        </row>
+			        <row id="rowMaxHeight">
+			          <label id="lblMaxHeight" value="&lblMaxHeight;:"/>
+			          <label id="setMaxH"/>
+			          <textbox readonly="true" id="edtMaxHeight"/>
+			        </row>
+			        <row id="rowDimsUnknown">
+			          <label id="lblDimsUnknown" value="&lblDimUnknown;:"/>
+			          <label id="setDimsUnknown"/>
+			          <textbox readonly="true" id="edtDimsUnknown"/>
+			        </row>
+			      </rows>
+			    </grid>
+			  </hbox>
+		  </vbox>
+		</hbox>
+	</vbox>
+	<separator />
+	<vbox>
+		<hbox>
+		  <vbox>
+			  <label id="lblImageTypes" class="bold" value="&lblImageTypesProp;"/>
+		  	<separator class="groove"/>
+		  	<hbox id="idITAll">
+		  		<spacer width="20px;"/>
+		  		<label value="&lblAllImages;"/>
+		  	</hbox>
+		  	<hbox id="idITSel">
+		  		<spacer width="20px;"/>
+			  	<grid>
+			      <columns>
+			        <column class="idCol_w130"/>
+			        <column class="idCol_w100"/>
+			        <column class="idCol_w130"/>
+			      </columns>
+			      <rows>
+			      	<row>
+			      		<label />
+			          <label value="&lblSetting;" class="bold"/>
+			          <label value="&lblNoImagesNotSaved;" class="bold"/>
+			        </row>
+			      	<row id="rowJpg">
+			          <label id="lblJpg" value="&lblJpgImages;:"/>
+			          <label id="setJpg"/>
+			          <textbox readonly="true" id="edtJpg"/>
+			        </row>
+			        <row id="rowPng">
+			          <label id="lblPng" value="&lblPngImages;:"/>
+			          <label id="setPng"/>
+			          <textbox readonly="true" id="edtPng"/>
+			        </row>
+			        <row id="rowGif">
+			          <label id="lblGif" value="&lblGifImages;:"/>
+			          <label id="setGif"/>
+			          <textbox readonly="true" id="edtGif"/>
+			        </row>
+			        <row id="rowBmp">
+			          <label id="lblBmp" value="&lblBmpImages;:"/>
+			          <label id="setBmp"/>
+			          <textbox readonly="true" id="edtBmp"/>
+			        </row>
+			        <row id="rowOther">
+			          <label id="lblOtehr" value="&lblOtherImages;:"/>
+			          <label id="setOther"/>
+			          <textbox readonly="true" id="edtOther"/>
+			        </row>
+			      </rows>
+			    </grid>
+			  </hbox>
+			  <separator/>
+			  <hbox id="idNoExt">
+		  		<spacer width="20px;"/>
+			  	<grid>
+			      <columns>
+			        <column class="idCol_w130"/>
+			        <column class="idCol_w100"/>
+			      </columns>
+			      <rows>
+			        <row id="rowNoExt">
+			          <label id="lblNoExt" value="&lblSaveNoExt;:"/>
+			          <label id="setNoExt"/>
+			        </row>
+			      </rows>
+			    </grid>
+			  </hbox>
+			  <separator/>
+		  </vbox>
+		  <spacer width="20px;"/>
+			<separator class="groove" orient="vertical"/>
+			<spacer width="20px;"/>
+			<vbox id="idDomain">
+			  <label id="lblDomain" class="bold" value="&lblSameDomainProp;"/>
+		  	<separator class="groove"/>
+		  	<hbox>
+		  		<spacer width="20px;"/>
+			  	<grid>
+			      <columns>
+			        <column class="idCol_w130"/>
+			        <column flex="1"/>
+			        <spacer width="20px;"/>
+			        <column flex="1"/>
+			      </columns>
+			      <rows>
+			      	<row>
+			      		<label />
+			          <label value="&lblSetting;" class="bold"/>
+			          <label value="&lblNoImagesNotSaved;" class="bold"/>
+			        </row>
+			      	<row id="rowMinWidth">
+			          <label id="lblSameDomain" value="&lblSameDomain;:"/>
+			          <label id="setSameDomain"/>
+			          <textbox readonly="true" id="edtSameDomain"/>
+			        </row>
+			      </rows>
+			    </grid>
+			  </hbox>
+		  </vbox>
+		</hbox>
+	</vbox>
+  <vbox id="idRegexp">
+  	<label id="lblRegexpProp" class="bold" value="&lblRegExpProp;"/>
+  	<separator class="groove"/>
+  	<hbox>
+  		<spacer width="20px;"/>
+	  	<grid>
+	      <columns>
+	        <column class="idCol_w130"/>
+	        <column class="idCol_w130_padR20"/>
+	        <column flex="1"/>
+	      </columns>
+	      <rows>
+	      	<row>
+	      		<label />
+	          <label value="&lblSetting;" class="bold"/>
+	          <label value="&lblNoImagesNotSaved;" class="bold"/>
+	        </row>
+	        <row id="rowRegexp">
+	          <label id="lblRegexp" value="&lblRegExp;"/>
+	          <label id="setRegexp"/>
+	          <textbox readonly="true" id="edtRegexp"/>
+	        </row>
+	      </rows>
+	    </grid>
+	  </hbox>
+	  <textbox class="indent30" readonly="true" id="txtRegexp"/>
+  	<separator/>
+  </vbox>  
+</window>

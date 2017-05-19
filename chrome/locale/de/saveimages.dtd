@@ -1,0 +1,151 @@
+<!ENTITY lblOk "Ok">
+<!ENTITY lblCancel "Abbrechen">
+
+<!-- Menu Labels -->
+<!ENTITY si_lblSaveImages "Bilder speichern">
+<!ENTITY si_lblSaveCurrent "Bilder aus aktuellem Tab speichern">
+<!ENTITY si_lblSaveLeft "Bilder von Tabs nach LINKS speichern &lt;&lt;">
+<!ENTITY si_lblSaveRight "Bilder von Tabs nach RECHTS speichern &gt;&gt;">
+<!ENTITY si_lblSaveAll "Bilder aus ALLEN Tabs speichern">
+<!ENTITY si_lblSaveSel "Speichern ausgewählter Bilder">
+<!ENTITY si_lblSaveUnderMouse "Bild unter der Maus speichern">
+<!ENTITY si_lblImageLinks "Bildlinks">
+<!ENTITY si_lblImageLinksAll "ALLE Bildlinks in 1 Tab öffnen">
+<!ENTITY si_lblImageLinksSel "AUSGEWÄHLTE Bildlinks in 1 Tab öffnen">
+<!ENTITY si_lblImageLinksAllTabs "ALLE Bildlinks in TABS öffnen">
+<!ENTITY si_lblImageLinksSelTabs "AUSGEWÄHLTE Bildlinks in TABS öffnen">
+<!ENTITY si_lblLinks "Links">
+<!ENTITY si_lblLinksAll "ALLE Links in 1 Tab öffnen">
+<!ENTITY si_lblLinksSel "AUSGEWÄHLTE Links in 1 Tab öffnen">
+<!ENTITY si_lblLinksAllTabs "ALLE Links in TABS öffnen">
+<!ENTITY si_lblLinksSelTabs "AUSGEWÄHLTE Links in TABS öffnen">
+<!ENTITY si_lblOptions "Optionen">
+<!ENTITY si_lblSaveDetails "Speicherdetails">
+<!ENTITY si_lblHelp "Hilfe">
+
+<!-- Option Pane Labels -->
+<!ENTITY optionsTitle "Optionen zum Speichern der Bilder">
+<!ENTITY buttonlabelextra2 "Standard wiederherstellen">
+<!ENTITY paneFiltersLbl "Filter">
+<!ENTITY paneSaveLbl "Speichern">
+<!ENTITY paneAutoLbl "Automatisch öffnen/speichern">
+<!ENTITY paneGeneralLbl "Allgemein">
+<!ENTITY paneShortcutsLbl "Tastenkombinationen">
+<!ENTITY paneMenuItemsLbl "Menüelemente">
+<!ENTITY btnExportLbl "Exportieren">
+<!ENTITY btnExportTooltip "Exportoptionen">
+<!ENTITY btnImportLbl "Importieren">
+<!ENTITY btnImportTooltip "Importoptionen">
+
+<!-- Filters pane -->
+<!ENTITY lblEnableLimits "Begrenzungen aktivieren">
+<!ENTITY lblFileSize "Dateigröße">
+<!ENTITY lblBytes "byte">
+<!ENTITY lblMin "Min">
+<!ENTITY lblMax "Max">
+<!ENTITY lblUnknown "Unbekannte">
+<!ENTITY lblSkip "Überspringen">
+<!ENTITY lblPrompt "Fragen">
+<!ENTITY lblSave "Speichern">
+<!ENTITY lblDimensions "Dimensionen (Pixel)">
+<!ENTITY lblMinWidth "Min Breite">
+<!ENTITY lblMaxWidth "Max Breite">
+<!ENTITY lblMinHeight "Min Höhe">
+<!ENTITY lblMaxHeight "Max Höhe">
+<!ENTITY lblImageTypes "Zu speichernde Typen">
+<!ENTITY lblAllImages "Alle Bilder">
+<!ENTITY lblSelection "Auswahl">
+<!ENTITY lblJPGImages "JPG/JPEG Bilder">
+<!ENTITY lblPNGImages "PNG Bilder">
+<!ENTITY lblGIFImages "GIF Bilder">
+<!ENTITY lblBMPImages "BMP Bilder">
+<!ENTITY lblSaveNoExt "Unbekannte als JPG speichern">
+<!ENTITY lblRegExp "Reguläre Ausdrücke">
+<!ENTITY lblRegExpSentence "Regulärer Ausdruck basierend auf Bild-URLs (nur passende werden gespeichert)">
+<!ENTITY lblClearRegExpList "Liste der regulären Ausdrücke leeren">
+<!ENTITY lblSameDomain "Nur Bilder von derselben Domain/demselben Server wie der ausgewählte Tab speichern">
+
+<!-- Save pane -->
+<!ENTITY lblDefaultSave "Standardaktion für das Speichern">
+<!ENTITY lblCurrentTab "Aktueller Tab">
+<!ENTITY lblLeftCurrentTab "Links vom aktuellen Tab &lt;&lt;">
+<!ENTITY lblRightCurrentTab "Rechts vom aktuellen Tab &gt;&gt;">
+<!ENTITY lblAllTabs "Alle Tabs">
+<!ENTITY lblIncludeCurrentTab "Den aktuellen Tab mit einschließen (links/rechts)">
+<!ENTITY lblFolderOptions "Ordneroptionen">
+<!ENTITY lblFolder "Ordner">
+<!ENTITY lblFileNames "Dateinamen">
+<!ENTITY lblSaveFolder "Speicherordner">
+<!ENTITY lblUseFFFolder "Zuletzt benutzten Ordner verwenden">
+<!ENTITY lblLastFFFolder "Zuletzt benutzten Ordner verwenden">
+<!ENTITY lblUseFolder "Diesen Ordner verwenden">
+<!ENTITY lblBrowseForFolder "Durchsuchen">
+<!ENTITY lblClearFolderList "Liste leeren">
+<!ENTITY lblAppendTitle "Tabtitel dem Speicherordner anfügen">
+<!ENTITY lblAppendURL "Ordnerstruktur aus der Bild-URL dem Speicherordner anfügen">
+<!ENTITY lblTreeStructure "Baumstruktur">
+<!ENTITY lblSingleFolder "Einzelordner">
+<!ENTITY lblAppendDate "Datum anfügen">
+<!ENTITY lblAppendTime "Zeit anfügen">
+<!ENTITY lblIncludeSeconds "Sekunden einbeziehen">
+<!ENTITY lblUseImgFN "Dateinamen der Bilder verwenden">
+<!ENTITY lblUseFN "Dateiname verwenden">
+<!ENTITY lblClearFNList "Liste der Dateinamen leeren">
+<!ENTITY lblFNPrompt "Nachfragen">
+<!ENTITY lblOnce "Einmal pro Seite">
+<!ENTITY lblForEachPage "Für jedes Bild">
+<!ENTITY lblRegExpFN "Regulärer Ausdruck (kann $1, $2, … beinhalten)">
+<!ENTITY lblClearRegxEprList "Liste der regulären Ausdrücke für Dateinamen leeren">
+<!ENTITY lblDuplicateFiles "Dubletten">
+<!ENTITY lblIgnore "Ignorieren">
+<!ENTITY lblOverwrite "Überschreiben">
+<!ENTITY lblNumberLength "Nummer dieser Länge anfügen">
+<!ENTITY lblExtLetterSize "Erweiterung Gehäusegröße">
+<!ENTITY lblExtAsIs "als gegeben">
+<!ENTITY lblExtLower "Kleinbuchstaben">
+<!ENTITY lblExtUpper "Großbuchstaben">
+<!ENTITY lblCloseTab "Tab nach Speichern schließen">
+<!ENTITY lblPromptTab "Vor Schließen nachfragen">
+<!ENTITY lblClearFoldersExit "Liste benutzter Ordner beim Beenden von Firefox leeren (nur bei Datei->Beenden)">
+<!ENTITY lblClearFNExit "Liste benutzter Dateinamen beim Beenden von Firefox leeren (nur bei Datei->Beenden)">
+
+<!-- General pane -->
+<!ENTITY lblOpenDlg "Dialog mit den Optionen zum Speichern der Bilder vor dem Speichern öffnen">
+<!ENTITY lblShowPopup "Speicherbestätigungspopup zeigen">
+<!ENTITY lblShowPopupError "Nur wenn ein Fehler aufgetreten ist">
+<!ENTITY lblNotifyPos "Popup in der unteren rechten Ecke von Firefox anzeigen">
+<!ENTITY lblPopupTime "Anzeigedauer (Sekunden)">
+<!ENTITY lblSaveDetail "Detaillierte Liste der gespeicherten/nicht gespeicherten Bilder">
+<!ENTITY lblShowDetailsSaved "Nur wenn Bilder gespeichert wurden">
+<!ENTITY lblAutoSwitch "Wenn mehrere Links geöffnet werden automatisch zu neuem Tab wechseln">
+<!ENTITY lblSaveBkgd "Hintergrundbilder speichern">
+<!ENTITY lblSaveMouse "Bild unter dem Mauszeiger speichern">
+<!ENTITY lblSaveMouseFilters "In den Optionen gesetzte Filter ignorieren">
+<!ENTITY lblFrameHeight "Höhe des Rahmens, wenn mehrere Links in einem Tab geöffnet werden">
+<!ENTITY lblPixels "Pixel">
+<!ENTITY lblFoldersRemember "Anzahl an Ordnern/Dateinamen in der Liste">
+<!ENTITY lblGenLang1 "Wählen Sie eine Sprache">
+<!ENTITY lblGenNote1 "Erfordert einen Browserneustart">
+<!ENTITY lblMultiLinks "Öffnen mehrerer Links/Bilder">
+<!ENTITY lblDelayOpenLinks "Zeitverzögerung zwischen dem Öffnen von Links/Bildern (Sekunden)">
+<!ENTITY lblNumOpenLinks "Anzahl der Links/Bilder, die gleichzeitig geöffnet werden sollen">
+<!ENTITY lblNoLimit "(0 = keine Begrenzung)">
+<!ENTITY lblNoDelay "(0 = keine Verzögerung)">
+<!ENTITY lblSkipLinkSelect "Öffnen des Linkauswahldialogs umgehen">
+
+<!-- Shortcuts pane -->
+<!ENTITY lblDescription "Beschreibung">
+<!ENTITY lblShortcutKey "Tastenkombination">
+<!ENTITY lblKey "Taste">
+<!ENTITY lblApply "Übernehmen">
+<!ENTITY lblClear "Löschen">
+<!ENTITY lblKeyboard1 "Es wird nicht überprüft, ob andere Tastenkombinationen in Firefox in Konflikt stehen.">
+<!ENTITY lblKeyboard2 "Jede Veränderung der Tastenkombinationen erfordert einen Browserneustart.">
+
+<!-- Menuitems pane -->
+<!ENTITY SelectMenuitems "Wählen Sie diejenigen Menüelemente, die in den unterschiedlichen Menüs angezeigt werden sollen.">
+<!ENTITY lblTools "Werkzeuge">
+<!ENTITY lblContext "Kontextmenü">
+<!ENTITY lblToolbutton "Werkzeugbutton">
+<!ENTITY lblHideToolsMenu "Werkzeugmenü 'Bilder speichern' nicht zeigen">
+<!ENTITY lblHideContextMenu "Kontextmenü 'Bilder speichern' nicht zeigen">

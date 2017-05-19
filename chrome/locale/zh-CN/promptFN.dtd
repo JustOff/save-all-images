@@ -1,0 +1,17 @@
+<!ENTITY lblSaveFileAs "另存为">
+<!ENTITY lblFNOptions "文件名选项">
+<!ENTITY lblSaveFolder "保存目录">
+<!ENTITY lblBrowseForFolder "浏览一个文件夹">
+<!ENTITY lblClearFolderList "清空文件夹列表">
+<!ENTITY lblFileName "文件名">
+<!ENTITY lblClearFNList "清空文件名列表">
+<!ENTITY lblRetainFN "保持原始文件名">
+<!ENTITY lblPrependFN "原始文件名附加">
+<!ENTITY lblPreSufNumber "前缀/后缀数">
+<!ENTITY lblStartValue "起始值">
+<!ENTITY lblLength "长度">
+<!ENTITY lblIncBy "增加">
+<!ENTITY lblPrefix "前缀">
+<!ENTITY lblSuffix "后缀">
+<!ENTITY lblExample "范例">
+<!ENTITY lblDefault "默认">

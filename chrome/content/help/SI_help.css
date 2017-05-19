@@ -1,0 +1,119 @@
+body {
+	background-color: #FFE;
+}
+
+h3 {
+	color: #00F;
+	margin-bottom: 3px;
+}
+
+h4 {
+	color: #000;
+	margin-bottom: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #05F;
+	font-weight: bold;
+	outline: 0;
+}
+a:hover {
+	color: #0C0;
+}
+
+.ul_related {
+	margin-top: 0px;
+}
+
+div#divheader {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 55px;
+	background-color: #FFE;
+}
+
+div#content {
+	margin-top: 60px;
+}
+
+div#tabIndex {
+	position: fixed;
+	top: 0px;
+	width: 64px;
+	height: 23px;
+	margin: 0 50%;
+	background-color: #FF840B;
+	border-radius: 0 0 10px 10px;
+	z-index: 500;
+	text-align: center;
+}
+div#tabIndex a {
+	font-weight: bold;
+	font-size: 18px;
+	color: #FFF;
+}
+div#tabIndex a:hover {
+	color: #C0FFC0;
+}
+
+table td {
+	vertical-align: top;
+}
+
+/* Other */
+.cellheader {
+	text-align: left;
+	font-weight: bold;
+	color: #FF440B;
+}
+
+.bold {
+	font-weight: bold;
+}
+.blue {
+	color: #00F;
+}
+.indent20 {
+	margin-left: 20px;
+}
+
+#hrheader {
+	width: 85%;
+	margin-left: 5px;
+}
+
+#imgSIIcon {
+	padding: 18px 10px 0 10px;
+}
+
+groupbox caption label, tabbox tab label {
+	color: #00F;
+}
+
+.tab_help {
+	width: 100%;
+	border: #000 1px solid;
+}
+.tab_help td {
+	padding-left: 10px;
+	border: #999 1px solid;
+}
+.tab_help td:first-child {
+	width: 220px;
+	font-weight: bold;
+}
+.tab_help td.cellheader, table.tab_help td.nopad {
+	padding-left: 0px;
+}
+.tab_help td.pad1 {
+	padding-left: 10px;
+}
+.tab_help td.pad2 {
+	padding-left: 20px;
+}
+.tab_help img {
+	border: none;
+}

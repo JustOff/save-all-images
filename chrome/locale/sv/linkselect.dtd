@@ -1,0 +1,15 @@
+<!ENTITY lblOk "Ok">
+<!ENTITY lblCancel "Cancel">
+<!ENTITY lblSelectLinks "Select Links">
+<!ENTITY lblSelectLinksOpen "Select links to open">
+<!ENTITY lblCheckAll "Check all">
+<!ENTITY lblCheckNone "Check none">
+<!ENTITY lblCheckSelected "Check selected">
+<!ENTITY lblInvertChecked "Invert checked">
+<!ENTITY lblFindText "Find text in links">
+<!ENTITY lblMoveUp "Move the selected item up in the list">
+<!ENTITY lblMoveDown "Move the selected item down in the list">
+<!ENTITY lblLinksTotal "Links - Total">
+<!ENTITY lblChecked "Checked">
+<!ENTITY lblOpenLinks "Open checked links">
+<!ENTITY lblClearFindList "Clear Find list">

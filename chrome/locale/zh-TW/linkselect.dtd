@@ -1,0 +1,15 @@
+﻿<!ENTITY lblOk "確定">
+<!ENTITY lblCancel "取消">
+<!ENTITY lblSelectLinks "選擇連結">
+<!ENTITY lblSelectLinksOpen "選擇要打開的連結">
+<!ENTITY lblCheckAll "全選">
+<!ENTITY lblCheckNone "全不選">
+<!ENTITY lblCheckSelected "選擇高亮度顯示">
+<!ENTITY lblInvertChecked "反選">
+<!ENTITY lblFindText "在連結中尋找文字">
+<!ENTITY lblMoveUp "將選擇項在列表中向上移">
+<!ENTITY lblMoveDown "將選擇項在列表中向下移">
+<!ENTITY lblLinksTotal "連結 - 總計">
+<!ENTITY lblChecked "已選擇">
+<!ENTITY lblOpenLinks "開啟選擇的連結">
+<!ENTITY lblClearFindList "清除尋找列表">

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane
+		id="paneGeneral"
+		label="&paneGeneralLbl;"
+		onpaneload="SIgeneral.load();"
+	>
+	
+	<preferences>
+		<preference id="chkOpenDlg" name="extensions.SI.chkOpenDlg" type="bool"/>
+		<preference id="chkShowPopup" name="extensions.SI.chkShowPopup" type="bool"/>
+		<preference id="chkShowPopupError" name="extensions.SI.chkShowPopupError" type="bool"/>
+		<preference id="chkNotifyPos" name="extensions.SI.chkNotifyPos" type="bool"/>
+		<preference id="edtSeconds" name="extensions.SI.edtSeconds" type="int"/>
+		<preference id="chkSaveDetail" name="extensions.SI.chkSaveDetail" type="bool"/>
+		<preference id="chkShowDetailsSaved" name="extensions.SI.chkShowDetailsSaved" type="bool"/>
+		<preference id="chkFocusTab" name="extensions.SI.chkFocusTab" type="bool"/>
+		<preference id="chkSaveBkgd" name="extensions.SI.chkSaveBkgd" type="bool"/>
+		<preference id="chkSaveMouse" name="extensions.SI.chkSaveMouse" type="bool"/>
+		<preference id="chkSaveMouseFilters" name="extensions.SI.chkSaveMouseFilters" type="bool"/>
+		<preference id="edtFrameH" name="extensions.SI.edtFrameH" type="int"/>
+		<preference id="edtNumFNs" name="extensions.SI.edtNumFNs" type="int"/>
+		<preference id="cbxLanguage" name="extensions.SI.cbxLanguage" type="int"/>
+		<preference id="edtDelayOpenLinks" name="extensions.SI.edtDelayOpenLinks" type="int"/>
+		<preference id="edtNumOpenLinks" name="extensions.SI.edtNumOpenLinks" type="int"/>
+		<preference id="chkSkipLinkSelect" name="extensions.SI.chkSkipLinkSelect" type="bool"/>
+	</preferences>
+	
+	<vbox>
+		<hbox align="center">
+			<label value="&lblGenLang1;"/>
+			<menulist id="idcbxLanguage" type="unichar" style="width: 25ex;" preference="cbxLanguage">
+				<menupopup id="pumLanguage">
+					<menuitem value="0" label="English"/>
+					<menuitem value="1" label="Deutsch"/>
+					<menuitem value="2" label="Français"/>
+					<menuitem value="3" label="Svenska"/>
+					<menuitem value="4" label="中文 (简体)"/>
+					<menuitem value="5" label="中文 (繁體)"/>
+				</menupopup>
+		  </menulist>
+		  <label value="&lblGenNote1;" style="color:red;"/>
+		</hbox>
+		<checkbox id="idchkOpenDlg" checked="true" label="&lblOpenDlg;" preference="chkOpenDlg"/>
+		<checkbox id="idchkShowPopup" checked="true" label="&lblShowPopup;" preference="chkShowPopup" oncommand="SIgeneral.chkShowPopupChecked();"/>
+		<checkbox id="idchkShowPopupError" class="indent20" label="&lblShowPopupError;" preference="chkShowPopupError"/>
+		<checkbox id="idchkNotifyPos" class="indent20" label="&lblNotifyPos;" preference="chkNotifyPos"/>
+		<hbox align="center" class="indent20">
+			<label value="&lblPopupTime;"/>
+			<textbox type="number" min="1" max="20" value="4" style="margin: 0px; width:10ex;" preference="edtSeconds"/>
+		</hbox>
+		<checkbox id="idchkSaveDetail" label="&lblSaveDetail;" preference="chkSaveDetail" oncommand="SIgeneral.chkShowDetailsChecked();"/>
+		<checkbox id="idchkShowDetailsSaved" class="indent20" label="&lblShowDetailsSaved;" preference="chkShowDetailsSaved"/>
+		<checkbox id="idchkSaveBkgd" checked="false" label="&lblSaveBkgd;" preference="chkSaveBkgd"/>
+		<checkbox id="idchkSaveMouse" checked="false" label="&lblSaveMouse;" preference="chkSaveMouse" oncommand="SIgeneral.chkSaveMouseChecked();"/>
+		<checkbox id="idchkSaveMouseFilters" checked="false" label="&lblSaveMouseFilters;" preference="chkSaveMouseFilters" style="margin-left: 20px;"/>
+		<hbox align="center">
+			<label value="&lblFoldersRemember;" style="width:28ex;"/>
+			<textbox type="number" min="10" max="30" increment="5" style="margin: 0px; width:7ex;" preference="edtNumFNs"/>
+		</hbox>
+		<spacer style="height:20px;"/>
+		<groupbox>
+			<caption>
+				<label value="&lblMultiLinks;" class="bold"/>
+			</caption>
+			<hbox align="center">
+				<label value="&lblFrameHeight;"/>
+				<textbox type="number" min="100" style="margin: 0px; width:10ex;" preference="edtFrameH"/>
+				<label value="&lblPixels;" style="margin: 4px;"/>
+			</hbox>
+			<hbox align="center">
+				<label value="&lblDelayOpenLinks;"/>
+				<textbox type="number" min="0" value="3" style="margin: 0px; width:10ex;" preference="edtDelayOpenLinks"/>
+				<label value="&lblNoDelay;"/>
+			</hbox>
+			<hbox align="center">
+				<label value="&lblNumOpenLinks;"/>
+				<textbox type="number" min="0" value="10" style="margin: 0px; width:10ex;" preference="edtNumOpenLinks"/>
+				<label value="&lblNoLimit;"/>
+			</hbox>
+			<checkbox checked="true" label="&lblAutoSwitch;" preference="chkFocusTab"/>
+			<checkbox label="&lblSkipLinkSelect;" preference="chkSkipLinkSelect"/>
+		</groupbox>
+	</vbox>
+	</prefpane>
+</overlay>

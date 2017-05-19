@@ -1,0 +1,41 @@
+#SI_mnuToolbar0 {
+  list-style-image: url("chrome://saveimages/skin/SIicon2.png");
+}
+
+toolbar[iconsize="small"] #SI_mnuToolbar0 {
+  list-style-image: url("chrome://saveimages/skin/SIicon2-sm.png");
+}
+
+#SI_mnuTools0, #SI_mnuContext0 {
+  list-style-image: url("chrome://saveimages/skin/SIicon2-sm.png");
+}
+
+/* Popup notification */
+#SI_idPnlNotify {
+	
+}
+#SI_idPnlNotify #SI_idNotifyOuterbox {
+	border: 2px solid #00F;
+	margin: 3px;
+}
+#SI_idPnlNotify #SI_idNotifyInnerbox {
+	border: #0FF 1px solid;
+	padding: 5px 10px 3px 10px;
+}
+
+#SI_idPnlErrors {
+	border: 1px solid #666;
+	border-radius: 5px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	display: none;
+}
+#SI_idPnlErrors #SI_idErrorOuterbox {
+	border: 2px solid #F00;
+	margin: 3px;
+}
+#SI_idPnlErrors #SI_idErrorInnerbox {
+	border: #FF8000 1px solid;
+	padding: 5px 10px 3px 10px;
+}

@@ -1,0 +1,17 @@
+<!ENTITY lblSaveFileAs "Datei speichern unter">
+<!ENTITY lblFNOptions "Dateinamensoptionen">
+<!ENTITY lblSaveFolder "Speicherordner">
+<!ENTITY lblBrowseForFolder "Ordner durchsuchen">
+<!ENTITY lblClearFolderList "Ordnerliste leeren">
+<!ENTITY lblFileName "Dateiname">
+<!ENTITY lblClearFNList "Liste der Dateinamen leeren">
+<!ENTITY lblRetainFN "Originaldateinamen beibehalten">
+<!ENTITY lblPrependFN "Folgendes dem Dateinamen voranstellen">
+<!ENTITY lblPreSufNumber "Präfix/Suffix-Nummer">
+<!ENTITY lblStartValue "Startwert">
+<!ENTITY lblLength "Länge">
+<!ENTITY lblIncBy "Erhöhen um">
+<!ENTITY lblPrefix "Präfix">
+<!ENTITY lblSuffix "Suffix">
+<!ENTITY lblExample "Beispiel">
+<!ENTITY lblDefault "Standard">

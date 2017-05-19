@@ -1,0 +1,1227 @@
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type">
+<TITLE>Regular Expressions</TITLE>
+<style type="text/css">
+#main #content {margin-right: 2em;}
+</style>
+</head>
+<body onLoad="init()" BGCOLOR="#FFFFFF" TEXT="#000000">
+
+<H1><A NAME="RegExp"></A>
+<A NAME="1193136">
+ RegExp
+</A></H1>
+<A NAME="1193138">
+A regular expression object contains the pattern of a regular expression. It has properties and methods for using that regular expression to find and replace matches in strings.</A>
+<A NAME="1193139">
+In addition to the properties of an individual regular expression object that you create using the <CODE>RegExp</CODE> constructor function, the predefined <CODE>RegExp</CODE> object has static properties that are set whenever any regular expression is used.
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193142">
+<I>Core object</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193146">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193148">
+JavaScript 1.2, NES 3.0</A></P><P><A NAME="1195460">
+</A></P><P><A NAME="1193152">
+JavaScript 1.3: added <A HREF="regexp.html#1194174"><CODE>toSource</CODE></A> method</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193153">
+ Created by
+</A></H4>
+
+<A NAME="1193154">
+A literal text format or the <CODE>RegExp</CODE> constructor function. </A>
+<A NAME="1193155">
+The literal format is used as follows:</A>
+<PRE><A NAME="1193156"><I>/pattern/flags</I></A></PRE>
+<A NAME="1193157">The constructor function is used as follows:</A>
+<PRE><A NAME="1193158">new RegExp(&quot;<I>pattern</I>&quot;[, &quot;<I>flags</I>&quot;])</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1193159">
+ Parameters
+</A></H4>
+
+<A NAME="1193172">
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left></a><PRE><A NAME="1193162">pattern</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193164">
+The text of the regular expression.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193166">flags</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193168">
+If specified, flags can have one of the following values:</A></P><ul><LI><A NAME="1193169">
+<CODE>g</CODE>: global match</A><LI><A NAME="1193170">
+<CODE>i</CODE>: ignore case</A><LI><A NAME="1193171">
+<CODE>gi</CODE>: both global match and ignore case</A></ul>
+
+</TABLE>
+<A NAME="1193173">
+Notice that the parameters to the literal format do not use quotation marks to indicate strings, while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:</A>
+<PRE><A NAME="1193174">/ab+c/i
+new RegExp(&quot;ab+c&quot;, &quot;i&quot;)</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1193175">
+ Description
+</A></H4>
+
+<A NAME="1193176">
+When using the constructor function, the normal string escape rules (preceding special characters with \ when included in a string) are necessary. For example, the following are equivalent:</A>
+<PRE><A NAME="1193177">re = new&nbsp;RegExp(&quot;\\w+&quot;)
+re = /\w+/</A></PRE><A NAME="1193181">
+The following table provides a complete list and description of the special characters that can be used in regular expressions.</A>
+<A NAME="1195218">
+<P></a><B><A NAME="1193188">
+Table 1.3&nbsp;Special characters in regular expressions. &nbsp;</A></B>
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TH VALIGN=baseline ALIGN=left><B><A NAME="1193192">
+Character</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1193194">
+Meaning</A></b>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193196">\</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193198">
+For characters that are usually treated literally, indicates that the next character is special and not to be interpreted literally. </A></P><P><A NAME="1193199">
+For example, <CODE>/b/</CODE> matches the character 'b'. By placing a backslash in front of b, that is by using <CODE>/\b/</CODE>, the character becomes special to mean match a word boundary.</A></P><P><A NAME="1193200">
+-or-</A></P><P><A NAME="1193201">
+For characters that are usually treated specially, indicates that the next character is not special and should be interpreted literally. </A></P><P><A NAME="1193202">
+For example, <CODE>*</CODE> is a special character that means 0 or more occurrences of the preceding character should be matched; for example, <CODE>/a*/</CODE> means match 0 or more a's<CODE>.</CODE> To match <CODE>*</CODE> literally, precede the it with a backslash; for example, <CODE>/a\*/</CODE> matches 'a*'.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193204">^</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193206">
+Matches beginning of input or line.</A></P><P><A NAME="1193207">
+For example, <CODE>/^A/</CODE> does not match the 'A' in "an A," but does match it in "An A."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193209">$</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193211">
+Matches end of input or line.</A></P><P><A NAME="1193212">
+For example, <CODE>/t$/</CODE> does not match the 't' in "eater", but does match it in "eat"</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193214">*</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193216">
+Matches the preceding character 0 or more times.</A></P><P><A NAME="1193217">
+For example, <CODE>/bo*/</CODE> matches 'boooo' in "A ghost booooed" and 'b' in "A bird warbled", but nothing in "A goat grunted".</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193219">+</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193221">
+Matches the preceding character 1 or more times. Equivalent to <CODE>{1,}</CODE>.</A></P><P><A NAME="1193222">
+For example, <CODE>/a+/</CODE> matches the 'a' in "candy" and all the a's in "caaaaaaandy."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193224">?</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193226">
+Matches the preceding character 0 or 1 time.</A></P><P><A NAME="1193227">
+For example, <CODE>/e?le?/</CODE> matches the 'el' in "angel" and the 'le' in "angle."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193229">.</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193231">
+(The decimal point) matches any single character except the newline character.</A></P><P><A NAME="1193232">
+For example, <CODE>/.n/</CODE> matches 'an' and 'on' in "nay, an apple is on the tree", but not 'nay'.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193234">(x)</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193236">
+Matches 'x' and remembers the match.</A></P><P><A NAME="1193237">
+For example, <CODE>/(foo)/</CODE> matches and remembers 'foo' in "foo bar." The matched substring can be recalled from the resulting array's elements <CODE>[1]</CODE>, ..., <CODE>[n]</CODE>, or from the predefined <CODE>RegExp</CODE> object's properties <CODE>$1</CODE><I>, ..., </I><CODE>$9</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193239">x|y</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193241">
+Matches either 'x' or 'y'.</A></P><P><A NAME="1193242">
+For example, <CODE>/green|red/</CODE> matches 'green' in "green apple" and 'red' in "red apple."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193244">{n}</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193246">
+Where <CODE>n</CODE> is a positive integer. Matches exactly <CODE>n</CODE> occurrences of the preceding character.</A></P><P><A NAME="1193247">
+For example, <CODE>/a{2}/</CODE> doesn't match the 'a' in "candy," but it matches all of the a's in "caandy," and the first two a's in "caaandy."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193249">{n,}</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193251">
+Where <CODE>n</CODE> is a positive integer. Matches at least <CODE>n</CODE> occurrences of the preceding character.</A></P><P><A NAME="1193252">
+For example, <CODE>/a{2,}</CODE> doesn't match the 'a' in "candy", but matches all of the a's in "caandy" and in "caaaaaaandy."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193254">{n,m}</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193256">
+Where <CODE>n</CODE> and <CODE>m</CODE> are positive integers. Matches at least <CODE>n</CODE> and at most <CODE>m</CODE> occurrences of the preceding character.</A></P><P><A NAME="1193257">
+For example, <CODE>/a{1,3}/</CODE> matches nothing in "cndy", the 'a' in "candy," the first two a's in "caandy," and the first three a's in "caaaaaaandy" Notice that when matching "caaaaaaandy", the match is "aaa", even though the original string had more a's in it.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193259">[xyz]</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193261">
+A character set. Matches any one of the enclosed characters. You can specify a range of characters by using a hyphen.</A></P><P><A NAME="1193262">
+For example, <CODE>[abcd]</CODE> is the same as <CODE>[a-c]</CODE>. They match the 'b' in "brisket" and the 'c' in "ache"<CODE>.</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193264">[^xyz]</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193266">
+A negated or complemented character set. That is, it matches anything that is not enclosed in the brackets. You can specify a range of characters by using a hyphen.</A></P><P><A NAME="1193267">
+For example, <CODE>[^abc]</CODE> is the same as <CODE>[^a-c]</CODE>. They initially match 'r' in "brisket" and 'h' in "chop."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193269">[\b]</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193271">
+Matches a backspace. (Not to be confused with <CODE>\b</CODE>.)</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193273">\b</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193275">
+Matches a word boundary, such as a space. (Not to be confused with <CODE>[\b]</CODE>.)</A></P><P><A NAME="1193276">
+For example, <CODE>/\bn\w/</CODE> matches the 'no' in "noonday";<CODE>/\wy\b/</CODE> matches the 'ly' in "possibly yesterday."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193278">\B</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193280">
+Matches a non-word boundary.</A></P><P><A NAME="1193281">
+For example, <CODE>/\w\Bn/</CODE> matches 'on' in "noonday", and <CODE>/y\B\w/</CODE> matches 'ye' in "possibly yesterday."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193283">\c<I>X</I></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193285">
+Where <I>X</I> is a control character. Matches a control character in a string.</A></P><P><A NAME="1193286">
+For example, <CODE>/\cM/</CODE> matches control-M in a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193288">\d</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193290">
+Matches a digit character. Equivalent to <CODE>[0-9]</CODE>.</A></P><P><A NAME="1193291">
+For example, <CODE>/\d/</CODE> or <CODE>/[0-9]/</CODE> matches '2' in "B2 is the suite number."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193293">\D</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193295">
+Matches any non-digit character. Equivalent to <CODE>[^0-9]</CODE>.</A></P><P><A NAME="1193296">
+For example, <CODE>/\D/</CODE> or <CODE>/[^0-9]/</CODE> matches 'B' in "B2 is the suite number."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193298">\f</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193300">
+Matches a form-feed.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193302">\n</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193304">
+Matches a linefeed.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193306">\r</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193308">
+Matches a carriage return.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193310">\s</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193312">
+Matches a single white space character, including space, tab, form feed, line feed. Equivalent to <CODE>[ \f\n\r\t\v]</CODE>.</A></P><P><A NAME="1193313">
+for example, <CODE>/\s\w*/</CODE> matches ' bar' in "foo bar."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193315">\S</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193317">
+Matches a single character other than white space. Equivalent to <CODE>[^ \f\n\r\t\v]</CODE>.</A></P><P><A NAME="1193318">
+For example, <CODE>/\S/\w*</CODE> matches 'foo' in "foo bar."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193320">\t</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193322">
+Matches a tab</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193324">\v</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193326">
+Matches a vertical tab.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193328">\w</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193330">
+Matches any alphanumeric character including the underscore. Equivalent to <CODE>[A-Za-z0-9_]</CODE>.</A></P><P><A NAME="1193331">
+For example, <CODE>/\w/</CODE> matches 'a' in "apple," '5' in "$5.28," and '3' in "3D."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193333">\W </A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193335">
+Matches any non-word character. Equivalent to <CODE>[^A-Za-z0-9_]</CODE>.</A></P><P><A NAME="1193336">
+For example, <CODE>/\W/</CODE> or <CODE>/[^$A-Za-z0-9_]/</CODE> matches '%' in "50%."</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193338">\<I>n</I></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193340">
+Where <I>n</I> is a positive integer. A back reference to the last substring matching the <I>n</I> parenthetical in the regular expression (counting left parentheses).</A></P><P><A NAME="1193341">
+For example, <CODE>/apple(,)\sorange\1/</CODE> matches 'apple, orange', in "apple, orange, cherry, peach." A more complete example follows this table.</A></P><P><A NAME="1193342">
+<B>Note:</B> If the number of left parentheses is less than the number specified in \<I>n</I>, the \<I>n</I> is taken as an octal escape as described in the next row.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193344">\o<I>octal
+</I>\x<I>hex</I></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193346">
+Where <CODE>\o</CODE><I><CODE>octal</CODE></I> is an octal escape value or <CODE>\x</CODE><I><CODE>hex</CODE></I> is a hexadecimal escape value. Allows you to embed ASCII codes into regular expressions.</A></P>
+
+</TABLE>
+<TABLE>
+<TR><TD>
+</TABLE>
+<A NAME="1193347">
+The literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration. </A>
+<A NAME="1193348">
+The constructor of the regular expression<B> </B>object, for example, <CODE>new&nbsp;RegExp("ab+c")</CODE>, provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input. Once you have a defined regular expression, and if the regular expression is used throughout the script and may change, you can use the
+</a> <A HREF="regexp.html#1194687"><CODE>compile</CODE></A> method to compile a new regular expression for efficient reuse.
+<A NAME="1193352">
+A separate predefined <CODE>RegExp</CODE> object is available in each window; that is, each separate thread of JavaScript execution gets its own <CODE>RegExp</CODE> object. Because each script runs to completion without interruption in a thread, this assures that different scripts do not overwrite values of the <CODE>RegExp</CODE> object.</A>
+<A NAME="1193356">
+The predefined <CODE>RegExp</CODE> object contains the static properties </a> <A HREF="regexp.html#1193704"><CODE>input</CODE></A>, <A HREF="regexp.html#1193831"><CODE>multiline</CODE></A>, <A HREF="regexp.html#1193768"><CODE>lastMatch</CODE></A>, <A HREF="regexp.html#1193789"><CODE>lastParen</CODE></A>, <A HREF="regexp.html#1193810"><CODE>leftContext</CODE></A>, <A HREF="regexp.html#1193854"><CODE>rightContext</CODE></A>, and <CODE>$1</CODE> through <CODE>$9</CODE>. The <A HREF="regexp.html#1193704"><CODE>input</CODE></A> and <A HREF="regexp.html#1193831"><CODE>multiline</CODE></A> properties can be preset. The values for the other static properties are set after execution of the <A HREF="regexp.html#1194735"><CODE>exec</CODE></A> and <A HREF="regexp.html#1194128"><CODE>test</CODE></A> methods of an individual regular expression object, and after execution of the <A HREF="string.html#1205239"><CODE>match</CODE></A> and <A HREF="string.html#1194258"><CODE>replace</CODE></A> methods of <A HREF="string.html#1193137"><CODE>String</CODE></A>.
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193393">
+ Property Summary
+</A></H4>
+
+<A NAME="1193394">
+Note that several of the <CODE>RegExp</CODE> properties have both long and short (Perl-like) names. Both names always refer to the same value. Perl is the programming language from which JavaScript modeled its regular expressions.</A>
+<A NAME="1203846">
+<P>&nbsp;
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TH VALIGN=baseline ALIGN=left></a><B><A NAME="1203856">
+Property</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1203858">
+Description</A></b>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204572"></a><A HREF="regexp.html#1193586"><CODE>$1, ..., $9</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204574">
+Parenthesized substring matches, if any.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204579"></a><A HREF="regexp.html#1193616"><CODE>$_</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204584">
+See <A HREF="regexp.html#1193704"><CODE>input</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204589"></a><A HREF="regexp.html#1193622"><CODE>$*</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204594">
+See <A HREF="regexp.html#1193831"><CODE>multiline</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204599"></a><A HREF="regexp.html#1193628"><CODE>$&amp;</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204604">
+See <A HREF="regexp.html#1193768"><CODE>lastMatch</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204609"></a><A HREF="regexp.html#1193634"><CODE>$+</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204614">
+See <A HREF="regexp.html#1193789"><CODE>lastParen</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204619"></a><A HREF="regexp.html#1193640"><CODE>$`</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204624">
+See <A HREF="regexp.html#1193810"><CODE>leftContext</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204629"></a><A HREF="regexp.html#1193646"><CODE>$'</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204634">
+See <A HREF="regexp.html#1193854"><CODE>rightContext</CODE></A>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204639"></a><A HREF="regexp.html#1200248"><CODE>constructor</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204641">
+Specifies the function that creates an object's prototype.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204646"></a><A HREF="regexp.html#1194562"><CODE>global</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204648">
+Whether or not to test the regular expression against all possible matches in a string, or only against the first.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204653"></a><A HREF="regexp.html#1193678"><CODE>ignoreCase</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204655">
+Whether or not to ignore case while attempting a match in a string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204660"></a><A HREF="regexp.html#1193704"><CODE>input</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204662">
+The string against which a regular expression is matched.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204667"></a><A HREF="regexp.html#1193732"><CODE>lastIndex</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204669">
+The index at which to start the next match. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204674"></a><A HREF="regexp.html#1193768"><CODE>lastMatch</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204676">
+The last matched characters.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1204681"></a><A HREF="regexp.html#1193789"><CODE>lastParen</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1204683">
+The last parenthesized substring match, if any.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1205370"></a><A HREF="regexp.html#1193810"><CODE>leftContext</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1205372">
+The substring preceding the most recent match.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1205377"></a><A HREF="regexp.html#1193831"><CODE>multiline</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1205379">
+Whether or not to search in strings across multiple lines.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1205384"></a><A HREF="regexp.html#1200174"><CODE>prototype</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1205386">
+Allows the addition of properties to all objects.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1203860">
+    </a>
+<A HREF="regexp.html#1193854"><CODE>rightContext</CODE></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1203862">
+The substring following the most recent match.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1203876">
+    </a>
+<A HREF="regexp.html#1193875"><CODE>source</CODE></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1203878">
+The text of the pattern.</A></P>
+
+</TABLE>
+<TABLE>
+<TR><TD>
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193537">
+ Method Summary
+</A></H4>
+
+<A NAME="1193571">
+<P>&nbsp;
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TH VALIGN=baseline ALIGN=left></a><B><A NAME="1193540">
+Method</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1193542">
+Description</A></b>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193547"></a><A HREF="regexp.html#1194687"><CODE>compile</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193549">
+Compiles a regular expression object.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193554"></a><A HREF="regexp.html#1194735"><CODE>exec</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193556">
+Executes a search for a match in its string parameter. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193561"></a><A HREF="regexp.html#1194128"><CODE>test</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193563">
+Tests for a match in its string parameter. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193568"></a><A HREF="regexp.html#1194174"><CODE>toSource</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193570">
+Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the <A HREF="object.html#1193320"><CODE>Object.toSource</CODE></A> method.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1199185"></a><A HREF="regexp.html#1199205"><CODE>toString</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1199187">
+Returns a string representing the specified object. Overrides the <A HREF="object.html#1193350"><CODE>Object.toString</CODE></A> method.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1199174"></a><A HREF="regexp.html#1199254"><CODE>valueOf</CODE></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1199176">
+Returns the primitive value of the specified object. Overrides the <A HREF="object.html#1193540"><CODE>Object.valueOf</CODE></A> method.</A></P>
+
+</TABLE>
+<TABLE>
+<TR><TD>
+</TABLE>
+<A NAME="1200128">
+In addition, this object inherits the </a> <A HREF="object.html#1193628"><CODE>watch</CODE></A> and <A HREF="object.html#1193499"><CODE>unwatch</CODE></A> methods from <A HREF="object.html#1193136"><CODE>Object</CODE></A>.
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193572">
+ Examples
+</A></H4>
+
+<A NAME="1193574">
+<B>Example 1.</B> The following script uses the <CODE>replace</CODE> method to switch the words in the string. For the replacement text, the script uses the values of the <CODE>$1</CODE> and <CODE>$2</CODE><I> </I>properties of the global <CODE>RegExp</CODE> object. Note that the <CODE>RegExp</CODE> object name is not be prepended to the <CODE>$</CODE> properties when they are passed as the second argument to the <CODE>replace</CODE> method. </A>
+<PRE><A NAME="1193575">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+re = /(\w+)\s(\w+)/;
+str = &quot;John Smith&quot;;
+newstr=str.replace(re, &quot;$2, $1&quot;);
+document.write(newstr)
+&lt;/SCRIPT&gt;</A></PRE><A NAME="1193576">
+This displays "Smith, John". </A>
+<A NAME="1193578">
+<B>Example 2.</B> In the following example, <CODE>RegExp.input</CODE> is set by the Change event. In the <CODE>getInfo</CODE> function, the <CODE>exec</CODE> method uses the value of <CODE>RegExp.input</CODE> as its argument. Note that <CODE>RegExp</CODE> is prepended to the <CODE>$</CODE> properties. </A>
+<PRE><A NAME="1193579">&lt;HTML&gt;</A></PRE><PRE><A NAME="1193580">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+function getInfo() {
+&nbsp;&nbsp;&nbsp;re = /(\w+)\s(\d+)/;
+&nbsp;&nbsp;&nbsp;re.exec();
+&nbsp;&nbsp;&nbsp;window.alert(RegExp.$1 + &quot;, your age is &quot; + RegExp.$2);
+}
+&lt;/SCRIPT&gt;</A></PRE><PRE><A NAME="1193581">Enter your first name and your age, and then press Enter.</A></PRE><PRE><A NAME="1193582">&lt;FORM&gt;
+&lt;INPUT TYPE:&quot;TEXT&quot; NAME=&quot;NameAge&quot; onChange=&quot;getInfo(this);&quot;&gt;
+&lt;/FORM&gt;</A></PRE><PRE><A NAME="1193583">&lt;/HTML&gt;</A></PRE>
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193586">
+$1, ..., $9
+</A></H2>
+
+<A NAME="1193603">
+Properties that contain parenthesized substring matches, if any. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193589">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193594">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193596">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193600">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193602">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193604">
+ Description
+</A></H4>
+
+<A NAME="1193605">
+Because <CODE>input</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.input</CODE>.</A>
+<A NAME="1193606">
+The number of possible parenthesized substrings is unlimited, but the predefined <CODE>RegExp</CODE> object can only hold the last nine. You can access all parenthesized substrings through the returned array's indexes.</A>
+<A NAME="1193607">
+These properties can be used in the replacement text for the </a> <A HREF="string.html#1194258"><CODE>String.replace</CODE></A> method. When used this way, do not prepend them with <CODE>RegExp</CODE>. The example below illustrates this. When parentheses are not included in the regular expression, the script interprets <I><CODE>$n</CODE></I>'s literally (where <I><CODE>n</CODE></I> is a positive integer).
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193611">
+ Examples
+</A></H4>
+
+<A NAME="1193612">
+The following script uses the <CODE>replace</CODE> method to switch the words in the string. For the replacement text, the script uses the values of the <CODE>$1</CODE> and <CODE>$2</CODE><I> </I>properties of the global <CODE>RegExp</CODE> object. Note that the <CODE>RegExp</CODE> object name is not be prepended to the <CODE>$</CODE> properties when they are passed as the second argument to the <CODE>replace</CODE> method. </A>
+<PRE><A NAME="1193613">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+re = /(\w+)\s(\w+)/;
+str = &quot;John Smith&quot;;
+newstr=str.replace(re, &quot;$2, $1&quot;);
+document.write(newstr)
+&lt;/SCRIPT&gt;</A></PRE><A NAME="1193614">
+This displays "Smith, John". </A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193616">
+$_
+</A></H2>
+
+<A NAME="1193620">
+See </a> <A HREF="regexp.html#1193704"><CODE>input</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193622">
+$*
+</A></H2>
+
+<A NAME="1193626">
+See </a> <A HREF="regexp.html#1193831"><CODE>multiline</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193628">
+$&amp;
+</A></H2>
+
+<A NAME="1193632">
+See </a> <A HREF="regexp.html#1193768"><CODE>lastMatch</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193634">
+$+
+</A></H2>
+
+<A NAME="1193638">
+See </a> <A HREF="regexp.html#1193789"><CODE>lastParen</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193640">
+$`
+</A></H2>
+
+<A NAME="1193644">
+See </a> <A HREF="regexp.html#1193810"><CODE>leftContext</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193646">
+$'
+</A></H2>
+
+<A NAME="1193650">
+See </a> <A HREF="regexp.html#1193854"><CODE>rightContext</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1194687">
+compile
+</A></H2>
+
+<A NAME="1194700">
+Compiles a regular expression object during execution of a script. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194690">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194695">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194697">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194699">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1201661">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1201662">regexp.compile(<I>pattern</I>[, <I>flags</I>])</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1201663">
+ Parameters
+</A></H4>
+
+<A NAME="1194720">
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left></A><PRE><A NAME="1194706">regexp</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194708">
+<CODE>The </CODE>name of the regular expression. It can be a variable name or a literal.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194710">pattern</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194712">
+A string containing the text of the regular expression. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194714">flags</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194716">
+If specified, flags can have one of the following values:</A></P>
+<ul><LI><A NAME="1194717">
+<CODE>"g"</CODE>: global match</A><LI><A NAME="1194718">
+<CODE>"i"</CODE>: ignore case</A><LI><A NAME="1194719">
+<CODE>"gi"</CODE>: both global match and ignore case</A></ul>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194721">
+ Description
+</A></H4>
+
+<A NAME="1194722">
+Use the <CODE>compile</CODE> method to compile a regular expression created with the <CODE>RegExp</CODE> constructor function. This forces compilation of the regular expression once only which means the regular expression isn't compiled each time it is encountered. Use the <CODE>compile</CODE> method when you know the regular expression will remain constant (after getting its pattern) and will be used repeatedly throughout the script. </A>
+<A NAME="1194723">
+You can also use the <CODE>compile</CODE> method to change the regular expression during execution. For example, if the regular expression changes, you can use the <CODE>compile</CODE> method to recompile the object for more efficient repeated use.</A>
+<A NAME="1194727">
+Calling this method changes the value of the regular expression's </a> <A HREF="regexp.html#1193875"><CODE>source</CODE></A>, <A HREF="regexp.html#1194562"><CODE>global</CODE></A>, and <A HREF="regexp.html#1193678"><CODE>ignoreCase</CODE></A> properties.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1200248">
+constructor
+</A></H2>
+
+<A NAME="1200249">
+Specifies the function that creates an object's prototype. Note that the value of this property is a reference to the function itself, not a string containing the function's name.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200252">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200257">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200259">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200261">
+JavaScript 1.1, NES 2.0</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200263">
+<I>ECMA version</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200265">
+ECMA-262</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1200266">
+ Description
+</A></H4>
+
+<A NAME="1200270">
+See </a> <A HREF="object.html#1193229"><CODE>Object.constructor</CODE></A>.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1194735">
+exec
+</A></H2>
+
+<A NAME="1194748">
+Executes the search for a match in a specified string. Returns a result array.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194738">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194743">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194745">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194747">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194749">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1194750"><I>regexp</I>.exec([<I>str</I>])
+<I>regexp</I>([<I>str</I>])</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1194751">
+ Parameters
+</A></H4>
+
+<A NAME="1194764">
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left></A><PRE><A NAME="1194754">regexp</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194756">
+<CODE>The </CODE>name of the regular expression. It can be a variable name or a literal. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194758">str</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194760">
+The string against which to match the regular expression. If omitted, the value of <A HREF="regexp.html#1193704"><CODE>RegExp.input</CODE></A> is used.</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194765">
+ Description
+</A></H4>
+
+<A NAME="1194766">
+As shown in the syntax description, a regular expression's <CODE>exec</CODE> method can be called either directly, (with <CODE>regexp.exec(str)</CODE>) or indirectly (with <CODE>regexp(str)</CODE>).</A>
+<A NAME="1194770">
+If you are executing a match simply to find <CODE>true</CODE> or <CODE>false</CODE>, use the
+</a> <A HREF="regexp.html#1194128"><CODE>test</CODE></A> method or the <CODE>String</CODE> <A HREF="string.html#1194332"><CODE>search</CODE></A> method.
+<A NAME="1194774">
+If the match succeeds, the <CODE>exec</CODE> method returns an array and updates properties of the regular expression object and the predefined regular expression object, <CODE>RegExp</CODE>. If the match fails, the <CODE>exec</CODE> method returns <CODE>null</CODE>. </A>
+<A NAME="1194775">
+Consider the following example: </A>
+<PRE><A NAME="1194776">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+//Match one d followed by one or more b's followed by one d
+//Remember matched b's and the following d
+//Ignore case
+myRe=/d(b+)(d)/ig;
+myArray = myRe.exec(&quot;cdbBdbsbz&quot;);
+&lt;/SCRIPT&gt;</A></PRE><A NAME="1194898">
+The following table shows the results for this script:</A>
+<A NAME="1195304">
+<P>&nbsp;
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TH VALIGN=baseline ALIGN=left></a><B><A NAME="1194779">
+Object</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1194781">
+Property/Index</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1194783">
+Description</A></b><TH VALIGN=baseline ALIGN=left><B><A NAME="1194785">
+Example</A></b>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=1 ROWSPAN=5><PRE><A NAME="1194787">myArray</A></PRE><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194789"></A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194791">
+The contents of <CODE>myArray</CODE></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194793">
+<CODE>["dbBd", "bB", "d"]</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194797">index</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194799">
+The 0-based index of the match in the string</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194801">
+<CODE>1</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194805">input</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194807">
+The original string</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194809">
+<CODE>cdbBdbsbz</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194813">[0]</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194815">
+The last matched characters</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194817">
+<CODE>dbBd</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194821">[1], ...[n]</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194823">
+The parenthesized substring matches, if any. The number of possible parenthesized substrings is unlimited.</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194825">
+<CODE>[1] = bB<br>[2] = d</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=1 ROWSPAN=4><PRE><A NAME="1194827">myRe</A></PRE><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194829">lastIndex</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194831">
+The index at which to start the next match.</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194833">
+<CODE>5</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194837">ignoreCase</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194839">
+Indicates if the <CODE>"i"</CODE> flag was used to ignore case</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194841">
+<CODE>true</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194845">global</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194847">
+Indicates if the <CODE>"g"</CODE> flag was used for a global match</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194849">
+<CODE>true</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194853">source</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194855">
+The text of the pattern</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194857">
+<CODE>d(b+)(d)</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=1 ROWSPAN=5><PRE><A NAME="1194859">RegExp</A></PRE><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194861">lastMatch
+$&amp;</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194863">
+The last matched characters</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194865">
+<CODE>dbBd</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194869">leftContext
+$\Q</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194871">
+The substring preceding the most recent match</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194873">
+<CODE>c</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194877">rightContext
+$'</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194879">
+The substring following the most recent match</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194881">
+<CODE>bsbz</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194885">$1, ...$9</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194887">
+The parenthesized substring matches, if any. The number of possible parenthesized substrings is unlimited, but <CODE>RegExp</CODE> can only hold the last nine.</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194889">
+<CODE>$1 = bB&nbsp; <br>$2 = d</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194893">lastParen&nbsp; 
+$+</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194895">
+The last parenthesized substring match, if any.</A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194897">
+<CODE>d</CODE></A></P>
+
+</TABLE>
+<TABLE>
+<TR><TD>
+</TABLE>
+<A NAME="1194899">
+If your regular expression uses the <CODE>"g"</CODE> flag, you can use the <CODE>exec</CODE> method multiple times to find successive matches in the same string. When you do so, the search starts at the substring of <CODE>str</CODE> specified by the regular expression's <CODE>lastIndex</CODE> property. For example, assume you have this script:</A>
+<PRE><A NAME="1194900">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+myRe=/ab*/g;
+str = &quot;abbcdefabh&quot;
+myArray = myRe.exec(str);
+document.writeln(&quot;Found &quot; + myArray[0] + 
+&nbsp;&nbsp;&nbsp;&quot;. Next match starts at &quot; + myRe.lastIndex)
+mySecondArray = myRe.exec(str);
+document.writeln(&quot;Found &quot; + mySecondArray[0] + 
+&nbsp;&nbsp;&nbsp;&quot;. Next match starts at &quot; + myRe.lastIndex)
+&lt;/SCRIPT&gt;</A></PRE><A NAME="1194901">
+This script displays the following text:</A>
+<A NAME="1194902">
+Found <CODE>abb</CODE>. Next match starts at 3<br>Found ab. Next match starts at 9</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194903">
+ Examples
+</A></H4>
+
+<A NAME="1194904">
+In the following example, the user enters a name and the script executes a match against the input. It then cycles through the array to see if other names match the user's name. </A>
+<A NAME="1194905">
+This script assumes that first names of registered party attendees are preloaded into the array A, perhaps by gathering them from a party database. </A>
+<PRE><A NAME="1194906">&lt;HTML&gt;</A></PRE><PRE><A NAME="1194907">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+A = [&quot;Frank&quot;, &quot;Emily&quot;, &quot;Jane&quot;, &quot;Harry&quot;, &quot;Nick&quot;, &quot;Beth&quot;, &quot;Rick&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Terrence&quot;, &quot;Carol&quot;, &quot;Ann&quot;, &quot;Terry&quot;, &quot;Frank&quot;, &quot;Alice&quot;, &quot;Rick&quot;, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Bill&quot;, &quot;Tom&quot;, &quot;Fiona&quot;, &quot;Jane&quot;, &quot;William&quot;, &quot;Joan&quot;, &quot;Beth&quot;]</A></PRE><PRE><A NAME="1194908">function lookup() {
+&nbsp;&nbsp;&nbsp;firstName = /\w+/i();
+&nbsp;&nbsp;&nbsp;if (!firstName)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.alert (RegExp.input + &quot; isn't a name!&quot;);
+&nbsp;&nbsp;&nbsp;else {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (i=0; i&lt;A.length; i++)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (firstName[0].toLowerCase() == A[i].toLowerCase()) count++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (count ==1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = &quot; other has &quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = &quot; others have &quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.alert (&quot;Thanks, &quot; + count + midstring + &quot;the same name!&quot;)
+&nbsp;&nbsp;&nbsp;}
+}</A></PRE><PRE><A NAME="1194909">&lt;/SCRIPT&gt;</A></PRE><PRE><A NAME="1194910">Enter your first name and then press Enter.</A></PRE><PRE><A NAME="1194911">&lt;FORM&gt; &lt;INPUT TYPE:&quot;TEXT&quot; NAME=&quot;FirstName&quot; onChange=&quot;lookup(this);&quot;&gt; &lt;/FORM&gt;</A></PRE><PRE><A NAME="1194912">&lt;/HTML&gt;</A></PRE>
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1194562">
+global
+</A></H2>
+
+<A NAME="1193669">
+Whether or not the <CODE>"g"</CODE> flag is used with the regular expression. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193655">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193660">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193662">
+<I>Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193666">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193668">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193670">
+ Description
+</A></H4>
+
+<A NAME="1193671">
+<CODE>global</CODE> is a property of an individual regular expression object.</A>
+<A NAME="1193672">
+The value of <CODE>global</CODE> is <CODE>true</CODE> if the <CODE>"g"</CODE> flag was used; otherwise, <CODE>false</CODE>. The <CODE>"g"</CODE> flag indicates that the regular expression should be tested against all possible matches in a string. </A>
+<A NAME="1193676">
+You cannot change this property directly. However, calling the </a> <A HREF="regexp.html#1194687"><CODE>compile</CODE></A> method changes the value of this property.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193678">
+ignoreCase
+</A></H2>
+
+<A NAME="1193695">
+Whether or not the <CODE>"i"</CODE> flag is used with the regular expression. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193681">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193686">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193688">
+<I>Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193692">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193694">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193696">
+ Description
+</A></H4>
+
+<A NAME="1193697">
+<CODE>ignoreCase</CODE> is a property of an individual regular expression object.</A>
+<A NAME="1193698">
+The value of <CODE>ignoreCase</CODE> is <CODE>true</CODE> if the <CODE>"i"</CODE> flag was used; otherwise, <CODE>false</CODE>. The <CODE>"i"</CODE> flag indicates that case should be ignored while attempting a match in a string.</A>
+<A NAME="1193702">
+You cannot change this property directly. However, calling the </a> <A HREF="regexp.html#1194687"><CODE>compile</CODE></A> method changes the value of this property.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193704">
+input
+</A></H2>
+
+<A NAME="1193705">
+The string against which a regular expression is matched. <CODE>$_</CODE> is another name for the same property. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193708">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193713">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193715">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193719">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193721">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193722">
+ Description
+</A></H4>
+
+<A NAME="1193723">
+Because <CODE>input</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.input</CODE>.</A>
+<A NAME="1193724">
+If no string argument is provided to a regular expression's <CODE>exec</CODE> or <CODE>test</CODE> methods, and if <CODE>RegExp.input</CODE> has a value, its value is used as the argument to that method.</A>
+<A NAME="1193725">
+The script or the browser can preset the <CODE>input</CODE> property. If preset and if no string argument is explicitly provided, the value of <CODE>input</CODE> is used as the string argument to the <CODE>exec</CODE> or <CODE>test</CODE> methods of the regular expression object. <CODE>input</CODE> is set by the browser in the following cases: </A>
+<ul><LI><A NAME="1193726">
+When an event handler is called for a <CODE>TEXT</CODE> form element, <CODE>input</CODE> is set to the value of the contained text. </A></LI>
+<LI><A NAME="1193727">
+When an event handler is called for a <CODE>TEXTAREA</CODE> form element, <CODE>input</CODE> is set to the value of the contained text. Note that <CODE>multiline</CODE> is also set to <CODE>true</CODE> so that the match can be executed over the multiple lines of text. </A></LI>
+<LI><A NAME="1193728">
+When an event handler is called for a <CODE>SELECT</CODE> form element, <CODE>input</CODE> is set to the value of the selected text. </A></LI>
+<LI><A NAME="1193729">
+When an event handler is called for a <CODE>Link</CODE> object, <CODE>input</CODE> is set to the value of the text between <CODE>&lt;A HREF=...&gt;</CODE> and <CODE>&lt;/A&gt;</CODE>. </A></LI>
+</ul><A NAME="1193730">
+The value of the <CODE>input</CODE> property is cleared after the event handler completes.</A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193732">
+lastIndex
+</A></H2>
+
+<A NAME="1193733">
+A read/write integer property that specifies the index at which to start the next match. <TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193736">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193741">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193743">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193745">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193746">
+ Description
+</A></H4>
+
+<A NAME="1193747">
+<CODE>lastIndex</CODE> is a property of an individual regular expression object.</A>
+<A NAME="1193748">
+This property is set only if the regular expression used the <CODE>"g"</CODE> flag to indicate a global search. The following rules apply: </A>
+<ul><LI><A NAME="1193749">
+If <CODE>lastIndex</CODE> is greater than the length of the string, <CODE>regexp.test</CODE> and <CODE>regexp.exec</CODE> fail, and <CODE>lastIndex</CODE> is set to <CODE>0</CODE>.</A></LI>
+<LI><A NAME="1193750">
+If <CODE>lastIndex</CODE> is equal to the length of the string and if the regular expression matches the empty string, then the regular expression matches input starting at <CODE>lastIndex</CODE><I>.</I> </A></LI>
+<LI><A NAME="1193751">
+If <CODE>lastIndex</CODE> is equal to the length of the string and if the regular expression does not match the empty string, then the regular expression mismatches input, and <CODE>lastIndex</CODE> is reset to 0. </A></LI>
+<LI><A NAME="1193752">
+Otherwise, <CODE>lastIndex</CODE> is set to the next position following the most recent match. </A></LI>
+</ul><A NAME="1193766">
+For example, consider the following sequence of statements:</A>
+<A NAME="1195330">
+<P>&nbsp;
+<TABLE BORDER="2" CELLPADDING=5>
+<TR><TD VALIGN=baseline ALIGN=left></A><PRE><A NAME="1193755">re = /(hi)?/g</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193757">
+Matches the empty string.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193759">re(&quot;hi&quot;)</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193761">
+Returns <CODE>["hi", "hi"]</CODE> with <CODE>lastIndex</CODE> equal to <CODE>2</CODE>.</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1193763">re(&quot;hi&quot;)</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1193765">
+Returns <CODE>[""]</CODE>, an empty array whose zeroth element is the match string. In this case, the empty string because <CODE>lastIndex</CODE> was 2 (and still is 2) and <CODE>"hi"</CODE> has length 2.</A></P>
+
+</TABLE>
+<TABLE>
+<TR><TD>
+</TABLE>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193768">
+lastMatch
+</A></H2>
+
+<A NAME="1193785">
+The last matched characters. <CODE>$&amp;</CODE> is another name for the same property.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193771">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193776">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193778">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193782">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193784">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193786">
+ Description
+</A></H4>
+
+<A NAME="1193787">
+Because <CODE>lastMatch</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.lastMatch</CODE>.</A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193789">
+lastParen
+</A></H2>
+
+<A NAME="1193790">
+The last parenthesized substring match, if any. <CODE>$+</CODE> is another name for the same property.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193793">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193798">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193800">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193804">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193806">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193807">
+ Description
+</A></H4>
+
+<A NAME="1193808">
+Because <CODE>lastParen</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.lastParen</CODE>.</A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193810">
+leftContext
+</A></H2>
+
+<A NAME="1193811">
+The substring preceding the most recent match. <CODE>$` </CODE>is another name for the same property.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193814">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193819">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193821">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193825">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193827">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193828">
+ Description
+</A></H4>
+
+<A NAME="1193829">
+Because <CODE>leftContext</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.leftContext</CODE>.</A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193831">
+multiline
+</A></H2>
+
+<A NAME="1193832">
+Reflects whether or not to search in strings across multiple lines. $* is another name for the same property.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193835">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193840">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193842">
+<I>Static</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193846">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193848">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193849">
+ Description
+</A></H4>
+
+<A NAME="1193850">
+Because <CODE>multiline</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.multiline</CODE>.</A>
+<A NAME="1193851">
+The value of <CODE>multiline</CODE> is <CODE>true</CODE> if multiple lines are searched, <CODE>false</CODE> if searches must stop at line breaks. </A>
+<A NAME="1193852">
+The script or the browser can preset the <CODE>multiline</CODE> property. When an event handler is called for a <CODE>TEXTAREA</CODE> form element, the browser sets <CODE>multiline</CODE> to <CODE>true</CODE>. <CODE>multiline</CODE> is cleared after the event handler completes. This means that, if you've preset multiline to <CODE>true</CODE>, it is reset to <CODE>false</CODE> after the execution of any event handler. </A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1200174">
+prototype
+</A></H2>
+
+<A NAME="1200175">
+Represents the prototype for this class. You can use the prototype to add properties or methods to all instances of a class. For information on prototypes, see
+</a> <A HREF="function.html#1193426"><CODE>Function.prototype</CODE></A>.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200181">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200186">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200188">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200190">
+JavaScript 1.1, NES 2.0</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1200192">
+<I>ECMA version</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1200194">
+ECMA-262</A></P>
+
+</TABLE>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193854">
+rightContext
+</A></H2>
+
+<A NAME="1193855">
+The substring following the most recent match. <CODE>$' </CODE>is another name for the same property.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193858">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193863">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193865">
+<I>Static, Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193869">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193871">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193872">
+ Description
+</A></H4>
+
+<A NAME="1193873">
+Because <CODE>rightContext</CODE> is static, it is not a property of an individual regular expression object. Instead, you always use it as <CODE>RegExp.rightContext</CODE>.</A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1193875">
+source
+</A></H2>
+
+<A NAME="1193876">
+A read-only property that contains the text of the pattern, excluding the forward slashes and <CODE>"g"</CODE> or <CODE>"i"</CODE> flags.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193879">
+<I>Property of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193884">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left COLSPAN=2 ROWSPAN=1><P><A NAME="1193886">
+<I>Read-only</I></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1193890">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1193892">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1193893">
+ Description
+</A></H4>
+
+<A NAME="1193894">
+<CODE>source</CODE> is a property of an individual regular expression object.</A>
+<A NAME="1193898">
+You cannot change this property directly. However, calling the </a> <A HREF="regexp.html#1194687"><CODE>compile</CODE></A> method changes the value of this property.
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1194128">
+test
+</A></H2>
+
+<A NAME="1194129">
+Executes the search for a match between a regular expression and a specified string. Returns <CODE>true</CODE> or <CODE>false</CODE>.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194132">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194137">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194139">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194141">
+JavaScript 1.2, NES 3.0</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194142">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1194143"><I>regexp</I>.test([<I>str</I>])</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1194144">
+ Parameters
+</A></H4>
+
+<A NAME="1194157">
+<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left></A><PRE><A NAME="1194147">regexp</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194149">
+<CODE>The </CODE>name of the regular expression. It can be a variable name or a literal. </A></P>
+<TR><TD VALIGN=baseline ALIGN=left><PRE><A NAME="1194151">str</A></PRE><TD VALIGN=baseline ALIGN=left><P><A NAME="1194153">
+The string against which to match the regular expression. If omitted, the value of <A HREF="regexp.html#1193704"><CODE>RegExp.input</CODE></A> is used.</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194158">
+ Description
+</A></H4>
+
+<A NAME="1194159">
+When you want to know whether a pattern is found in a string use the <CODE>test</CODE> method (similar to the
+</a> <A HREF="string.html#1194332"><CODE>String.search</CODE></A> method); for more information (but slower execution) use the <A HREF="regexp.html#1194735"><CODE>exec</CODE></A> method (similar to the <A HREF="string.html#1205239"><CODE>String.match</CODE></A> method).
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194169">
+ Example
+</A></H4>
+
+<A NAME="1194170">
+The following example prints a message which depends on the success of the test:</A>
+<PRE><A NAME="1194171">function testinput(re, str){
+&nbsp;&nbsp;&nbsp;if (re.test(str))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = &quot; contains &quot;;
+&nbsp;&nbsp;&nbsp;else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;midstring = &quot; does not contain &quot;;
+&nbsp;&nbsp;&nbsp;document.write (str + midstring + re.source);
+}</A></PRE>
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1194174">
+toSource
+</A></H2>
+
+<A NAME="1194176">
+Returns a string representing the source code of the object.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194179">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194184">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1194186">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1194188">
+JavaScript 1.3</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194189">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1194190">toSource()</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1194191">
+ Parameters
+</A></H4>
+
+<A NAME="1194192">
+None</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1194193">
+ Description
+</A></H4>
+
+<A NAME="1201585">
+The <CODE>toSource</CODE> method returns the following values:</A>
+<ul><LI><A NAME="1201586">
+For the built-in <CODE>RegExp</CODE> object, <CODE>toSource</CODE> returns the following string indicating that the source code is not available:
+</A></LI><PRE><A NAME="1201587">&nbsp;&nbsp;&nbsp;function Boolean() {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[native code]
+&nbsp;&nbsp;&nbsp;}</A></PRE><LI><A NAME="1201588">
+For instances of <CODE>RegExp</CODE>, <CODE>toSource</CODE> returns a string representing the source code.
+</A></LI></ul><A NAME="1201589">
+This method is usually called internally by JavaScript and not explicitly in code.</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199455">
+ See also
+</A></H4>
+
+<A NAME="1199459">
+</a>
+<A HREF="object.html#1193320"><CODE>Object.toSource</CODE></A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1199205">
+toString
+</A></H2>
+
+<A NAME="1199222">
+Returns a string representing the specified object.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199208">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199213">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199215">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199217">
+JavaScript 1.1, NES 2.0</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199219">
+<I>ECMA version</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199221">
+ECMA-262</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199223">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1199224">toString()</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1199225">
+ Parameters
+</A></H4>
+
+<A NAME="1199226">
+None.</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199227">
+ Description
+</A></H4>
+
+<A NAME="1199234">
+The </a> <A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A> object overrides the <CODE>toString</CODE> method of the <A HREF="object.html#1193136"><CODE>Object</CODE></A> object; it does not inherit <A HREF="object.html#1193350"><CODE>Object.toString</CODE></A>. For <A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A> objects, the <CODE>toString</CODE> method returns a string representation of the object.
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199500">
+ Examples
+</A></H4>
+
+<A NAME="1199501">
+The following example displays the string value of a RegExp object:</A>
+<PRE><A NAME="1199512">myExp = new RegExp(&quot;a+b+c&quot;);
+alert(myExp.toString())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displays &quot;/a+b+c/&quot;</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1199247">
+ See also
+</A></H4>
+
+<A NAME="1199251">
+</a>
+<A HREF="object.html#1193350"><CODE>Object.toString</CODE></A>
+
+<HR><H2><A NAME="Head2Ref;"></A>
+<A NAME="1199254">
+valueOf
+</A></H2>
+
+<A NAME="1199271">
+Returns the primitive value of a RegExp object.<TABLE BORDER="0">
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199257">
+<I>Method of</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199262">
+    </a>
+<A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199264">
+<I>Implemented in</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199266">
+JavaScript 1.1</A></P>
+<TR><TD VALIGN=baseline ALIGN=left><P><A NAME="1199268">
+<I>ECMA version</I></A></P><TD VALIGN=baseline ALIGN=left><P><A NAME="1199270">
+ECMA-262</A></P>
+
+</TABLE>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199272">
+ Syntax
+</A></H4>
+
+<PRE><A NAME="1199273">valueOf()</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1199274">
+ Parameters
+</A></H4>
+
+<A NAME="1199275">
+None</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199276">
+ Description
+</A></H4>
+
+<A NAME="1199283">
+The <CODE>valueOf</CODE> method of </a> <A HREF="regexp.html#1193136"><CODE>RegExp</CODE></A> returns the primitive value of a RegExp object as a string data type. This value is equivalent to <A HREF="regexp.html#1199205"><CODE>RegExp.toString</CODE></A>.
+<A NAME="1199290">
+This method is usually called internally by JavaScript and not explicitly in code.</A>
+
+<H4><A NAME="Head3;"></A>
+<A NAME="1199291">
+ Examples
+</A></H4>
+
+<PRE><A NAME="1199531">myExp = new RegExp(&quot;a+b+c&quot;);
+alert(myExp.valueOf())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displays &quot;/a+b+c/&quot;</A></PRE>
+<H4><A NAME="Head3;"></A>
+<A NAME="1199293">
+ See also
+</A></H4>
+
+<A NAME="1199297">
+</a>
+<A HREF="regexp.html#1199205"><CODE>RegExp.toString</CODE></A>, <A HREF="object.html#1193540"><CODE>Object.valueOf</CODE></A>
+
+<HR>
+
+<FONT SIZE=-1><A HREF="index.html">Table of Contents</A> | <A HREF="radio.html">Previous</A>
+ | <A HREF="reset.html">Next</A>
+ | <A HREF="bklast.html">Index</A>
+</FONT>
+</body>
+</html>

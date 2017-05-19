@@ -1,0 +1,123 @@
+body {
+	background-color: #FFC;
+}
+
+h3 {
+	color: #00F;
+}
+
+h4 {
+	color: #000;
+}
+
+table td {
+	vertical-align: top;
+}
+
+.cellheader {
+	text-align: left;
+	font-weight: bold;
+	color: #06F;
+}
+.indent20 {
+	margin-left: 20px;
+}
+.indent30 {
+	margin-left: 30px;
+}
+.bold {
+	font-weight: bold;
+}
+
+toolbarbutton {
+	width: 28px;
+	height: auto;
+}
+toolbarbutton.clearlist {
+	list-style-image: url("chrome://saveimages/skin/SIclearList.png");
+	margin: auto;
+}
+#btnClearCbx[disabled="true"], #btnClearFolderCbx[disabled="true"] {
+	list-style-image: url("chrome://saveimages/skin/SIclearList_dis.png");
+}
+toolbarbutton.browse {
+	list-style-image: url("chrome://saveimages/skin/SIbrowse.png");
+	margin: auto;
+	width: 24px;
+}
+#btnBrowse[disabled="true"] {
+	list-style-image: url("chrome://saveimages/skin/SIbrowse_dis.png");
+}
+
+/* saveDetails CSS */
+#si_idSaveDetails textbox {
+  background: transparent !important;
+  border: none;
+  padding: 0px;
+  margin-top: 1px;
+  -moz-appearance: none;
+}
+
+grid {
+	font-weight: normal;
+}
+
+.idCol_w130, .idCol_w130_padR20 {
+	min-width: 130px;
+}
+.idCol_w130_padR20 {
+	padding-right: 20px;
+}
+.idCol_w100 {
+	min-width: 100px;
+}
+
+
+/*  preferences */
+radio[pane] {
+  list-style-image: url("chrome://saveimages/skin/SIicon2.png");
+}
+
+/*  help file  */
+table.tab_help {
+	width: 100%;
+	border: #000 1px solid;
+}
+table.tab_help td {
+	padding-left: 10px;
+	border: #999 1px solid;
+}
+table.tab_help td.cellheader, table.tab_help td.nopad {
+	padding-left: 0px;
+}
+table.tab_help td.pad1 {
+	padding-left: 10px;
+}
+table.tab_help td.pad2 {
+	padding-left: 20px;
+}
+table.tab_help a {
+	text-decoration: none;
+}
+
+#grdMenuItems {
+	border: #000 1px solid;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	padding-right: 20px;
+}
+#grdMenuItems row {
+	border-bottom: #CCC 1px solid;
+}
+#grdMenuItems checkbox {
+	width: 20px;
+	margin: 0 15px 0 20px;
+}
+
+#idlbxKeys listitem:nth-child(odd) {
+	background-color: #E8F0F0;
+}
+#idlbxKeys:focus listitem[selected="true"] {
+	background-color: Highlight;
+	color: HighlightText;
+}

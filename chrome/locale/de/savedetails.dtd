@@ -1,0 +1,30 @@
+<!ENTITY lblSaveDetails "Speicherdetails">
+<!ENTITY lblBaseFolder "Basis für Speicherordner">
+<!ENTITY lblTotalProcessed "Anzahl verarbeiteter Bilder">
+<!ENTITY lblTotalSaved "Anzahl gespeicherter Bilder">
+<!ENTITY lblDuplicateImages "Dubletten">
+<!ENTITY lblTotalErrors "Anzahl Fehler">
+<!ENTITY lblFileSizeProp "Dateigrößeneigenschaften">
+<!ENTITY lblSetting "Einstellung">
+<!ENTITY lblNoImagesNotSaved "Nicht gespeicherte Bilder">
+<!ENTITY lblMinFS "Minimale Dateigröße">
+<!ENTITY lblMaxFS "Maximale Dateigröße">
+<!ENTITY lblFSUnknown "Dateigröße unbekannt">
+<!ENTITY lblDimProp "Dimensionseigenschaften">
+<!ENTITY lblMinWidth "Minimale Breite">
+<!ENTITY lblMaxWidth "Maximale Breite">
+<!ENTITY lblMinHeight "Minimale Höhe">
+<!ENTITY lblMaxHeight "Maximale Höhe">
+<!ENTITY lblDimUnknown "Dimensionen unbekannt">
+<!ENTITY lblImageTypesProp "Bildtypen und Speichereinstellungen">
+<!ENTITY lblAllImages "Bildtypen:        Alle Bilder">
+<!ENTITY lblJpgImages "JPG/JPEG Bilder">
+<!ENTITY lblPngImages "PNG Bilder">
+<!ENTITY lblGifImages "GIF Bilder">
+<!ENTITY lblBmpImages "BMP Bilder">
+<!ENTITY lblOtherImages "Andere Bilder">
+<!ENTITY lblSaveNoExt "Wenn keine Erweiterung, als JPG speichern">
+<!ENTITY lblSameDomainProp "Domain-Einstellungen">
+<!ENTITY lblSameDomain "Nur Bilder von gleicher Domain speichern">
+<!ENTITY lblRegExpProp "Einstellungen für reguläre Ausdrücke">
+<!ENTITY lblRegExp "Regulärer Ausdruck">

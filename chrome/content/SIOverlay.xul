@@ -1,0 +1,187 @@
+﻿<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://saveimages/skin/SI_OV.css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay id="SIOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+         
+  <stringbundleset id="stringbundleset">         
+		<stringbundle id="SI_platformKeys" src="chrome://global-platform/locale/platformKeys.properties"/>
+		<stringbundle id="SI_localeKeys" src="chrome://global/locale/keys.properties"/>
+		<stringbundle id="SI_strings" src="chrome://saveimages/locale/saveimages.properties"/>
+  </stringbundleset>
+
+// This imports our javascript.
+<script type="application/x-javascript" src="chrome://saveimages/content/SICommon.js"/>
+<script type="application/x-javascript" src="chrome://saveimages/content/SIOverlay.js"/>
+
+<keyset><!--key="" is required for these to work-->
+  <key id="SI_key0" label="SI:&si_lblSaveImages;" key="" oncommand="SIOV.startSaveImages(event,null,0);"/>
+  <key id="SI_key1" label="SI:&si_lblSaveCurrent;" key="" oncommand="SIOV.startSaveImages(event,null,1);"/>
+  <key id="SI_key2" label="SI:&si_lblSaveLeft;" key="" oncommand="SIOV.startSaveImages(event,null,2);"/>
+  <key id="SI_key3" label="SI:&si_lblSaveRight;" key="" oncommand="SIOV.startSaveImages(event,null,3);"/>
+  <key id="SI_key4" label="SI:&si_lblSaveAll;" key="" oncommand="SIOV.startSaveImages(event,null,4);"/>
+  <key id="SI_key13" label="SI:&si_lblSaveSel;" key="" oncommand="SIOV.startSaveImages(event,null,6);"/>
+  <key id="SI_key5" label="SI:&si_lblImageLinksAll;" key="" oncommand="SIOV.openAllLinks(1);"/>
+  <key id="SI_key6" label="SI:&si_lblImageLinksSel;" key="" oncommand="SIOV.openSelectedLinks(11);"/>
+  <key id="SI_key7" label="SI:&si_lblImageLinksAllTabs;" key="" oncommand="SIOV.openAllLinks(2);"/>
+  <key id="SI_key8" label="SI:&si_lblImageLinksSelTabs;" key="" oncommand="SIOV.openSelectedLinks(12);"/>
+  <key id="SI_key9" label="SI:&si_lblLinksAll;" key="" oncommand="SIOV.openAllLinks(3);"/>
+  <key id="SI_key10" label="SI:&si_lblLinksSel;" key="" oncommand="SIOV.openSelectedLinks(13);"/>
+  <key id="SI_key11" label="SI:&si_lblLinksAllTabs;" key="" oncommand="SIOV.SIOV.openAllLinks(4);"/>
+  <key id="SI_key12" label="SI:&si_lblLinksSelTabs;" key="" oncommand="SIOV.openSelectedLinks(14);"/>
+  <key id="SI_key15" label="SI:&si_lblOptions;" key="" oncommand="SIOV.openSIOptionsDialog();"/>
+  <key id="SI_key16" label="SI:&si_lblSaveDetails;" key="" oncommand="SIOV.showSaveDetails();"/>
+  <key id="SI_key17" label="SI:&si_lblHelp;" key="" oncommand="SIOV.SIShowHelp();"/>
+  <key id="SI_key18" label="SI:&si_lblSaveUnderMouse;" key="" oncommand="SIOV.startSaveImages(event,null,5);"/>
+  
+  <key id="SI_key101" label="SI:Save to folder 1" key="" oncommand="SIOV.startSaveImages(event,null,0,'');"/>
+</keyset>
+
+<popupset>
+	<panel id="SI_idPnlNotify" maxwidth="600">
+		<hbox id="SI_idNotifyOuterbox" flex="1">
+		  <vbox id="SI_idNotifyInnerbox" flex="1">
+		    <hbox align="center">
+		      <image src="chrome://saveimages/skin/SIicon2-sm.png" autostretch="never"/>
+		      <label class="header" value="&si_lblSaveImages;"/>
+		    </hbox>
+	      <grid flex="1" style="margin-top: 5px;">
+	        <columns>
+	          <column/>
+	          <column flex="1"/>
+	        </columns>
+	        <rows>
+	          <row>
+	            <label id="SI_idNotifyLbl1" crop="center"/>
+	          </row>
+	          <row>
+	          	<label id="SI_idNotifyLbl2" crop="center"/>
+	          </row>
+	        </rows>
+	      </grid>
+	    </vbox>
+    </hbox>
+	</panel>
+	<panel id="SI_idPnlErrors" maxwidth="600">
+		<hbox id="SI_idErrorOuterbox" flex="1">
+		  <vbox id="SI_idErrorInnerbox" flex="1">
+		    <hbox align="center">
+		      <image src="chrome://saveimages/skin/SIicon2-sm.png" autostretch="never"/>
+		      <label class="header" value="&si_lblSaveImages;"/>
+		    </hbox>
+	      <grid flex="1" style="margin-top: 5px;">
+	        <columns>
+	          <column/>
+	          <column flex="1"/>
+	        </columns>
+	        <rows>
+	          <row>
+	            <label id="SI_idLblError1" crop="center"/>
+	          </row>
+	          <row>
+	          	<label id="SI_idLblError2" crop="center"/>
+	          </row>
+	          <row>
+	            <label id="SI_idLblError3" crop="center"/>
+	          </row>
+	          <row>
+	          	<label id="SI_idLblError4" crop="center"/>
+	          </row>
+	        </rows>
+	      </grid>
+	    </vbox>
+    </hbox>
+	</panel>
+</popupset>
+
+<toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="SI_mnuToolbar0" label="&si_lblSaveImages;" type="menu-button"
+                 class="toolbarbutton-1 chromeclass-toolbar-additional"
+                 oncommand="SIOV.startSaveImages(event,null,0);">                                  
+		<menupopup id="idTBSaveImages_menu" onpopupshowing="if (event.target == this) { SIOV.endisContexts(); }">
+			<menuitem id="SI_mnuToolbar1"	label="&si_lblSaveCurrent;" oncommand="SIOV.startSaveImages(event,null,1); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar2" label="&si_lblSaveLeft;" oncommand="SIOV.startSaveImages(event,null,2); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar3" label="&si_lblSaveRight;" oncommand="SIOV.startSaveImages(event,null,3); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar4" label="&si_lblSaveAll;" oncommand="SIOV.startSaveImages(event,null,4); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar13" label="&si_lblSaveSel;" oncommand="SIOV.startSaveImages(event,null,6); event.stopPropagation();"/>
+			<menuseparator id="SI_mnuSepToolbar1"/>
+			<menuitem id="SI_mnuLbl2" label="&si_lblImageLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar5" label="&si_lblImageLinksAll;" oncommand="SIOV.openAllLinks(1); event.stopPropagation();"/>
+    	<menuitem id="SI_mnuToolbar6" label="&si_lblImageLinksSel;" oncommand="SIOV.openSelectedLinks(11); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar7" label="&si_lblImageLinksAllTabs;" oncommand="SIOV.openAllLinks(2); event.stopPropagation();"/>
+    	<menuitem id="SI_mnuToolbar8" label="&si_lblImageLinksSelTabs;" oncommand="SIOV.openSelectedLinks(12); event.stopPropagation();"/>
+			<menuseparator id="SI_mnuSepToolbar2"/>
+			<menuitem id="SI_mnuLbl5" label="&si_lblLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar9" label="&si_lblLinksAll;" oncommand="SIOV.openAllLinks(3); event.stopPropagation();"/>
+    	<menuitem id="SI_mnuToolbar10" label="&si_lblLinksSel;" oncommand="SIOV.openSelectedLinks(13); event.stopPropagation();"/>
+			<menuitem id="SI_mnuToolbar11" label="&si_lblLinksAllTabs;" oncommand="SIOV.openAllLinks(4); event.stopPropagation();"/>
+    	<menuitem id="SI_mnuToolbar12" label="&si_lblLinksSelTabs;" oncommand="SIOV.openSelectedLinks(14); event.stopPropagation();"/>
+			<menuseparator id="SI_mnuSepToolbar3"/>
+			<menuitem	id="SI_mnuToolbar15" label="&si_lblOptions;" tooltiptext="" oncommand="SIOV.openSIOptionsDialog(); event.stopPropagation();"/>
+			<menuitem	id="SI_mnuToolbar16" label="&si_lblSaveDetails;" oncommand="SIOV.showSaveDetails();  event.stopPropagation();"/>
+			<menuitem	id="SI_mnuToolbar17" label="&si_lblHelp;" tooltiptext="" oncommand="event.stopPropagation(); SIOV.SIShowHelp();"/>
+		</menupopup>
+	</toolbarbutton>
+</toolbarpalette>
+
+// This is for the right click menu.
+<popup id="contentAreaContextMenu">
+  <menu id="SI_mnuContext0" class="menu-iconic" label="&si_lblSaveImages;" insertafter="context-stop">
+    <menupopup onpopupshowing="if (event.target == this) { SIOV.endisContexts(); }">
+      <menuitem id="SI_mnuContext1" label="&si_lblSaveCurrent;" oncommand="SIOV.startSaveImages(event,null,1);"/>
+      <menuitem id="SI_mnuContext2" label="&si_lblSaveLeft;" oncommand="SIOV.startSaveImages(event,null,2);"/>
+			<menuitem id="SI_mnuContext3" label="&si_lblSaveRight;" oncommand="SIOV.startSaveImages(event,null,3);"/>
+      <menuitem id="SI_mnuContext4" label="&si_lblSaveAll;" oncommand="SIOV.startSaveImages(event,null,4);"/>
+      <menuitem id="SI_mnuContext13" label="&si_lblSaveSel;" oncommand="SIOV.startSaveImages(event,null,6);"/>
+      <menuseparator id="SI_mnuSepCont1"/>
+      <menuitem id="SI_mnuLbl1" label="&si_lblImageLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+      <menuitem id="SI_mnuContext5" label="&si_lblImageLinksAll;" oncommand="SIOV.openAllLinks(1);"/>
+      <menuitem id="SI_mnuContext6" label="&si_lblImageLinksSel;" oncommand="SIOV.openSelectedLinks(11);"/>
+			<menuitem id="SI_mnuContext7" label="&si_lblImageLinksAllTabs;" oncommand="SIOV.openAllLinks(2);"/>
+    	<menuitem id="SI_mnuContext8" label="&si_lblImageLinksSelTabs;" oncommand="SIOV.openSelectedLinks(12);"/>
+	    <menuseparator id="SI_mnuSepCont2"/>
+	    <menuitem id="SI_mnuLbl4" label="&si_lblLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+			<menuitem id="SI_mnuContext9" label="&si_lblLinksAll;" oncommand="SIOV.openAllLinks(3);"/>
+    	<menuitem id="SI_mnuContext10" label="&si_lblLinksSel;" oncommand="SIOV.openSelectedLinks(13);"/>
+			<menuitem id="SI_mnuContext11" label="&si_lblLinksAllTabs;" oncommand="SIOV.openAllLinks(4);"/>
+    	<menuitem id="SI_mnuContext12" label="&si_lblLinksSelTabs;" oncommand="SIOV.openSelectedLinks(14);"/>
+			<menuseparator id="SI_mnuSepCont3"/>
+      <menuitem	id="SI_mnuContext15" label="&si_lblOptions;"	oncommand="SIOV.openSIOptionsDialog();"/>
+      <menuitem	id="SI_mnuContext16" label="&si_lblSaveDetails;" oncommand="SIOV.showSaveDetails();"/>
+      <menuitem	id="SI_mnuContext17" label="&si_lblHelp;" oncommand="SIOV.SIShowHelp();"/>
+    </menupopup>
+  </menu>
+</popup>
+
+// This is for the Tools menu.
+<menupopup id="menu_ToolsPopup">
+  <menu id="SI_mnuTools0" class="menu-iconic" insertafter="devToolsSeparator" label="&si_lblSaveImages;">
+    <menupopup onpopupshowing="if (event.target == this) { SIOV.endisContexts(); }">
+      <menuitem id="SI_mnuTools1" label="&si_lblSaveCurrent;" oncommand="SIOV.startSaveImages(event,null,1);"/>
+      <menuitem id="SI_mnuTools2" label="&si_lblSaveLeft;" oncommand="SIOV.startSaveImages(event,null,2);"/>
+			<menuitem id="SI_mnuTools3" label="&si_lblSaveRight;" oncommand="SIOV.startSaveImages(event,null,3);"/>
+      <menuitem id="SI_mnuTools4" label="&si_lblSaveAll;" oncommand="SIOV.startSaveImages(event,null,4);"/>
+      <menuitem id="SI_mnuTools13" label="&si_lblSaveSel;" oncommand="SIOV.startSaveImages(event,null,6);"/>
+      <menuseparator id="SI_mnuSepTools1"/>
+      <menuitem id="SI_mnuLbl0" label="&si_lblImageLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+      <menuitem id="SI_mnuTools5" label="&si_lblImageLinksAll;" oncommand="SIOV.openAllLinks(1);"/>
+      <menuitem id="SI_mnuTools6" label="&si_lblImageLinksSel;" oncommand="SIOV.openSelectedLinks(11);"/>
+			<menuitem id="SI_mnuTools7" label="&si_lblImageLinksAllTabs;" oncommand="SIOV.openAllLinks(2);"/>
+    	<menuitem id="SI_mnuTools8" label="&si_lblImageLinksSelTabs;" oncommand="SIOV.openSelectedLinks(12);"/>
+			<menuseparator id="SI_mnuSepTools2"/>
+			<menuitem id="SI_mnuLbl3" label="&si_lblLinks;" style="color:navy" oncommand="event.stopPropagation();"/>
+    	<menuitem id="SI_mnuTools9" label="&si_lblLinksAll;" oncommand="SIOV.openAllLinks(3);"/>
+			<menuitem id="SI_mnuTools10" label="&si_lblLinksSel;" oncommand="SIOV.openSelectedLinks(13);"/>
+    	<menuitem id="SI_mnuTools11" label="&si_lblLinksAllTabs;" oncommand="SIOV.openAllLinks(4);"/>
+			<menuitem id="SI_mnuTools12" label="&si_lblLinksSelTabs;" oncommand="SIOV.openSelectedLinks(14);"/>
+			<menuseparator id="SI_mnuSepTools3"/>
+      <menuitem	id="SI_mnuTools15" label="&si_lblOptions;" oncommand="SIOV.openSIOptionsDialog();"/>
+      <menuitem	id="SI_mnuTools16" label="&si_lblSaveDetails;" oncommand="SIOV.showSaveDetails();"/>
+      <menuitem	id="SI_mnuTools17" label="&si_lblHelp;" oncommand="SIOV.SIShowHelp();"/>
+    </menupopup>
+  </menu>
+</menupopup>
+
+</overlay>
+

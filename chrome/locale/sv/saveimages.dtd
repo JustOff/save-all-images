@@ -1,0 +1,151 @@
+<!ENTITY lblOk "Ok">
+<!ENTITY lblCancel "Cancel">
+
+<!-- Menu Labels -->
+<!ENTITY si_lblSaveImages "Spara bilder">
+<!ENTITY si_lblSaveCurrent "Spara bilder från aktuell flik">
+<!ENTITY si_lblSaveLeft "Spara bilder från flikar till vänster &lt;&lt;">
+<!ENTITY si_lblSaveRight "Spara bilder från flikar till höger &gt;&gt;">
+<!ENTITY si_lblSaveAll "Spara bilder från alla flikar">
+<!ENTITY si_lblSaveSel "Spara markerade bilder">
+<!ENTITY si_lblSaveUnderMouse "Spara bild nedanför musen">
+<!ENTITY si_lblImageLinks "Bildlänkar">
+<!ENTITY si_lblImageLinksAll "Öppna alla bildlänkar i 1 flik">
+<!ENTITY si_lblImageLinksSel "Öppna markerade bildlänkar i 1 flik">
+<!ENTITY si_lblImageLinksAllTabs "Öppna alla bildlänkar i flikar">
+<!ENTITY si_lblImageLinksSelTabs "Öppna markerade bildlänkar i flikar">
+<!ENTITY si_lblLinks "Länkar">
+<!ENTITY si_lblLinksAll "Öppna alla länkar i 1 flik">
+<!ENTITY si_lblLinksSel "Öppna markerade länkar i 1 flik">
+<!ENTITY si_lblLinksAllTabs "Öppna alla länkar i flikar">
+<!ENTITY si_lblLinksSelTabs "Öppna markerade länkar i flikar">
+<!ENTITY si_lblOptions "Inställningar">
+<!ENTITY si_lblSaveDetails "Information om sparade bilder">
+<!ENTITY si_lblHelp "Hjälp">
+
+<!-- Option Pane Labels -->
+<!ENTITY optionsTitle "Inställningar för Save Images">
+<!ENTITY buttonlabelextra2 "Återställ standard">
+<!ENTITY paneFiltersLbl "Filter">
+<!ENTITY paneSaveLbl "Spara">
+<!ENTITY paneAutoLbl "Öppna/Spara automatiskt">
+<!ENTITY paneGeneralLbl "Allmänt">
+<!ENTITY paneShortcutsLbl "Kortkommandon">
+<!ENTITY paneMenuItemsLbl "Menyobjekt">
+<!ENTITY btnExportLbl "Export">
+<!ENTITY btnExportTooltip "Export Options settings">
+<!ENTITY btnImportLbl "Import">
+<!ENTITY btnImportTooltip "Import Options settings">
+
+<!-- Filters pane -->
+<!ENTITY lblEnableLimits "Enable Limits">
+<!ENTITY lblFileSize "File Size">
+<!ENTITY lblBytes "bytes">
+<!ENTITY lblMin "Min">
+<!ENTITY lblMax "Max">
+<!ENTITY lblUnknown "If unknown">
+<!ENTITY lblSkip "Skip">
+<!ENTITY lblPrompt "Prompt">
+<!ENTITY lblSave "Save">
+<!ENTITY lblDimensions "Dimensions (pixels)">
+<!ENTITY lblMinWidth "Min Width">
+<!ENTITY lblMaxWidth "Max Width">
+<!ENTITY lblMinHeight "Min Height">
+<!ENTITY lblMaxHeight "Max Height">
+<!ENTITY lblImageTypes "Image Types to save">
+<!ENTITY lblAllImages "All images">
+<!ENTITY lblSelection "Selection">
+<!ENTITY lblJPGImages "JPG/JPEG images">
+<!ENTITY lblPNGImages "PNG images">
+<!ENTITY lblGIFImages "GIF images">
+<!ENTITY lblBMPImages "BMP images">
+<!ENTITY lblSaveNoExt "If no extension, save as JPG">
+<!ENTITY lblRegExp "Regular Expressions">
+<!ENTITY lblRegExpSentence "Regular expression based on images URL (only matching images will be saved)">
+<!ENTITY lblClearRegExpList "Clear regular expression list">
+<!ENTITY lblSameDomain "Only save images from the same domain/server as the selected tab's URL">
+
+<!-- Save pane -->
+<!ENTITY lblDefaultSave "Default Save Action">
+<!ENTITY lblCurrentTab "Current tab">
+<!ENTITY lblLeftCurrentTab "Left of current tab &lt;&lt;">
+<!ENTITY lblRightCurrentTab "Right of current tab &gt;&gt;">
+<!ENTITY lblAllTabs "All tabs">
+<!ENTITY lblIncludeCurrentTab "Include the Current tab when saving images (Left/Right)">
+<!ENTITY lblFolderOptions "Folder Options">
+<!ENTITY lblFolder "Folder">
+<!ENTITY lblFileNames "File Names">
+<!ENTITY lblSaveFolder "Save Folder">
+<!ENTITY lblUseFFFolder "Use Firefox download folder">
+<!ENTITY lblLastFFFolder "Use Firefox last download folder">
+<!ENTITY lblUseFolder "Use Folder">
+<!ENTITY lblBrowseForFolder "Browse for a folder">
+<!ENTITY lblClearFolderList "Clear folder list">
+<!ENTITY lblAppendTitle "Append the tab title to 'Save Folder'">
+<!ENTITY lblAppendURL "Append image URL folder structure to 'Save Folder'">
+<!ENTITY lblTreeStructure "Tree structure">
+<!ENTITY lblSingleFolder "Single folder">
+<!ENTITY lblAppendDate "Append the date">
+<!ENTITY lblAppendTime "Append the time">
+<!ENTITY lblIncludeSeconds "Include seconds">
+<!ENTITY lblUseImgFN "Use images file name">
+<!ENTITY lblUseFN "Use file name">
+<!ENTITY lblClearFNList "Clear file name list">
+<!ENTITY lblFNPrompt "Prompt for file name">
+<!ENTITY lblOnce "Once per page">
+<!ENTITY lblForEachPage "For each image">
+<!ENTITY lblRegExpFN "Regular expression file name (can use $1, $2...)">
+<!ENTITY lblClearRegxEprList "Clear regular expression file name list">
+<!ENTITY lblDuplicateFiles "Duplicate Files">
+<!ENTITY lblIgnore "Ignore">
+<!ENTITY lblOverwrite "Overwrite">
+<!ENTITY lblNumberLength "Number - Length">
+<!ENTITY lblExtLetterSize "Extension Letter Size">
+<!ENTITY lblExtAsIs "As given">
+<!ENTITY lblExtLower "Lower case">
+<!ENTITY lblExtUpper "Upper case">
+<!ENTITY lblCloseTab "Close tab after saving">
+<!ENTITY lblPromptTab "Prompt about closing tab">
+<!ENTITY lblClearFoldersExit "Clear 'Use Folder' list when Firefox exists (Only works if use 'File->Exit')">
+<!ENTITY lblClearFNExit "Clear 'Use file name' list when Firefox exists (Only works if use 'File->Exit')">
+
+<!-- General pane -->
+<!ENTITY lblOpenDlg "Open Save Images Options Dialog Box before saving">
+<!ENTITY lblShowPopup "Show save confirmation popup">
+<!ENTITY lblShowPopupError "Only if an error occurs">
+<!ENTITY lblNotifyPos "Display notification popup at bottom/right corner of Firefox window">
+<!ENTITY lblPopupTime "Notification popup display time (seconds)">
+<!ENTITY lblSaveDetail "Show a detailed list of saved/not saved images">
+<!ENTITY lblShowDetailsSaved "Only when images are saved">
+<!ENTITY lblAutoSwitch "Automatically switch to new tab (when opening multiple links)">
+<!ENTITY lblSaveBkgd "Save background images">
+<!ENTITY lblSaveMouse "Save image under the mouse cursor">
+<!ENTITY lblSaveMouseFilters "Ignore 'Filters' set in 'Options'">
+<!ENTITY lblFrameHeight "Frame height when multiple links are opened in one tab">
+<!ENTITY lblPixels "pixels">
+<!ENTITY lblFoldersRemember "Number of folders/file names to remember">
+<!ENTITY lblGenLang1 "Choose 'Save Images' language">
+<!ENTITY lblGenNote1 "Requires the browser to be restarted">
+<!ENTITY lblMultiLinks "Opening Multiple Links/Images">
+<!ENTITY lblDelayOpenLinks "Time delay between opening links/images (seconds)">
+<!ENTITY lblNumOpenLinks "Number of links/images to open at once">
+<!ENTITY lblNoLimit "(0 = no limit)">
+<!ENTITY lblNoDelay "(0 = no delay)">
+<!ENTITY lblSkipLinkSelect "Bypass opening 'Select Links' dialog box">
+
+<!-- Shortcuts pane -->
+<!ENTITY lblDescription "Description">
+<!ENTITY lblShortcutKey "Shortcut Key">
+<!ENTITY lblKey "Key">
+<!ENTITY lblApply "Apply">
+<!ENTITY lblClear "Clear">
+<!ENTITY lblKeyboard1 "Inga kontroller görs av ev. konflikter med andra kortkommandon i Firefox.">
+<!ENTITY lblKeyboard2 "Alla ändringar av kortkommandon kräver att webbläsaren startas om.">
+
+<!-- Menuitems pane -->
+<!ENTITY SelectMenuitems "Select the menu items that you want displayed in the various menus.">
+<!ENTITY lblTools "Tools Menu">
+<!ENTITY lblContext "Context Menu">
+<!ENTITY lblToolbutton "Toolbutton">
+<!ENTITY lblHideToolsMenu "Hide the Save Images Tools menu">
+<!ENTITY lblHideContextMenu "Hide the Save Images context menu">

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet type="text/css" href="chrome://saveimages/skin/SI_OV.css"?>
+
+<window class="dialog"
+	title="Save Images : About"
+	orient="vertical"
+	style="background-color:#FFFFFF; width:400px;"
+	autostretch="always"
+	onload="sizeToContent()"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<vbox>
+    <groupbox align="center" orient="horizontal" style="background-color:#FFFFFF !important;">
+      <vbox>
+        <hbox align="center">
+        <hbox align="baseline">
+          <text value="Save Images" style="font-weight: bold; font-size: x-large;"/>
+          <text value="  v1.1.0.3"/>
+          <spacer style="width: 100px"/>
+        </hbox>
+          <image src="chrome://saveimages/skin/SIicon.png" style="width:32px; height:32px;"/>
+        </hbox>
+        <text value="    Save images in web pages." style="font-weight: bold;"/>  
+        <separator class="thin"/>
+        <text value="Developed by:" style="font-weight: bold;"/>
+        <text value="    Lumox"/>
+        <separator class="thin"/>
+        <text value="Contact: plashcor@gmail.com"/>
+        <separator class="thin"/>
+        <description style="margin:0px 0px 0px 6px; width:350px;">
+          Save Images comes with NO WARRANTY - it is free software, and may be redistribute under the GPL agreement. 
+        </description>
+        <separator class="thin"/>
+        <description style="margin:0px 0px 0px 6px; width:350px;">
+          Save Images saves the images from the current tab web page, tabs to the left or right or from all tabs, from the Firefox cache, to a specified location, with either the images original file name or a file name that you specify. The size and types of images saved may be chosen, with options if the file size is unknown or if duplicate files are found. There are also menu items to either open all or selected links in a single tab or multiple tabs. 
+        </description>
+        <spacer style="height: 20px"/>
+        <vbox>
+          <text value="Thanks to:" style="font-weight: bold;"/>
+			<label value='- Eric Batard for the information on how to solve the problem of duplicate files being overwritten.'/>
+			<label value="- André Pirard for the information on how to extract an image's file name from the header content-disposition."/>
+			<label value="- Florent Bouchez Tichadou for the filtering and file name regular expression code."/>
+			<label value="- Christopher Stelmaszyk for the German translation."/>
+			<label value="- Jack Black for the French translation."/>
+			<label value="- Micheal Liu for the Chinese simplified (zh-CN) translation."/>
+			<label value="- Roger Chen for the Chinese traditional (zh-TW) translation."/>
+        </vbox>
+      </vbox>
+    </groupbox>
+    <hbox>
+      <spacer flex="1"/>
+      <button label="Close" onclick="self.close();"/>
+      <spacer style="width: 24px"/>
+    </hbox>
+  </vbox>
+
+</window>

@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://saveimages/locale/saveimages.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane
+		id="paneSave"
+		label="&paneSaveLbl;"
+		onpaneload="SIsave.load();"
+	>
+	
+		<preferences>
+		  <preference id="grpDefAction" name="extensions.SI.grpDefAction" type="int"/>
+		  <preference id="chkInclCurTab" name="extensions.SI.chkInclCurTab" type="bool"/>
+		  <preference id="grpFolder" name="extensions.SI.grpFolder" type="string"/>
+		  <preference id="cbxSaveFolder" name="extensions.SI.cbxSaveFolder" type="unichar"/>
+		  
+		  <preference id="chkAppendTitle" name="extensions.SI.chkAppendTitle" type="bool"/>
+		  <preference id="chkUseUrlFolders" name="extensions.SI.chkUseUrlFolders" type="bool"/>
+		  <preference id="grpUrlFolders" name="extensions.SI.grpUrlFolders" type="string"/>
+		  <preference id="chkAppendDate" name="extensions.SI.chkAppendDate" type="bool"/>
+		  <preference id="chkAppendTime" name="extensions.SI.chkAppendTime" type="bool"/>
+		  <preference id="chkAppendSecs" name="extensions.SI.chkAppendSecs" type="bool"/>
+		  
+		  <preference id="grpFN" name="extensions.SI.grpFN" type="string"/>
+		  <preference id="cbxFN" name="extensions.SI.cbxFN" type="unichar"/>
+		  <preference id="grpFNPrompt" name="extensions.SI.grpFNPrompt" type="string"/>
+		  <preference id="cbxRegexpFN" name="extensions.SI.cbxRegexpFN" type="unichar"/>
+		  <preference id="grpDupes" name="extensions.SI.grpDupes" type="string"/>
+		  <preference id="grpExtn" name="extensions.SI.grpExtn" type="int"/>
+		  <preference id="edtNumLen" name="extensions.SI.edtNumLen" type="int"/>
+		  <preference id="chkCloseTab" name="extensions.SI.chkCloseTab" type="bool"/>
+		  <preference id="chkPromptTab" name="extensions.SI.chkPromptTab" type="bool"/>
+		  <preference id="chkClearFolders" name="extensions.SI.chkClearFolders" type="bool"/>
+		  <preference id="chkClearFilenames" name="extensions.SI.chkClearFilenames" type="bool"/>
+		</preferences>
+	
+	 	<vbox>
+      <groupbox style="margin: -3px 0px 0px 0px;">
+        <caption>
+          <label value="&lblDefaultSave;" class="bold"/>
+        </caption>
+        <radiogroup id="grpDefAction" style="margin: -6px 0px 0px 0px;" preference="grpDefAction">
+          <hbox>
+            <radio value="1" label="&lblCurrentTab;" selected="true"/>
+            <radio value="2" label="&lblLeftCurrentTab;"/>
+            <radio value="3" label="&lblRightCurrentTab;"/>
+            <radio value="4" label="&lblAllTabs;"/>
+          </hbox>
+        </radiogroup>
+        <checkbox id="chkInclCurTab" label="&lblIncludeCurrentTab;" preference="chkInclCurTab"/>
+      </groupbox>
+      
+      <tabbox id="tbxFolders" style="margin: 5px 0px 5px 0px;">
+		    <tabs>
+		      <tab label="&lblFolder;" class="bold" />
+		      <tab label="&lblFileNames;" class="bold" />
+		    </tabs>
+			  <tabpanels>
+			    <tabpanel id="tabFolders">
+			    	<vbox flex="1">
+			        <groupbox style="margin: -3px 0px 0px 5px;">
+				        <caption>
+				          <label value="&lblSaveFolder;" class="bold"/>
+				        </caption>
+				        <radiogroup id="grpFolder" style="margin: -6px 0px 0px 0px;" preference="grpFolder" oncommand="SIsave.radFolderChanged();">
+					        <hbox align="center">
+					          <radio id="idradUseFFFolder" value="radUseFFFolder" label="&lblUseFFFolder;: "/>
+					          <label id="lblUseFFFolder" value="" crop="center" flex="1" class="bold"/>
+					        </hbox>
+					        <hbox align="center">
+					        	<radio id="idradLastFFFolder" value="radLastFFFolder" label="&lblLastFFFolder;: " />
+					        	<label id="lblLastFFFolder" value="" crop="center" flex="1" class="bold"/>
+					        </hbox>
+					        <hbox align="center">          
+					          <radio id="idradSaveFolder" value="radSaveFolder" label="&lblUseFolder;" control="idcbxSaveFolder" selected="true"/>
+					          <menulist id="idcbxSaveFolder" type="unichar" editable="true" flex="1" preference="cbxSaveFolder">
+					            <menupopup id="pumSaveFolder">
+					            </menupopup>
+					          </menulist>
+					          <toolbarbutton id="btnBrowse" class="browse" tooltiptext="&lblBrowseForFolder;" oncommand="SICommon.browseFolder('idcbxSaveFolder','paneSave');"/>
+					          <toolbarbutton id="btnClearFolderCbx" class="clearlist" tooltiptext="&lblClearFolderList;" oncommand="SICommon.clearCombobox('idcbxSaveFolder','pumSaveFolder','cbxSaveFolder','saveFolderList');"/>
+					        </hbox>
+					      </radiogroup>
+				      </groupbox>
+				      <checkbox id="idchkAppendTitle" label="&lblAppendTitle;" preference="chkAppendTitle"/>
+			        <checkbox id="idchkUseUrlFolders" label="&lblAppendURL;" preference="chkUseUrlFolders" oncommand="SIsave.chkUseUrlFoldersChecked();"/>
+			        <radiogroup id="idgrpUrlFolders" disabled="true" preference="grpUrlFolders" onselect="SIsave.UrlFolderChanged();">
+			          <hbox>
+			            <spacer style="width:20px;"/>
+			            <vbox>                
+			              <radio value="tree" label="&lblTreeStructure;" selected="true"/>
+			              <radio value="single" label="&lblSingleFolder;"/>
+			            </vbox>
+			            <spacer style="width:60px;"/>
+			            <vbox>
+			              <label id="lblUrlFold1" value="|_ Folder1"/>
+			              <hbox>
+			                <spacer style="width:10px;"/>
+			                <label id="lblUrlFold2" value="|_ Folder2"/>
+			              </hbox>
+			              <hbox>
+			                <spacer style="width:20px;"/>
+			                <label id="lblUrlFold3" value="|_ Folder3"/>
+			              </hbox>
+			            </vbox>
+			          </hbox>
+			        </radiogroup>
+			        <hbox>
+				        <checkbox id="idchkAppendDate" label="&lblAppendDate;" preference="chkAppendDate" oncommand="SIsave.chkAppendDateChecked();"/>
+				        <spacer style="width:12px;"/>
+				        <checkbox id="idchkAppendTime" label="&lblAppendTime;" disabled="true" preference="chkAppendTime" oncommand="SIsave.chkAppendDateChecked();"/>
+				        <spacer style="width:12px;"/>
+				        <checkbox id="idchkAppendSecs" label="&lblIncludeSeconds;" disabled="true" preference="chkAppendSecs"/>
+				      </hbox>
+				    </vbox>
+			    </tabpanel>
+			    <tabpanel id="tabFilenames">
+						<vbox flex="1">
+			        <radiogroup id="grpFN" style="margin: -6px 0px 4px 0px;" preference="grpFN" oncommand="SIsave.promptFNChanged();">
+		            <radio id="radDefaultFN" value="radUseImgFN" label="&lblUseImgFN;"/>
+		            <hbox align="center">          
+		              <radio id="radUseFN" value="radUseFN" label="&lblUseFN;:" selected="true"/>
+		              <menulist id="idcbxFN" type="unichar" editable="true" flex="1" focused="yes" preference="cbxFN">
+		                <menupopup id="pumFN">
+		                </menupopup>
+		              </menulist>
+		              <toolbarbutton id="btnClearFNCbx" class="clearlist" tooltiptext="&lblClearFNList;" oncommand="SICommon.clearCombobox('idcbxFN','pumFN','cbxFN','saveFNList');"/>
+		            </hbox>
+	              <hbox>
+	                <radio id="radFNPrompt" value="prompt" label="&lblFNPrompt;"/>            
+	                <radiogroup id="idgrpFNPrompt" disabled="true" preference="grpFNPrompt">
+	                  <hbox>
+	                    <radio class="indent20" value="once" label="&lblOnce;" selected="true"/>
+	                    <radio class="indent20" value="each" label="&lblForEachPage;"/>
+	                  </hbox>
+	                </radiogroup>
+	              </hbox>
+	              <radio id="radFNRegexp" value="radRegexp" label="&lblRegExpFN;: "/>
+	              <hbox align="center" class="indent20">
+	              	<menulist id="idcbxRegexpFN" type="unichar" editable="true" flex="1" preference="cbxRegexpFN">
+	              		<menupopup id="pumRegexpFN"></menupopup>
+	              	</menulist>
+	              	<toolbarbutton id="btnClearRegExp" class="clearlist" tooltiptext="&lblClearRegxEprList;" oncommand="SICommon.clearCombobox('idcbxRegexpFN','pumRegexpFN','cbxRegexpFN','regexpFNList');"/>
+	              </hbox>
+			        </radiogroup>
+				      <groupbox>
+				        <caption>
+				          <label value="&lblDuplicateFiles;" class="bold"/>
+				        </caption>
+				        <radiogroup id="grpDupes" style="margin-top: -6px;" preference="grpDupes">
+				          <hbox>
+				            <radio value="ignore" label="&lblIgnore;"/>
+				            <radio value="prompt" label="&lblPrompt;"/>
+				            <radio value="over" label="&lblOverwrite;"/>
+			              <radio value="num" selected="true" label="&lblNumberLength;"/>
+		      	        <textbox id="edtNumLen" type="number" maxlength="2" min="1" max="10" value="3" style="width:6ex;" preference="edtNumLen"/>
+			            </hbox>
+				        </radiogroup>
+				      </groupbox>
+				      <groupbox>
+				        <caption>
+				          <label value="&lblExtLetterSize;" class="bold"/>
+				        </caption>
+				        <radiogroup id="grpExtn" style="margin-top: -6px;" preference="grpExtn">
+				          <hbox>
+				            <radio value="0" label="&lblExtAsIs;"/>
+				            <radio value="1" label="&lblExtLower;"/>
+				            <radio value="2" label="&lblExtUpper;"/>
+			            </hbox>
+				        </radiogroup>
+				      </groupbox>
+			      </vbox>
+			    </tabpanel>
+			  </tabpanels>
+			</tabbox>
+
+			<hbox>
+        <checkbox id="idchkCloseTab" label="&lblCloseTab;" preference="chkCloseTab" oncommand="SIsave.closeTabChanged();"/>
+        <spacer style="width:20px;"/>
+        <checkbox id="idchkPromptTab" label="&lblPromptTab;" disabled="true" preference="chkPromptTab"/>
+      </hbox>
+      <checkbox label="&lblClearFoldersExit;" preference="chkClearFolders"/>
+      <checkbox label="&lblClearFNExit;" preference="chkClearFilenames"/>
+      <spacer style="height:12px;"/>
+	  </vbox>
+	</prefpane>
+</overlay>
