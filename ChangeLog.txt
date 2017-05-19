@@ -1,5 +1,12 @@
 This extension possibly will not work on operating systems other than Windows and Linux (not tested on other OS's).
 
+v1.0.1
+- Added support for Pale Moon 27.*
+- Rebranded to Save Images (Moon Edition)
+
+
+Original Save Images changelog:
+
 v1.1.0.3
 - Fixed: partially - selecting a language causes the add-on to be not signed and therefore disabled
 - Added: filters now also apply to background images 
