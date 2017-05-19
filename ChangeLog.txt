@@ -1,5 +1,8 @@
 This extension possibly will not work on operating systems other than Windows and Linux (not tested on other OS's).
 
+v1.0.2
+- Misc cosmetic fixes
+
 v1.0.1
 - Added support for Pale Moon 27.*
 - Rebranded to Save Images (Moon Edition)
