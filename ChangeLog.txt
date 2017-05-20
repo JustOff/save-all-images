@@ -1,5 +1,8 @@
 This extension possibly will not work on operating systems other than Windows and Linux (not tested on other OS's).
 
+v1.0.3
+- Misc code cleanup and branding fixes
+
 v1.0.2
 - Misc cosmetic fixes
 
