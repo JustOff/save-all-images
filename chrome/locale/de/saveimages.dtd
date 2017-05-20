@@ -106,14 +106,14 @@
 <!ENTITY lblExtUpper "Großbuchstaben">
 <!ENTITY lblCloseTab "Tab nach Speichern schließen">
 <!ENTITY lblPromptTab "Vor Schließen nachfragen">
-<!ENTITY lblClearFoldersExit "Liste benutzter Ordner beim Beenden von Firefox leeren (nur bei Datei->Beenden)">
-<!ENTITY lblClearFNExit "Liste benutzter Dateinamen beim Beenden von Firefox leeren (nur bei Datei->Beenden)">
+<!ENTITY lblClearFoldersExit "Liste benutzter Ordner beim Beenden von Pale Moon leeren (nur bei Datei->Beenden)">
+<!ENTITY lblClearFNExit "Liste benutzter Dateinamen beim Beenden von Pale Moon leeren (nur bei Datei->Beenden)">
 
 <!-- General pane -->
 <!ENTITY lblOpenDlg "Dialog mit den Optionen zum Speichern der Bilder vor dem Speichern öffnen">
 <!ENTITY lblShowPopup "Speicherbestätigungspopup zeigen">
 <!ENTITY lblShowPopupError "Nur wenn ein Fehler aufgetreten ist">
-<!ENTITY lblNotifyPos "Popup in der unteren rechten Ecke von Firefox anzeigen">
+<!ENTITY lblNotifyPos "Popup in der unteren rechten Ecke von Pale Moon anzeigen">
 <!ENTITY lblPopupTime "Anzeigedauer (Sekunden)">
 <!ENTITY lblSaveDetail "Detaillierte Liste der gespeicherten/nicht gespeicherten Bilder">
 <!ENTITY lblShowDetailsSaved "Nur wenn Bilder gespeichert wurden">
@@ -139,7 +139,7 @@
 <!ENTITY lblKey "Taste">
 <!ENTITY lblApply "Übernehmen">
 <!ENTITY lblClear "Löschen">
-<!ENTITY lblKeyboard1 "Es wird nicht überprüft, ob andere Tastenkombinationen in Firefox in Konflikt stehen.">
+<!ENTITY lblKeyboard1 "Es wird nicht überprüft, ob andere Tastenkombinationen in Pale Moon in Konflikt stehen.">
 <!ENTITY lblKeyboard2 "Jede Veränderung der Tastenkombinationen erfordert einen Browserneustart.">
 
 <!-- Menuitems pane -->

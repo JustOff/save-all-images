@@ -76,8 +76,8 @@
 <!ENTITY lblFolder "資料夾">
 <!ENTITY lblFileNames "檔案名稱">
 <!ENTITY lblSaveFolder "儲存資料夾">
-<!ENTITY lblUseFFFolder "使用火狐下載資料夾">
-<!ENTITY lblLastFFFolder "使用火狐上次下載資料夾">
+<!ENTITY lblUseFFFolder "使用Pale Moon下載資料夾">
+<!ENTITY lblLastFFFolder "使用Pale Moon上次下載資料夾">
 <!ENTITY lblUseFolder "使用資料夾">
 <!ENTITY lblBrowseForFolder "選擇一個資料夾">
 <!ENTITY lblClearFolderList "清空資料夾列表">
@@ -106,14 +106,14 @@
 <!ENTITY lblExtUpper "大寫">
 <!ENTITY lblCloseTab "儲存完畢關閉標籤頁">
 <!ENTITY lblPromptTab "提示關閉標籤頁">
-<!ENTITY lblClearFoldersExit "火狐存在時清空 '使用資料夾' 列表 (僅在使用 '檔案->離開'有效)">
-<!ENTITY lblClearFNExit "火狐存在時清空 '使用檔案名稱' 列表 (僅在使用 '檔案->離開'有效)">
+<!ENTITY lblClearFoldersExit "Pale Moon存在時清空 '使用資料夾' 列表 (僅在使用 '檔案->離開'有效)">
+<!ENTITY lblClearFNExit "Pale Moon存在時清空 '使用檔案名稱' 列表 (僅在使用 '檔案->離開'有效)">
 
 <!-- General pane -->
 <!ENTITY lblOpenDlg "儲存之前打開儲存影像選項對話框">
 <!ENTITY lblShowPopup "顯示確認儲存提示">
 <!ENTITY lblShowPopupError "僅在發生錯誤時">
-<!ENTITY lblNotifyPos "在火狐窗口右下角顯示彈出提示">
+<!ENTITY lblNotifyPos "在Pale Moon窗口右下角顯示彈出提示">
 <!ENTITY lblPopupTime "彈出提示顯示時間 (秒)">
 <!ENTITY lblSaveDetail "為已儲存/未儲存影像顯示詳情列表">
 <!ENTITY lblShowDetailsSaved "僅儲存影像時">
@@ -139,7 +139,7 @@
 <!ENTITY lblKey "鍵">
 <!ENTITY lblApply "套用">
 <!ENTITY lblClear "清空">
-<!ENTITY lblKeyboard1 "不會檢查是否與火狐快捷鍵有衝突.">
+<!ENTITY lblKeyboard1 "不會檢查是否與Pale Moon快捷鍵有衝突.">
 <!ENTITY lblKeyboard2 "對快捷鍵的更改在瀏覽器重新啟動後生效.">
 
 <!-- Menuitems pane -->

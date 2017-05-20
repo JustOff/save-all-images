@@ -76,8 +76,8 @@
 <!ENTITY lblFolder "Répertoire">
 <!ENTITY lblFileNames "Noms de fichiers">
 <!ENTITY lblSaveFolder "Répertoire d'enregistrement">
-<!ENTITY lblUseFFFolder "Utiliser le répertoire de téléchargement de Firefox ">
-<!ENTITY lblLastFFFolder "Utiliser le dernier répertoire de téléchargement de Firefox ">
+<!ENTITY lblUseFFFolder "Utiliser le répertoire de téléchargement de Pale Moon ">
+<!ENTITY lblLastFFFolder "Utiliser le dernier répertoire de téléchargement de Pale Moon ">
 <!ENTITY lblUseFolder "Utiliser ce répertoire :">
 <!ENTITY lblBrowseForFolder "Parcourir pour trouver un répertoire">
 <!ENTITY lblClearFolderList "Effacer la liste de répertoires">
@@ -106,14 +106,14 @@
 <!ENTITY lblExtUpper "Haut-de-casse">
 <!ENTITY lblCloseTab "Fermer l'onglet après l'enregistrement">
 <!ENTITY lblPromptTab "Demander lors de la fermeture de l'onglet">
-<!ENTITY lblClearFoldersExit "Effacer la liste 'Utiliser le répertoire' lorsque Firefox se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
-<!ENTITY lblClearFNExit "Effacer la liste 'Utiliser le nom de fichier' lorsque Firefox se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
+<!ENTITY lblClearFoldersExit "Effacer la liste 'Utiliser le répertoire' lorsque Pale Moon se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
+<!ENTITY lblClearFNExit "Effacer la liste 'Utiliser le nom de fichier' lorsque Pale Moon se ferme (fonctionne uniquement lors de l'emploi de 'Fichier->Quitter')">
 
 <!-- General pane -->
 <!ENTITY lblOpenDlg "Ouvrir la boite de dialogue des options de Save Images avant l'enregistrement">
 <!ENTITY lblShowPopup "Afficher la fenêtre surgissante de confirmation d'enregistrement">
 <!ENTITY lblShowPopupError "Seulement si une erreur survient">
-<!ENTITY lblNotifyPos "Afficher la fenêtre surgissante de notification dans le coin en bas à droite de la fenêtre de Firefox">
+<!ENTITY lblNotifyPos "Afficher la fenêtre surgissante de notification dans le coin en bas à droite de la fenêtre de Pale Moon">
 <!ENTITY lblPopupTime "Durée d'affichage de la fenêtre surgissante de notification (en secondes) :">
 <!ENTITY lblSaveDetail "Afficher une liste détaillée des images enregistrées/non enregistrées">
 <!ENTITY lblShowDetailsSaved "Seulement lorsque des images sont enregistrées">
@@ -139,7 +139,7 @@
 <!ENTITY lblKey "Touche">
 <!ENTITY lblApply "Appliquer">
 <!ENTITY lblClear "Effacer">
-<!ENTITY lblKeyboard1 "Aucune vérification n'est faite d'éventuels conflits avec d'autres raccourcis clavier de Firefox.">
+<!ENTITY lblKeyboard1 "Aucune vérification n'est faite d'éventuels conflits avec d'autres raccourcis clavier de Pale Moon.">
 <!ENTITY lblKeyboard2 "Toute modification de raccourci clavier nécessite le redémarrage du navigateur.">
 
 <!-- Menuitems pane -->

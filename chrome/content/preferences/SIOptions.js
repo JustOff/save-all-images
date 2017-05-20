@@ -77,7 +77,7 @@ var SIsave = {
 	    		radDD = tPrefs.getIntPref('browser.download.folderList'); //0-"Desktop", 1-"My Downloads", 2-User specified
 	    if (radDD == 2) {
 	      dir = tPrefs.getComplexValue('browser.download.dir', Ci.nsISupportsString).data;
-	      byId('lblUseFFFolder').value = dir; //set label to Firefox folder
+	      byId('lblUseFFFolder').value = dir; //set label to Pale Moon folder
 	    }
 	  } catch(e) {};
 	  if ((radDD != 2) || (dir == '')) { //if false or error, disable option
@@ -89,7 +89,7 @@ var SIsave = {
 	  try {
 	    lastDir = tPrefs.getComplexValue('browser.download.lastDir', Ci.nsISupportsString).data;
 	    if (lastDir)
-	      byId('lblLastFFFolder').value = lastDir; //set label to Firefox last download folder
+	      byId('lblLastFFFolder').value = lastDir; //set label to Pale Moon last download folder
 	  } catch(e) {};
 	  if (lastDir == '') {
 	  	if (grpFolder == 'radLastFFFolder') //if was selected, now select "Save Folder"

@@ -76,8 +76,8 @@
 <!ENTITY lblFolder "Folder">
 <!ENTITY lblFileNames "File Names">
 <!ENTITY lblSaveFolder "Save Folder">
-<!ENTITY lblUseFFFolder "Use Firefox download folder">
-<!ENTITY lblLastFFFolder "Use Firefox last download folder">
+<!ENTITY lblUseFFFolder "Use Pale Moon download folder">
+<!ENTITY lblLastFFFolder "Use Pale Moon last download folder">
 <!ENTITY lblUseFolder "Use Folder">
 <!ENTITY lblBrowseForFolder "Browse for a folder">
 <!ENTITY lblClearFolderList "Clear folder list">
@@ -106,14 +106,14 @@
 <!ENTITY lblExtUpper "Upper case">
 <!ENTITY lblCloseTab "Close tab after saving">
 <!ENTITY lblPromptTab "Prompt about closing tab">
-<!ENTITY lblClearFoldersExit "Clear 'Use Folder' list when Firefox exits (Only works if use 'File->Exit')">
-<!ENTITY lblClearFNExit "Clear 'Use file name' list when Firefox exits (Only works if use 'File->Exit')">
+<!ENTITY lblClearFoldersExit "Clear 'Use Folder' list when Pale Moon exits (Only works if use 'File->Exit')">
+<!ENTITY lblClearFNExit "Clear 'Use file name' list when Pale Moon exits (Only works if use 'File->Exit')">
 
 <!-- General pane -->
 <!ENTITY lblOpenDlg "Open Save Images Options Dialog Box before saving">
 <!ENTITY lblShowPopup "Show save confirmation popup">
 <!ENTITY lblShowPopupError "Only if an error occurs">
-<!ENTITY lblNotifyPos "Display notification popup at bottom/right corner of Firefox window">
+<!ENTITY lblNotifyPos "Display notification popup at bottom/right corner of Pale Moon window">
 <!ENTITY lblPopupTime "Notification popup display time (seconds)">
 <!ENTITY lblSaveDetail "Show a detailed list of saved/not saved images">
 <!ENTITY lblShowDetailsSaved "Only when images are saved">
@@ -139,7 +139,7 @@
 <!ENTITY lblKey "Key">
 <!ENTITY lblApply "Apply">
 <!ENTITY lblClear "Clear">
-<!ENTITY lblKeyboard1 "No checks are done for conflicts with other Firefox keyboard shortcuts.">
+<!ENTITY lblKeyboard1 "No checks are done for conflicts with other Pale Moon keyboard shortcuts.">
 <!ENTITY lblKeyboard2 "Any changes to keyboard shortcuts requires the browser to be restarted.">
 
 <!-- Menuitems pane -->

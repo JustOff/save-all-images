@@ -32,7 +32,7 @@
         </description>
         <separator class="thin"/>
         <description style="margin:0px 0px 0px 6px; width:350px;">
-          Save Images saves the images from the current tab web page, tabs to the left or right or from all tabs, from the Firefox cache, to a specified location, with either the images original file name or a file name that you specify. The size and types of images saved may be chosen, with options if the file size is unknown or if duplicate files are found. There are also menu items to either open all or selected links in a single tab or multiple tabs. 
+          Save Images saves the images from the current tab web page, tabs to the left or right or from all tabs, from the Pale Moon cache, to a specified location, with either the images original file name or a file name that you specify. The size and types of images saved may be chosen, with options if the file size is unknown or if duplicate files are found. There are also menu items to either open all or selected links in a single tab or multiple tabs. 
         </description>
         <spacer style="height: 20px"/>
         <vbox>

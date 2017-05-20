@@ -702,7 +702,7 @@ var SIOV = {
 	    	check = {value: false},
 	    	flags = this.SIPrompt.BUTTON_POS_0 * this.SIPrompt.BUTTON_TITLE_YES +
 	              this.SIPrompt.BUTTON_POS_1 * this.SIPrompt.BUTTON_TITLE_CANCEL+
-	              this.SIPrompt.BUTTON_POS_2 * this.SIPrompt.BUTTON_TITLE_NO; //cancel & no are swopped - firefox error
+	              this.SIPrompt.BUTTON_POS_2 * this.SIPrompt.BUTTON_TITLE_NO; //cancel & no are swopped - Pale Moon error
 	    for (i=0; i<len; i++) {
 		    imgNode = this.imgArr[i].node;
 		    url = this.imgArr[i].url;
