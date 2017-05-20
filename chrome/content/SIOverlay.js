@@ -6,8 +6,7 @@ var SIOV = {
 	SIPrompt: Cc['@mozilla.org/embedcomp/prompt-service;1'].getService(Ci.nsIPromptService),
 	siILC: Ci.nsIImageLoadingContent,
 
-	isWindows: true, si_isMac: false, FFv14plus: true, FFv32plus: false, FFv36plus: false, SMv229plus: false,
-	chkUseSizes: false, chkFileSize: false, edtMinFSize: 0, edtMaxFSize: 0, grpSizeUnk: 'sizeprompt',
+	isWindows: true, chkUseSizes: false, chkFileSize: false, edtMinFSize: 0, edtMaxFSize: 0, grpSizeUnk: 'sizeprompt',
 	chkDims: false, edtMinWidth: 200, edtMinHeight: 200, edtMaxWidth: 0, edtMaxHeight: 0, grpDimsUnk: 'dimprompt',
 	imageType: '.all',
 	chkSaveNoExt: true, saveSelected: false,
@@ -391,10 +390,7 @@ var SIOV = {
 				}
 				dirStr += this.appendFolder(dir);
 		  }
-		  if (this.FFv14plus)
-		  	var tempFile = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsIFile);
-		  else
-		  	var tempFile = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsILocalFile);
+		  var tempFile = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsIFile);
 		  var imgUrlFN = this.cleanSIURL(imgPath);
 		  var bkgdFN = (isBkgdImg)? '_'+this.lblBackground : '';
 		  if (((imgUrlFN == '.jpg') || (imgUrlFN == '.jpeg')) && (this.chkSaveNoExt)) {//no filename so give filename of 'image'
@@ -636,10 +632,7 @@ var SIOV = {
 				this.imgArr.push({'node':imgNode, 'url':url, 'ced': null, 'bkgd': isBkgdImg, 'domURL':domURL, 'tabTitle':tabTitle, 'tabIndex':this.tabIndex, 'doc':contDoc});
 				last = this.imgArr.length-1;
 				this.waitingCount++;
-				if (this.FFv32plus || this.SMv229plus)
-					this.si_cacheStorage.asyncOpenURI(makeURI(url), '', Ci.nsICacheStorage.OPEN_READONLY, new this.CacheListener(last));
-				else
-					this.si_httpCS.asyncOpenCacheEntry(url, 1, new this.CacheListener(last));
+				this.si_cacheStorage.asyncOpenURI(makeURI(url), '', Ci.nsICacheStorage.OPEN_READONLY, new this.CacheListener(last));
 			}
 		  window.clearTimeout(this.tmrWait);
 		  if (SIOV.waitingCount > 0) {
@@ -1130,10 +1123,7 @@ var SIOV = {
 
 	createSIFolder: function(folder) {
 		try {
-			if (this.FFv14plus)
-		  	var dir = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsIFile);
-		  else
-		  	var dir = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsILocalFile);
+		  var dir = Cc['@mozilla.org/file/local;1'].createInstance(Ci.nsIFile);
 		  dir.initWithPath(folder); // no ~ so just create in saveFolder
 		  if (!dir.exists() || !dir.isDirectory()) {   // if it doesn't exist, create it
 		  	dir.create(Ci.nsIFile.DIRECTORY_TYPE, 0x1FF); //0x1FF=0777 needed for Linux permissions
@@ -1456,19 +1446,10 @@ var SIOV = {
 	// Initializes the extension
 	initialize: function(aEvent) {
 		try {
-			this.si_isMac = this.si_isMacFunc();
-			this.si_getFirefoxVersion();
-			if (this.FFv32plus || this.SMv229plus) {
-				var {LoadContextInfo} = Cu.import("resource://gre/modules/LoadContextInfo.jsm", {});
-				var si_cacheService = Cc["@mozilla.org/netwerk/cache-storage-service;1"].getService(Ci.nsICacheStorageService);
-				this.si_cacheStorage = si_cacheService.diskCacheStorage(LoadContextInfo.default,false);
-				this.CacheListener.prototype = this.listenerPrototype_FF32;
-			} else {
-				var si_cacheService = Cc['@mozilla.org/network/cache-service;1'].getService(Ci.nsICacheService);
-				this.si_httpCS = si_cacheService.createSession('HTTP', 0, true);
-				this.si_httpCS.doomEntriesIfExpired = false;
-				this.CacheListener.prototype = this.listenerPrototype;
-			}
+			var {LoadContextInfo} = Cu.import("resource://gre/modules/LoadContextInfo.jsm", {});
+			var si_cacheService = Cc["@mozilla.org/netwerk/cache-storage-service;1"].getService(Ci.nsICacheStorageService);
+			this.si_cacheStorage = si_cacheService.diskCacheStorage(LoadContextInfo.default,false);
+			this.CacheListener.prototype = this.listenerPrototype_FF32;
 
 			var prf = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefBranch).QueryInterface(Ci.nsIPrefService);
 			SICommon.gLocaleKeys = byId('SI_localeKeys');
@@ -1524,41 +1505,6 @@ var SIOV = {
 		catch(e) {}
 		window.removeEventListener('load', function() {SIOV.initialize();}, false);
 	},
-
-	si_getFirefoxVersion: function(){
-		const SEAMONKEY_ID = "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}";
-		const FIREFOX_ID = "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}";
-		const PALEMOON_ID = "{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}";
-		var appID = null;
-		var appInfo = Cc['@mozilla.org/xre/app-info;1'].getService(Ci.nsIXULAppInfo);
-		appID = appInfo.ID
-		var versionChecker = Cc['@mozilla.org/xpcom/version-comparator;1'].getService(Ci.nsIVersionComparator);
-		if (appInfo && versionChecker) {
-			if (appID == FIREFOX_ID) {
-				this.FFv14plus = versionChecker.compare(appInfo.version, '14') >= 0;
-				this.FFv32plus = versionChecker.compare(appInfo.version, '31') > 0;
-				this.FFv36plus = versionChecker.compare(appInfo.version, '35') > 0;
-			} else if (appID == PALEMOON_ID) {
-				this.FFv14plus = versionChecker.compare(appInfo.version, '14') >= 0;
-				this.FFv32plus = versionChecker.compare(appInfo.version, '27') > 0;
-			} else if (appID == SEAMONKEY_ID) {
-				this.SMv229plus = versionChecker.compare(appInfo.version, '2.29') >= 0;
-			}
-		}
-	},
-
-// Returns true if the extension is running on a Mac
-	si_isMacFunc: function() {
-	  var appInfo = Cc['@mozilla.org/xre/app-info;1'];
-	  if (appInfo) {
-	    if(appInfo.getService(Ci.nsIXULRuntime).OS == 'Darwin')
-	      return true;
-	    else
-	      if (navigator.platform.indexOf('Mac') != -1)
-	        return true;
-	  }
-	  return false;
-	}
 
 }; //SIOV
 
