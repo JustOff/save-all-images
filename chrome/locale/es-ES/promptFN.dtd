@@ -1,0 +1,17 @@
+<!ENTITY lblSaveFileAs "Guardar archivo como">
+<!ENTITY lblFNOptions "Opciones para nombre de archivo">
+<!ENTITY lblSaveFolder "Carpeta de guardado">
+<!ENTITY lblBrowseForFolder "Seleccionar carpeta">
+<!ENTITY lblClearFolderList "Despejar lista de carpetas">
+<!ENTITY lblFileName "Nombre de archivo">
+<!ENTITY lblClearFNList "Despejar lista de nombres de archivos">
+<!ENTITY lblRetainFN "Conservar el nombre original del archivo">
+<!ENTITY lblPrependFN "Anteponer el nombre del archivo original con">
+<!ENTITY lblPreSufNumber "Número de prefijo y sufijo">
+<!ENTITY lblStartValue "Valor inicial">
+<!ENTITY lblLength "Longitud">
+<!ENTITY lblIncBy "Incrementar en">
+<!ENTITY lblPrefix "Prefijo">
+<!ENTITY lblSuffix "Sufijo">
+<!ENTITY lblExample "Ejemplo">
+<!ENTITY lblDefault "Predeterminado">

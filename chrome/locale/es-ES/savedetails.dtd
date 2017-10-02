@@ -1,0 +1,30 @@
+<!ENTITY lblSaveDetails "Guardar detalles">
+<!ENTITY lblBaseFolder "Carpeta base de guardado">
+<!ENTITY lblTotalProcessed "Número total de imágenes procesadas">
+<!ENTITY lblTotalSaved "Número total de imágenes guardadas">
+<!ENTITY lblDuplicateImages "Imágenes duplicadas">
+<!ENTITY lblTotalErrors "Número total de errores">
+<!ENTITY lblFileSizeProp "Propiedades de tamaño de archivo">
+<!ENTITY lblSetting "Configuración">
+<!ENTITY lblNoImagesNotSaved "Número de imágenes no guardadas">
+<!ENTITY lblMinFS "Tamaño mínimo de archivo">
+<!ENTITY lblMaxFS "Tamaño máximo de archivo">
+<!ENTITY lblFSUnknown "Tamaño del archivo desconocido">
+<!ENTITY lblDimProp "Propiedades de dimensión">
+<!ENTITY lblMinWidth "Ancho mínimo">
+<!ENTITY lblMaxWidth "Ancho máximo">
+<!ENTITY lblMinHeight "Altura mínima">
+<!ENTITY lblMaxHeight "Altura máxima">
+<!ENTITY lblDimUnknown "Dimensiones desconocidas">
+<!ENTITY lblImageTypesProp "Propiedades de los tipos de imágenes a guardar">
+<!ENTITY lblAllImages "Tipos de imágenes: Todas las imágenes">
+<!ENTITY lblJpgImages "Imágenes JPG/JPEG">
+<!ENTITY lblPngImages "Imágenes PNG">
+<!ENTITY lblGifImages "Imágenes GIF">
+<!ENTITY lblBmpImages "Imágenes BMP">
+<!ENTITY lblOtherImages "Otras imágenes">
+<!ENTITY lblSaveNoExt "Si no hay extensión, guardar como JPG">
+<!ENTITY lblSameDomainProp "Propiedades para un mismo dominio">
+<!ENTITY lblSameDomain "Guardar solo si es del mismo dominio">
+<!ENTITY lblRegExpProp "Propiedades de expresión regular">
+<!ENTITY lblRegExp "Expresión regular">

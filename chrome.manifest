@@ -9,7 +9,9 @@ style   chrome://global/content/customizeToolbar.xul   chrome://save-images-me/s
 #localization
 locale	save-images-me   en			chrome/locale/en/
 locale	save-images-me   de			chrome/locale/de/
-locale	save-images-me	 fr			chrome/locale/fr/
+locale	save-images-me   es-AR		chrome/locale/es-AR/
+locale	save-images-me   es-ES		chrome/locale/es-ES/
+locale	save-images-me   fr			chrome/locale/fr/
 locale	save-images-me   sv			chrome/locale/sv/
-locale	save-images-me	 zh-CN		chrome/locale/zh-CN/
-locale	save-images-me	 zh-TW		chrome/locale/zh-TW/
+locale	save-images-me   zh-CN		chrome/locale/zh-CN/
+locale	save-images-me   zh-TW		chrome/locale/zh-TW/

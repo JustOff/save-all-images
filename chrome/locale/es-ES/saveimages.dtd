@@ -1,0 +1,151 @@
+<!ENTITY lblOk "Aceptar">
+<!ENTITY lblCancel "Cancelar">
+
+<!-- Menu Labels -->
+<!ENTITY si_lblSaveImages "Guardar imágenes">
+<!ENTITY si_lblSaveCurrent "Guardar imágenes de la pestaña actual">
+<!ENTITY si_lblSaveLeft "Guardar imágenes de las pestañas de la IZQUIERDA &lt;&lt;">
+<!ENTITY si_lblSaveRight "Guardar imágenes de las pestañas de la DERECHA &gt;&gt;">
+<!ENTITY si_lblSaveAll "Guardar imágenes de TODAS las pestañas">
+<!ENTITY si_lblSaveSel "Guardar imágenes seleccionadas">
+<!ENTITY si_lblSaveUnderMouse "Guardar la imagen de abajo del cursor del ratón">
+<!ENTITY si_lblImageLinks "Enlaces de imágenes">
+<!ENTITY si_lblImageLinksAll "Abrir TODOS los enlaces de imágenes en una misma pestaña">
+<!ENTITY si_lblImageLinksSel "Abrir los enlaces de imágenes SELECCIONADOS en una misma pestaña">
+<!ENTITY si_lblImageLinksAllTabs "Abrir TODOS los enlaces de imágenes en PESTAÑAS">
+<!ENTITY si_lblImageLinksSelTabs "Abrir los enlaces de imágenes SELECCIONADOS en PESTAÑAS">
+<!ENTITY si_lblLinks "Enlaces">
+<!ENTITY si_lblLinksAll "Abrir TODOS los enlaces en una misma pestaña">
+<!ENTITY si_lblLinksSel "Abrir enlaces SELECCIONADOS en una misma pestaña">
+<!ENTITY si_lblLinksAllTabs "Abrir TODOS los enlaces en PESTAÑAS">
+<!ENTITY si_lblLinksSelTabs "Abrir enlaces SELECCIONADOS en PESTAÑAS">
+<!ENTITY si_lblOptions "Opciones">
+<!ENTITY si_lblSaveDetails "Guardar detalles">
+<!ENTITY si_lblHelp "Ayuda">
+
+<!-- Option Pane Labels -->
+<!ENTITY optionsTitle "Opciones de Save Images">
+<!ENTITY buttonlabelextra2 "Restablecer valores predeterminados">
+<!ENTITY paneFiltersLbl "Filtros">
+<!ENTITY paneSaveLbl "Guardar">
+<!ENTITY paneAutoLbl "Abrir y guardar automáticamente">
+<!ENTITY paneGeneralLbl "General">
+<!ENTITY paneShortcutsLbl "Atajos de teclado">
+<!ENTITY paneMenuItemsLbl "Elementos de menú">
+<!ENTITY btnExportLbl "Exportar">
+<!ENTITY btnExportTooltip "Exportar ajuste de opciones">
+<!ENTITY btnImportLbl "Importar">
+<!ENTITY btnImportTooltip "Importar ajuste de opciones">
+
+<!-- Filters pane -->
+<!ENTITY lblEnableLimits "Habilitar límites">
+<!ENTITY lblFileSize "Tamaño del archivo">
+<!ENTITY lblBytes "bytes">
+<!ENTITY lblMin "Mín">
+<!ENTITY lblMax "Máx">
+<!ENTITY lblUnknown "Si se desconoce">
+<!ENTITY lblSkip "Omitir">
+<!ENTITY lblPrompt "Preguntar">
+<!ENTITY lblSave "Guardar">
+<!ENTITY lblDimensions "Dimensiones (píxeles)">
+<!ENTITY lblMinWidth "Ancho mín">
+<!ENTITY lblMaxWidth "Ancho máx">
+<!ENTITY lblMinHeight "Altura mín">
+<!ENTITY lblMaxHeight "Altura máx">
+<!ENTITY lblImageTypes "Tipos de imágenes a guardar">
+<!ENTITY lblAllImages "Todas las imágenes">
+<!ENTITY lblSelection "Selección">
+<!ENTITY lblJPGImages "Imágenes JPG/JPEG">
+<!ENTITY lblPNGImages "Imágenes PNG">
+<!ENTITY lblGIFImages "Imágenes GIF">
+<!ENTITY lblBMPImages "Imágenes BMP">
+<!ENTITY lblSaveNoExt "Si no hay extensión, guardar como JPG">
+<!ENTITY lblRegExp "Expresiones regulares">
+<!ENTITY lblRegExpSentence "Expresión regular basada en URL de imágenes (solo las imágenes que coincidan serán guardadas)">
+<!ENTITY lblClearRegExpList "Despejar la lista de expresiones regulares">
+<!ENTITY lblSameDomain "Guardar únicamente imágenes del mismo dominio o servidor que el del URL de la pestaña seleccionada">
+
+<!-- Save pane -->
+<!ENTITY lblDefaultSave "Acción predeterminada para guardar">
+<!ENTITY lblCurrentTab "Pestaña actual">
+<!ENTITY lblLeftCurrentTab "A la izquierda de la pestaña actual &lt;&lt;">
+<!ENTITY lblRightCurrentTab "A la derecha de la pestaña actual &gt;&gt;">
+<!ENTITY lblAllTabs "Todas las pestañas">
+<!ENTITY lblIncludeCurrentTab "Incluir la pestaña actual al guardar imágenes de la izquierda o de la derecha">
+<!ENTITY lblFolderOptions "Opciones de carpeta">
+<!ENTITY lblFolder "Carpeta">
+<!ENTITY lblFileNames "Nombres de archivos">
+<!ENTITY lblSaveFolder "Carpeta de guardado">
+<!ENTITY lblUseFFFolder "Usar la carpeta de descargas de Pale Moon">
+<!ENTITY lblLastFFFolder "Usar la última carpeta de descargas de Pale Moon">
+<!ENTITY lblUseFolder "Carpeta a usar">
+<!ENTITY lblBrowseForFolder "Buscar carpeta">
+<!ENTITY lblClearFolderList "Despejar lista de carpetas">
+<!ENTITY lblAppendTitle "Añadir el título de la pestaña a la 'carpeta de guardado'">
+<!ENTITY lblAppendURL "Añadir la estructura de carpeta del URL de la imagen a la 'carpeta de guardado'">
+<!ENTITY lblTreeStructure "Estructura de árbol">
+<!ENTITY lblSingleFolder "Carpeta única">
+<!ENTITY lblAppendDate "Añadir la fecha">
+<!ENTITY lblAppendTime "Añadir la hora">
+<!ENTITY lblIncludeSeconds "Incluir segundos">
+<!ENTITY lblUseImgFN "Usar el nombre de archivo de las imágenes">
+<!ENTITY lblUseFN "Nombre de archivo a usar">
+<!ENTITY lblClearFNList "Despejar lista de nombres de archivos">
+<!ENTITY lblFNPrompt "Solicitar el nombre de archivo">
+<!ENTITY lblOnce "Una vez por página">
+<!ENTITY lblForEachPage "Por cada imagen">
+<!ENTITY lblRegExpFN "Nombre de archivo de expresión regular (se puede usar '$1', '$2', …)">
+<!ENTITY lblClearRegxEprList "Despejar la lista de nombres de archivos de expresiones regulares">
+<!ENTITY lblDuplicateFiles "Archivos duplicados">
+<!ENTITY lblIgnore "Ignorar">
+<!ENTITY lblOverwrite "Sobreescribir">
+<!ENTITY lblNumberLength "Número de dígitos">
+<!ENTITY lblExtLetterSize "Tipo de letra de las extensiones">
+<!ENTITY lblExtAsIs "Como aparece">
+<!ENTITY lblExtLower "Minúsculas">
+<!ENTITY lblExtUpper "Mayúsculas">
+<!ENTITY lblCloseTab "Cerrar pestaña después de guardar">
+<!ENTITY lblPromptTab "Preguntar para cerrar pestaña">
+<!ENTITY lblClearFoldersExit "Despejar la lista de 'Carpeta a usar' al cerrar Pale Moon (solo funciona al usar 'Archivo'→'Salir')">
+<!ENTITY lblClearFNExit "Despejar la lista de 'Nombre de archivo a usar' al cerrar Pale Moon (solo funciona al usar 'Archivo'→'Salir')">
+
+<!-- General pane -->
+<!ENTITY lblOpenDlg "Abrir el cuadro de diálogo 'Opciones de Save Images&quot; antes de guardar">
+<!ENTITY lblShowPopup "Mostrar ventana emergente de confirmación al guardar">
+<!ENTITY lblShowPopupError "Solo si ocurre un error">
+<!ENTITY lblNotifyPos "Mostrar ventana emergente de notificación en la esquina inferior derecha de la ventana de Pale Moon">
+<!ENTITY lblPopupTime "Tiempo de visualización de la ventana emergente de notificación (en segundos)">
+<!ENTITY lblSaveDetail "Mostrar una lista detallada de imágenes guardadas y no guardadas">
+<!ENTITY lblShowDetailsSaved "Solo cuando las imágenes son guardadas">
+<!ENTITY lblAutoSwitch "Cambiar automáticamente a la siguiente pestaña (al abrir múltiples enlaces)">
+<!ENTITY lblSaveBkgd "Guardar imágenes de fondo">
+<!ENTITY lblSaveMouse "Guardar la imagen de abajo del cursor del ratón">
+<!ENTITY lblSaveMouseFilters "Ignorar los filtros establecidos en 'Opciones'">
+<!ENTITY lblFrameHeight "Altura del marco al abrir múltiples enlaces en una misma pestaña">
+<!ENTITY lblPixels "píxeles">
+<!ENTITY lblFoldersRemember "Número de carpetas y nombres de archivo a recordar">
+<!ENTITY lblGenLang1 "Elige el idioma de 'Save Images'">
+<!ENTITY lblGenNote1 "Se requiere reiniciar el navegador">
+<!ENTITY lblMultiLinks "Apertura de múltiples enlaces e imágenes">
+<!ENTITY lblDelayOpenLinks "Intervalo entre la apertura de enlaces e imágenes (en segundos)">
+<!ENTITY lblNumOpenLinks "Número de enlaces e imágenes que se pueden abrir a la vez">
+<!ENTITY lblNoLimit "(0 = sin límite)">
+<!ENTITY lblNoDelay "(0 = sin intervalo)">
+<!ENTITY lblSkipLinkSelect "Saltarse la apertura del cuadro de diálogo 'Seleccionar enlaces'">
+
+<!-- Shortcuts pane -->
+<!ENTITY lblDescription "Descripción">
+<!ENTITY lblShortcutKey "Tecla de atajo">
+<!ENTITY lblKey "Tecla">
+<!ENTITY lblApply "Aplicar">
+<!ENTITY lblClear "Despejar">
+<!ENTITY lblKeyboard1 "No se realizará ninguna comprobación de posibles conflictos con otros atajos de teclado de Pale Moon.">
+<!ENTITY lblKeyboard2 "Cualquier cambio a los atajos de teclado requiere que el navegador sea reiniciado.">
+
+<!-- Menuitems pane -->
+<!ENTITY SelectMenuitems "Selecciona los elementos que se mostrarán en los distintos menús.">
+<!ENTITY lblTools "Menú Herramientas">
+<!ENTITY lblContext "Menú contextual">
+<!ENTITY lblToolbutton "Botón herramienta">
+<!ENTITY lblHideToolsMenu "Ocultar el menú de Save Images en Herramientas">
+<!ENTITY lblHideContextMenu "Ocultar el menú de Save Images en el menú contextual">
