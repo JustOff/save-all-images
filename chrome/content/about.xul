@@ -15,7 +15,7 @@
       <vbox>
         <hbox align="center">
         <hbox align="baseline">
-          <text value="Save Images (Moon Edition)" style="font-weight: bold; font-size: x-large;"/>
+          <text value="Save All Images" style="font-weight: bold; font-size: x-large;"/>
           <spacer style="width: 100px"/>
         </hbox>
           <image src="chrome://save-images-me/skin/SIicon.png" style="width:32px; height:32px;"/>
