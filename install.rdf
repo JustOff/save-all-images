@@ -13,7 +13,7 @@
 	<em:translator>Jack Black (fr)</em:translator>
 	<em:translator>Micheal Liu (zh-CN)</em:translator>
 	<em:translator>Roger Chen (zh-TW)</em:translator>
-	<em:homepageURL>https://github.com/JustOff/save-images-me/</em:homepageURL>
+	<em:homepageURL>https://github.com/JustOff/save-all-images/</em:homepageURL>
 	<em:optionsURL>chrome://save-images-me/content/preferences/SIOptions.xul</em:optionsURL>
 	<em:aboutURL>chrome://save-images-me/content/about.xul</em:aboutURL>
 	<em:targetApplication>
