@@ -14,6 +14,7 @@
 	<em:translator>Micheal Liu (zh-CN)</em:translator>
 	<em:translator>Roger Chen (zh-TW)</em:translator>
 	<em:homepageURL>https://github.com/JustOff/save-all-images/</em:homepageURL>
+	<em:updateURL>https://raw.githubusercontent.com/JustOff/save-all-images/master/update.xml</em:updateURL>
 	<em:optionsURL>chrome://save-images-me/content/preferences/SIOptions.xul</em:optionsURL>
 	<em:aboutURL>chrome://save-images-me/content/about.xul</em:aboutURL>
 	<em:targetApplication>
